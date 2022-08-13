@@ -11,7 +11,7 @@
 #include "r2cm/r2cm_WindowUtility.h"
 
 #include "test/TestMenu.h"
-#include "ptt/ptt_GameScene.h"
+#include "ptt/ptt_TimerScene.h"
 #include "ptt/ptt_VersionInfo.h"
 
 const char* DevelopmentMenu::GetTitle()
