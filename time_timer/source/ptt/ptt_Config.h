@@ -16,7 +16,7 @@ namespace ptt
 		{
 			const static NodeConfig ret
 			{
-				false
+				true
 			};
 			return ret;
 		}
