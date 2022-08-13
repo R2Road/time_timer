@@ -1,9 +1,10 @@
 #include "Utility4Test.h"
 
-#include <Windows.h>
+#include <iomanip>
 
-#include "r2bix/r2render_TextureFrame.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
+#include "r2bix/r2render_TextureFrame.h"
 
 r2cm::eColor Convert_R2bixForegroundColor_to_R2CMColor( r2base::ColorValue color_value )
 {
@@ -61,15 +62,11 @@ r2cm::eColor Convert_R2bixBackgroundColor_to_R2CMColor( r2base::ColorValue color
 
 void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
 {
-	HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-
 	for( int y = rect.GetMinY(); rect.GetMaxY() >= y; ++y )
 	{
 		for( int x = rect.GetMinX(); rect.GetMaxX() >= x; ++x )
 		{
-			SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( offset_y + y ) } );
-
-			std::cout << c;
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( x ), static_cast<short>( offset_y + y ) }, c );
 		}
 	}
 }
@@ -81,29 +78,84 @@ void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
 
 void Utility4Test::DrawTexture( const r2render::Texture& texture )
 {
+	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
 	for( int y = 0; y < texture.GetHeight(); ++y )
 	{
 		for( int x = 0; x < texture.GetWidth(); ++x )
 		{
-			std::cout 
-				<< r2cm::clm( Convert_R2bixForegroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< r2cm::clm( Convert_R2bixBackgroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< texture.GetCharacter( x, y )
-				<< r2cm::clm();
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
+			r2cm::WindowUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetColor( x, y ) );
 		}
+	}
 
+	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
+}
+void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
+{
+	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
+	for( int y = 0; y < texture.GetHeight(); ++y )
+	{
+		for( int x = 0; x < texture.GetWidth(); ++x )
+		{
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
+		}
+	}
+
+	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
+}
+void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
+{
+	std::size_t x = 0;
+	for( const auto color : texture.GetColorContainer() )
+	{
+		std::cout << std::setw( 3 ) << color << " ";
+
+		++x;
+		if( texture.GetWidth() <= x )
+		{
+			x = 0u;
+			std::cout << r2cm::linefeed;
+		}
+	}
+	if( 0u != x )
+	{
 		std::cout << r2cm::linefeed;
 	}
 }
+void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
+{
+	std::size_t x = 0;
+	for( const auto disuse : texture.GetCharacterDisuseContainer() )
+	{
+		std::cout << std::setw( 3 ) << disuse << " ";
+
+		++x;
+		if( texture.GetWidth() <= x )
+		{
+			x = 0u;
+			std::cout << r2cm::linefeed;
+		}
+	}
+	if( 0u != x )
+	{
+		std::cout << r2cm::linefeed;
+	}
+}
+
 void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
 {
+	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
 	for( int y = 0; y < frame.GetHeight(); ++y )
 	{
 		for( int x = 0; x < frame.GetWidth(); ++x )
 		{
-			std::cout << frame.GetCharacter( x, y );
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetCharacter( x, y ) );
+			r2cm::WindowUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetColor( x, y ) );
 		}
-
-		std::cout << r2cm::linefeed;
 	}
+
+	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + frame.GetHeight() ) } );
 }
