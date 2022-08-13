@@ -7,7 +7,7 @@ namespace r2base
 	public:
 		struct LabelConfig
 		{
-			bool bShowPositionPivot = false;
+			bool bShowPositionPivot = true;
 		};
 
 	private:
