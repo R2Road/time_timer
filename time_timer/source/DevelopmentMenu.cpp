@@ -69,7 +69,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					// Setup
 					//
 					r2base::Director director;
-					director.Setup( ptt::GameScene::Create( director ) );
+					director.Setup( ptt::TimerScene::Create( director ) );
 
 					r2cm::WindowUtility::ScrollBarVisible( false );
 

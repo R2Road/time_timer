@@ -4,10 +4,10 @@
 
 namespace ptt
 {
-	class GameScene : public r2node::SceneNode
+	class TimerScene : public r2node::SceneNode
 	{
 	private:
-		GameScene() = delete;
+		TimerScene() = delete;
 
 	public:
 		static r2node::SceneNodeUp Create( r2base::Director& director );

@@ -22,7 +22,7 @@
 
 namespace ptt
 {
-	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp TimerScene::Create( r2base::Director& director )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )

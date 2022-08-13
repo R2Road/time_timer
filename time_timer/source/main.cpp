@@ -61,7 +61,7 @@ int main()
 	// Setup
 	//
 	r2base::Director director;
-	director.Setup( ptt::GameScene::Create( director ) );
+	director.Setup( ptt::TimerScene::Create( director ) );
 
 	//
 	// Environment : ScrollBar
