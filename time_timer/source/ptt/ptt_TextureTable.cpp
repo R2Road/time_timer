@@ -18,61 +18,37 @@ namespace ptt
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
 				/* 0 */ "                                                            "
-				/* 1 */ "   ###    ###    # #   #####    ###   #   #  #####   ###    "
-				/* 2 */ "  #      #   #  # # #  #       #   #  #   #  #      #   #   "
-				/* 3 */ "  # ###  ### #  # # #  #####   #   #  #   #  #####  ####    "
-				/* 4 */ "  #   #  #   #  # # #  #       #   #   # #   #      #   #   "
-				/* 5 */ "   ###   #   #  # # #  # ###    ###     #    # ###  #   #   "
+				/* 1 */ "  00000     11      22222    33333    4  4                  "
+				/* 2 */ " 0     0   111     2     2  3     3  4   4                  "
+				/* 3 */ " 0     0     1       2222      333   4   4                  "
+				/* 4 */ " 0     0     1     22       3     3  4444444                "
+				/* 5 */ "  00000   1111111  2222222   33333       4                  "
 				/* 6 */ "                                                            "
-				/* 7 */ " 22222    00000    4  4     88888                           "
-				/* 8 */ "2     2  0     0  4   4    8     8  M                       "
-				/* 9 */ "  2222   0     0  4   4     88888   I                       "
-				/* 0 */ "22       0     0  4444444  8     8  N                       "
-				/* 1 */ "2222222   00000       4     88888   I                       "
-				/* 2 */ "                                                            "
-				/* 3 */ "[   ESC   ] Exit                                            "
-				/* 4 */ "[ W,A,S,D ] Move Number                                     "
-				/* 5 */ "[    R    ] Restart                                         "
-				/* 6 */ "[   TAB   ] History                                         "
 				/* 7 */ "                                                            "
-				/* 8 */ "  #   #   ###   #   #    #   #   #####  #   #   B           "
-				/* 9 */ "  #   #  #   #  #   #    # # #     #    ##  #   B           "
-				/* 0 */ "   # #   #   #  #   #    # # #     #    # # #   B           "
-				/* 1 */ "    #    #   #  #   #    # # #     #    #  ##   B           "
-				/* 2 */ "    #     ###    ###      # #    #####  #   #   B           "
+				/* 8 */ " 555555    666     7777777   88888    99999                 "
+				/* 9 */ " 5        6              7  8     8  9     9                "
+				/* 0 */ " 555555   666666         7   88888    999999                "
+				/* 1 */ "       5  6     6        7  8     8        9                "
+				/* 2 */ " 555555    66666         7   88888    99999                 "
+				/* 3 */ "                                                            "
+				/* 4 */ "                                                            "
+				/* 5 */ "                                                            "
+				/* 6 */ "                                                            "
+				/* 7 */ "                                                            "
+				/* 8 */ "                                                            "
+				/* 9 */ "                                                            "
+				/* 0 */ "                                                            "
+				/* 1 */ "                                                            "
+				/* 2 */ "                                                            "
 				/* 3 */ "                                                            "
 			) ) );
 
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
-					"title_0"
+					"number_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 7, 36, 4 ) );
-			}
-
-			{
-				auto frame_result = mTextureFrameContainer.emplace(
-					"keyinfo_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
-				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 3 ) );
-			}
-
-			{
-				auto frame_result = mTextureFrameContainer.emplace(
-					"game_over_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
-				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 58, 6 ) );
-			}
-
-			{
-				auto frame_result = mTextureFrameContainer.emplace(
-					"you_win_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
-				);
-				frame_result.first->second->SetVisibleRect( 0, 17, 47, 22 );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 8, 6 ) );
 			}
 		}
 	}

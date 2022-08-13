@@ -224,6 +224,9 @@
     <ClCompile Include="source\ptt\ptt_TimerScene.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
+    <ClCompile Include="source\test\item\test_ptt_texturetable.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -475,6 +478,9 @@
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TimerScene.h">
       <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_ptt_texturetable.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
