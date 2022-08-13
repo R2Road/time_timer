@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="external\r2bix\r2action_AnimationRequestAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_BlinkAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_CallbackAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_DelayAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_MoveByAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_MoveToAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_RepeatAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_SequenceAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_TickAction.cpp" />
+    <ClCompile Include="external\r2bix\r2animation_constant.cpp" />
+    <ClCompile Include="external\r2bix\r2base_ColorMaskOption.cpp" />
+    <ClCompile Include="external\r2bix\r2base_ColorValue.cpp" />
+    <ClCompile Include="external\r2bix\r2base_CoutBufferRedirector.cpp" />
+    <ClCompile Include="external\r2bix\r2base_DebugConfig.cpp" />
+    <ClCompile Include="external\r2bix\r2base_Director.cpp" />
+    <ClCompile Include="external\r2bix\r2base_Node.cpp" />
+    <ClCompile Include="external\r2bix\r2base_ScreenBufferManager.cpp" />
+    <ClCompile Include="external\r2bix\r2base_TextureFrameAnimationInfo.cpp" />
+    <ClCompile Include="external\r2bix\r2base_TextureFrameAnimationTableBase.cpp" />
+    <ClCompile Include="external\r2bix\r2base_TextureTableBase.cpp" />
+    <ClCompile Include="external\r2bix\r2component_ActionProcessComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_CustomTextureComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_LabelMComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_LabelSComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TextureFrameAnimationComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TextureFrameRenderComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TextureRenderComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TransformComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2input_Constant.cpp" />
+    <ClCompile Include="external\r2bix\r2input_KeyboardInputCollector.cpp" />
+    <ClCompile Include="external\r2bix\r2input_KeyboardInputListener.cpp" />
+    <ClCompile Include="external\r2bix\r2node_CustomTextureNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_LabelMNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_LabelSNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_PivotNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_SceneNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_SpriteAnimationNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_SpriteNode.cpp" />
+    <ClCompile Include="external\r2bix\r2render_Camera.cpp" />
+    <ClCompile Include="external\r2bix\r2render_Texture.cpp" />
+    <ClCompile Include="external\r2bix\r2render_TextureFrame.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_FileUtil.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_InputUtil.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_StringBuilder.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_StringDecomposition.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_StringSize.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp" />
+    <ClCompile Include="external\r2\r2_Direction4.cpp" />
+    <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
+    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp" />
+    <ClCompile Include="external\r2\r2_Point_Float.cpp" />
+    <ClCompile Include="external\r2\r2_Point_Int.cpp" />
+    <ClCompile Include="external\r2\r2_Random.cpp" />
+    <ClCompile Include="external\r2\r2_Rect_Int.cpp" />
+    <ClCompile Include="external\r2\r2_Size_Int.cpp" />
+    <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
+    <ClCompile Include="source\DevelopmentMenu.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ptt\ptt_GameScene.cpp" />
+    <ClCompile Include="source\ptt\ptt_TextureTable.cpp" />
+    <ClCompile Include="source\test\TestMenu.cpp" />
+    <ClCompile Include="source\test\Utility4Test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="external\r2bix\r2action_AnimationRequestAction.h" />
+    <ClInclude Include="external\r2bix\r2action_BlinkAction.h" />
+    <ClInclude Include="external\r2bix\r2action_CallbackAction.h" />
+    <ClInclude Include="external\r2bix\r2action_DelayAction.h" />
+    <ClInclude Include="external\r2bix\r2action_MoveByAction.h" />
+    <ClInclude Include="external\r2bix\r2action_MoveToAction.h" />
+    <ClInclude Include="external\r2bix\r2action_RepeatAction.h" />
+    <ClInclude Include="external\r2bix\r2action_SequenceAction.h" />
+    <ClInclude Include="external\r2bix\r2action_TickAction.h" />
+    <ClInclude Include="external\r2bix\r2animation_constant.h" />
+    <ClInclude Include="external\r2bix\r2base_Action.h" />
+    <ClInclude Include="external\r2bix\r2base_ColorMaskOption.h" />
+    <ClInclude Include="external\r2bix\r2base_ColorValue.h" />
+    <ClInclude Include="external\r2bix\r2base_Component.h" />
+    <ClInclude Include="external\r2bix\r2base_ComponentStaticID.h" />
+    <ClInclude Include="external\r2bix\r2base_CoutBufferRedirector.h" />
+    <ClInclude Include="external\r2bix\r2base_DebugConfig.h" />
+    <ClInclude Include="external\r2bix\r2base_Director.h" />
+    <ClInclude Include="external\r2bix\r2base_Node.h" />
+    <ClInclude Include="external\r2bix\r2base_ScreenBufferManager.h" />
+    <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationInfo.h" />
+    <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationTableBase.h" />
+    <ClInclude Include="external\r2bix\r2base_TextureTableBase.h" />
+    <ClInclude Include="external\r2bix\r2base_VersionInfo.h" />
+    <ClInclude Include="external\r2bix\r2component_ActionProcessComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_CustomTextureComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_LabelMComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_LabelSComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TextureFrameAnimationComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TextureFrameRenderComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TextureRenderComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TransformComponent.h" />
+    <ClInclude Include="external\r2bix\r2input_Constant.h" />
+    <ClInclude Include="external\r2bix\r2input_KeyboardInputCollector.h" />
+    <ClInclude Include="external\r2bix\r2input_KeyboardInputListener.h" />
+    <ClInclude Include="external\r2bix\r2node_CustomTextureNode.h" />
+    <ClInclude Include="external\r2bix\r2node_LabelMNode.h" />
+    <ClInclude Include="external\r2bix\r2node_LabelSNode.h" />
+    <ClInclude Include="external\r2bix\r2node_PivotNode.h" />
+    <ClInclude Include="external\r2bix\r2node_SceneNode.h" />
+    <ClInclude Include="external\r2bix\r2node_SpriteAnimationNode.h" />
+    <ClInclude Include="external\r2bix\r2node_SpriteNode.h" />
+    <ClInclude Include="external\r2bix\r2render_Camera.h" />
+    <ClInclude Include="external\r2bix\r2render_iRenderTarget.h" />
+    <ClInclude Include="external\r2bix\r2render_Texture.h" />
+    <ClInclude Include="external\r2bix\r2render_TextureFrame.h" />
+    <ClInclude Include="external\r2bix\r2utility_FileUtil.h" />
+    <ClInclude Include="external\r2bix\r2utility_InputUtil.h" />
+    <ClInclude Include="external\r2bix\r2utility_StringBuilder.h" />
+    <ClInclude Include="external\r2bix\r2utility_StringDecomposition.h" />
+    <ClInclude Include="external\r2bix\r2utility_StringSize.h" />
+    <ClInclude Include="external\r2cm\r2cm_Director.h" />
+    <ClInclude Include="external\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
+    <ClInclude Include="external\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="external\r2cm\r2cm_ostream.h" />
+    <ClInclude Include="external\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="external\r2cm\r2cm_StopWatch.h" />
+    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
+    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />
+    <ClInclude Include="external\r2\r2_Assert.h" />
+    <ClInclude Include="external\r2\r2_Direction4.h" />
+    <ClInclude Include="external\r2\r2_FPSTimer.h" />
+    <ClInclude Include="external\r2\r2_GridIndexConverter.h" />
+    <ClInclude Include="external\r2\r2_Point.h" />
+    <ClInclude Include="external\r2\r2_Point_Float.h" />
+    <ClInclude Include="external\r2\r2_Point_Int.h" />
+    <ClInclude Include="external\r2\r2_Random.h" />
+    <ClInclude Include="external\r2\r2_Rect.h" />
+    <ClInclude Include="external\r2\r2_Rect_Int.h" />
+    <ClInclude Include="external\r2\r2_Size.h" />
+    <ClInclude Include="external\r2\r2_Size_Int.h" />
+    <ClInclude Include="external\r2\r2_Timer.h" />
+    <ClInclude Include="external\r2\r2_Timer_Float.h" />
+    <ClInclude Include="external\r2\r2_UniqueIndex.h" />
+    <ClInclude Include="source\DevelopmentMenu.h" />
+    <ClInclude Include="source\ptt\ptt_Config.h" />
+    <ClInclude Include="source\ptt\ptt_GameScene.h" />
+    <ClInclude Include="source\ptt\ptt_TextureTable.h" />
+    <ClInclude Include="source\ptt\ptt_VersionInfo.h" />
+    <ClInclude Include="source\test\TestMenu.h" />
+    <ClInclude Include="source\test\Utility4Test.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{2D908A8D-3690-4F7A-AFE1-E8CB5BD27BCB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cppplayground</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>external\vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
+xcopy "$(ProjectDir)external\vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>external\vld\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
+xcopy "$(ProjectDir)external\vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
