@@ -29,10 +29,10 @@ namespace ptt
 			//
 			{
 				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "timer timer" );
+				node->GetComponent<r2component::LabelSComponent>()->SetString( "time timer" );
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.11f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
 			}
 
