@@ -1,23 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="r2">
-      <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test">
       <UniqueIdentifier>{1cd71849-42fd-4beb-8c36-ee216acfc014}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="r2bix">
-      <UniqueIdentifier>{56c407ac-3cd0-4e36-9350-1d558861105b}</UniqueIdentifier>
     </Filter>
     <Filter Include="test\item">
       <UniqueIdentifier>{73b8ae37-fff3-4b18-94bd-671e7fec08ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="r2cm">
-      <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project_time_timer">
       <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{de198ac1-e477-4185-a48e-82f6779099fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2">
+      <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2bix">
+      <UniqueIdentifier>{56c407ac-3cd0-4e36-9350-1d558861105b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\r2cm">
+      <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,184 +33,184 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_AnimationRequestAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_BlinkAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_CallbackAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_DelayAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_MoveByAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_MoveToAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_RepeatAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_SequenceAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2action_TickAction.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2animation_constant.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_ColorMaskOption.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_ColorValue.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_CoutBufferRedirector.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_DebugConfig.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_Director.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_Node.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_ScreenBufferManager.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_TextureFrameAnimationInfo.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_TextureFrameAnimationTableBase.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2base_TextureTableBase.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_ActionProcessComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_CustomTextureComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_LabelMComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_LabelSComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_TextureFrameAnimationComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_TextureFrameRenderComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_TextureRenderComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2component_TransformComponent.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2input_Constant.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2input_KeyboardInputCollector.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2input_KeyboardInputListener.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_CustomTextureNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_LabelMNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_LabelSNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_PivotNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_SceneNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_SpriteAnimationNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2node_SpriteNode.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2render_Camera.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2render_Texture.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2render_TextureFrame.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2utility_FileUtil.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2utility_InputUtil.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2utility_StringBuilder.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2utility_StringDecomposition.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2bix\r2utility_StringSize.cpp">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Point_Float.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Point_Int.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Random.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Rect_Int.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Size_Int.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Timer_Float.cpp">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_GameScene.cpp">
       <Filter>project_time_timer</Filter>
@@ -234,229 +237,229 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Singleton.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>r2cm</Filter>
+      <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_AnimationRequestAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_BlinkAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_CallbackAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_DelayAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_MoveByAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_MoveToAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_RepeatAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_SequenceAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_TickAction.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2animation_constant.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_Action.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_ColorMaskOption.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_ColorValue.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_Component.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_ComponentStaticID.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_CoutBufferRedirector.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_DebugConfig.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_Director.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_Node.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_ScreenBufferManager.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationInfo.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationTableBase.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_TextureTableBase.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_VersionInfo.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_ActionProcessComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_CustomTextureComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_LabelMComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_LabelSComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_TextureFrameAnimationComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_TextureFrameRenderComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_TextureRenderComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2component_TransformComponent.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2input_Constant.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2input_KeyboardInputCollector.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2input_KeyboardInputListener.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_CustomTextureNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_LabelMNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_LabelSNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_PivotNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_SceneNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_SpriteAnimationNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2node_SpriteNode.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2render_Camera.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2render_iRenderTarget.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2render_Texture.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2render_TextureFrame.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2utility_FileUtil.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2utility_InputUtil.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2utility_StringBuilder.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2utility_StringDecomposition.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2utility_StringSize.h">
-      <Filter>r2bix</Filter>
+      <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_GridIndexConverter.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Point.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Point_Float.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Point_Int.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Random.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Rect.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Rect_Int.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Size.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Size_Int.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Timer.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Timer_Float.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_UniqueIndex.h">
-      <Filter>r2</Filter>
+      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_Config.h">
       <Filter>project_time_timer</Filter>
