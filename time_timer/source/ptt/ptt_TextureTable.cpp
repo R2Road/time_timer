@@ -17,20 +17,20 @@ namespace ptt
 				60,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
-				/* 0 */ "                                                            "
-				/* 1 */ "  00000     11      22222    33333    4  4                  "
-				/* 2 */ " 0     0   111     2     2  3     3  4   4                  "
-				/* 3 */ " 0     0     1       2222      333   4   4                  "
-				/* 4 */ " 0     0     1     22       3     3  4444444                "
-				/* 5 */ "  00000   1111111  2222222   33333       4                  "
-				/* 6 */ "                                                            "
-				/* 7 */ "                                                            "
-				/* 8 */ " 555555    666     7777777   88888    99999                 "
-				/* 9 */ " 5        6              7  8     8  9     9                "
-				/* 0 */ " 555555   666666         7   88888    999999                "
-				/* 1 */ "       5  6     6        7  8     8        9                "
-				/* 2 */ " 555555    66666         7   88888    99999                 "
-				/* 3 */ "                                                            "
+				/* 0 */ "=============================================               "
+				/* 1 */ "==00000=====11======22222====33333====4==4===               "
+				/* 2 */ "=0=====0===111=====2=====2==3=====3==4===4===               "
+				/* 3 */ "=0=====0=====1=======2222======333===4===4===               "
+				/* 4 */ "=0=====0=====1=====22=======3=====3==4444444=               "
+				/* 5 */ "==00000===1111111==2222222===33333=======4===               "
+				/* 6 */ "=============================================               "
+				/* 7 */ "=============================================               "
+				/* 8 */ "=555555====666=====7777777===88888====99999==               "
+				/* 9 */ "=5========6==============7==8=====8==9=====9=               "
+				/* 0 */ "=555555===666666=========7===88888====999999=               "
+				/* 1 */ "=======5==6=====6========7==8=====8========9=               "
+				/* 2 */ "=555555====66666=========7===88888====99999==               "
+				/* 3 */ "=============================================               "
 				/* 4 */ "                                                            "
 				/* 5 */ "                                                            "
 				/* 6 */ "                                                            "
@@ -49,6 +49,38 @@ namespace ptt
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_1"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 9, 0, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_2"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 18, 0, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_3"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 27, 0, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_4"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 36, 0, 8, 6 ) );
 			}
 		}
 	}

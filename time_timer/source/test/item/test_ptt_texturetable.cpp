@@ -1,5 +1,7 @@
 #include "test_ptt_texturetable.h"
 
+#include <string>
+
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2render_Camera.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
@@ -29,8 +31,13 @@ namespace test_ptt_texturetable
 
 			std::cout << r2cm::split;
 
+			std::string temp = "number_ ";
+			for( int i = 0; 5 > i; ++i )
 			{
-				DECLARATION_MAIN( auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "number_0" ) );
+				temp.pop_back();
+				temp += std::to_string( i );
+
+				DECLARATION_MAIN( auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() ) );
 
 				std::cout << r2cm::linefeed;
 
