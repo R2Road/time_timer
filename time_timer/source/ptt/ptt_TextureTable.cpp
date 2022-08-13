@@ -82,6 +82,46 @@ namespace ptt
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 36, 0, 8, 6 ) );
 			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_5"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 7, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_6"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 9, 7, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_7"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 18, 7, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_8"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 27, 7, 8, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"number_9"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 36, 7, 8, 6 ) );
+			}
 		}
 	}
 }

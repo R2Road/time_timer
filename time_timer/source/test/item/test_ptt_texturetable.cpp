@@ -36,7 +36,7 @@ namespace test_ptt_texturetable
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
 				std::string temp = "number_ ";
-				for( short i = 0; 5 > i; ++i )
+				for( short i = 0; 10 > i; ++i )
 				{
 					temp.pop_back();
 					temp += std::to_string( i );
