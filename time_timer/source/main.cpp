@@ -50,7 +50,7 @@ int main()
 	//
 	// Environment : Size
 	//
-	r2cm::WindowUtility::Resize( 562, 800 );
+	r2cm::WindowUtility::Resize( 960, 960 );
 
 	//
 	// Environment : Position
