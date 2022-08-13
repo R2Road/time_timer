@@ -15,7 +15,7 @@
 #else
 
 	#include "r2bix/r2base_Director.h"
-	#include "p2048mini/p2048mini_GameScene.h"
+	#include "ptt/ptt_GameScene.h"
 
 #endif
 
@@ -61,7 +61,7 @@ int main()
 	// Setup
 	//
 	r2base::Director director;
-	director.Setup( p2048mini::GameScene::Create( director ) );
+	director.Setup( ptt::GameScene::Create( director ) );
 
 	//
 	// Environment : ScrollBar
