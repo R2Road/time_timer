@@ -13,7 +13,7 @@ namespace ptt
 		}
 
 		{
-			auto result = mTextureContainer.emplace( "p2048mini_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
+			auto result = mTextureContainer.emplace( "project_timer_timer_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
 				60,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
