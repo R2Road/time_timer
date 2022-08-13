@@ -3,6 +3,8 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/test_ptt_numbernode.h"
+
 r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
@@ -11,7 +13,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		//ret->AddItem( '1', test_p2048mini_stage::Generate::GetInstance() );
+		ret->AddItem( '1', test_ptt_numbernode::Generate::GetInstance() );
 
 
 

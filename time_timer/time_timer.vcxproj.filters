@@ -215,6 +215,12 @@
     <ClCompile Include="source\ptt\ptt_TextureTable.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_NumberNode.cpp">
+      <Filter>project_time_timer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\item\test_ptt_numbernode.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -460,6 +466,12 @@
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TextureTable.h">
       <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_NumberNode.h">
+      <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_ptt_numbernode.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
