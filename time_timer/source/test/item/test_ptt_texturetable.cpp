@@ -8,6 +8,7 @@
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "ptt/ptt_TextureTable.h"
 #include "test/Utility4Test.h"
@@ -31,17 +32,19 @@ namespace test_ptt_texturetable
 
 			std::cout << r2cm::split;
 
-			std::string temp = "number_ ";
-			for( int i = 0; 5 > i; ++i )
 			{
-				temp.pop_back();
-				temp += std::to_string( i );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
-				DECLARATION_MAIN( auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() ) );
+				std::string temp = "number_ ";
+				for( short i = 0; 5 > i; ++i )
+				{
+					temp.pop_back();
+					temp += std::to_string( i );
 
-				std::cout << r2cm::linefeed;
+					auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
 
-				Utility4Test::DrawTextureFrame( *tf_num );
+					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf_num->GetWidth() + 2 ) ), pivot_point.y, *tf_num );
+				}
 			}
 
 			std::cout << r2cm::split;

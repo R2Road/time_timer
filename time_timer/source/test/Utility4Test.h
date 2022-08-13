@@ -23,4 +23,5 @@ public:
 	static void DrawTextureDisuse( const r2render::Texture& texture );
 
 	static void DrawTextureFrame( const r2render::TextureFrame& frame );
+	static void DrawTextureFrame( const short x, const short y, const r2render::TextureFrame& frame );
 };
