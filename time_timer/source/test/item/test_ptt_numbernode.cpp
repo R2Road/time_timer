@@ -2,6 +2,7 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2render_Camera.h"
+#include "r2bix/r2component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 
 #include "r2cm/r2cm_Inspector.h"
@@ -32,7 +33,8 @@ namespace test_ptt_numbernode
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto number_node = ptt::NumberNode::Create( dummy_director ) );
-			EXPECT_NE( nullptr, number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			EXPECT_TRUE( number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+			EXPECT_TRUE( number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
 
 			std::cout << r2cm::split;
 
