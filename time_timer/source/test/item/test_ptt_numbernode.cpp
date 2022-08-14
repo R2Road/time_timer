@@ -176,6 +176,7 @@ namespace test_ptt_numbernode
 			{
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
+				int new_number = 0;
 				do
 				{
 
@@ -189,38 +190,11 @@ namespace test_ptt_numbernode
 					Utility4Test::DrawTexture( render_target );
 
 					input = _getch();
-					switch( input )
+
+					new_number = input - 48; // 48 == '0'
+					if( 0 <= new_number && new_number < 10 )
 					{
-					case '0':
-						number_component->SetNumber( 0 );
-						break;
-					case '1':
-						number_component->SetNumber( 1 );
-						break;
-					case '2':
-						number_component->SetNumber( 2 );
-						break;
-					case '3':
-						number_component->SetNumber( 3 );
-						break;
-					case '4':
-						number_component->SetNumber( 4 );
-						break;
-					case '5':
-						number_component->SetNumber( 5 );
-						break;
-					case '6':
-						number_component->SetNumber( 6 );
-						break;
-					case '7':
-						number_component->SetNumber( 7 );
-						break;
-					case '8':
-						number_component->SetNumber( 8 );
-						break;
-					case '9':
-						number_component->SetNumber( 9 );
-						break;
+						number_component->SetNumber( new_number );
 					}
 
 				} while( 27 != input );
