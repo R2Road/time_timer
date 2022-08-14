@@ -20,7 +20,7 @@ namespace test_ptt_minutenode
 	{
 		return []()->const char*
 		{
-			return "NumberNode : Generate";
+			return "MinuteNode : Generate";
 		};
 	}
 	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
