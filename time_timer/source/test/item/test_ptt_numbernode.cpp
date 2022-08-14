@@ -35,7 +35,7 @@ namespace test_ptt_numbernode
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
-			std::cout << r2cm::split;
+			std::cout << r2cm::linefeed;
 
 			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
@@ -48,8 +48,16 @@ namespace test_ptt_numbernode
 
 			{
 				DECLARATION_MAIN( auto tfrc = number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_TRUE( tfrc );
 				EXPECT_EQ( ptt::TextureTable::GetInstance().GetTextureFrame( "number_0" ), tfrc->GetTextureFrame() );
+			}
+			
+			std::cout << r2cm::split;
+
+			{
 				DECLARATION_MAIN( auto tfac = number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
 				EXPECT_TRUE( tfac );
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_0 ) );
