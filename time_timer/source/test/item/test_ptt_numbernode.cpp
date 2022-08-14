@@ -121,7 +121,6 @@ namespace test_ptt_numbernode
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
-					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2cm::linefeed;
 
 					std::cout << r2cm::linefeed;
 
