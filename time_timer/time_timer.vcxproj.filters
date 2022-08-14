@@ -230,6 +230,9 @@
     <ClCompile Include="source\ptt\ptt_TextureFrameAnimationTable.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_NumberComponent.cpp">
+      <Filter>project_time_timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -486,6 +489,9 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TextureFrameAnimationTable.h">
+      <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_NumberComponent.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
   </ItemGroup>

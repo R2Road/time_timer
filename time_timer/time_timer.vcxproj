@@ -81,6 +81,7 @@
     <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="source\DevelopmentMenu.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ptt\ptt_NumberComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="source\ptt\ptt_TimerScene.cpp" />
     <ClCompile Include="source\ptt\ptt_NumberNode.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="source\DevelopmentMenu.h" />
     <ClInclude Include="source\ptt\ptt_Config.h" />
+    <ClInclude Include="source\ptt\ptt_NumberComponent.h" />
     <ClInclude Include="source\ptt\ptt_TextureFrameAnimationTable.h" />
     <ClInclude Include="source\ptt\ptt_TimerScene.h" />
     <ClInclude Include="source\ptt\ptt_NumberNode.h" />

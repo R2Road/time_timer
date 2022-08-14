@@ -5,6 +5,7 @@
 
 #include "ptt/ptt_TextureFrameAnimationTable.h"
 #include "ptt/ptt_TextureTable.h"
+#include "ptt_NumberComponent.h"
 
 namespace ptt
 {
@@ -19,6 +20,9 @@ namespace ptt
 			auto frame_animation_component = ret->AddComponent<r2component::TextureFrameAnimationComponent>();
 			frame_animation_component->SetTextureFrameRenderComponent( frame_render_component );
 			frame_animation_component->LoadAnimation( ptt::TextureFrameAnimationTable::GetInstance().Get( 1 ) );
+
+			auto number_component = ret->AddComponent<ptt::NumberComponent>();
+			number_component->SetTextureFrameAnimationComponent( frame_animation_component );
 		}
 
 		return ret;

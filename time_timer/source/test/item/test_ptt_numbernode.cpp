@@ -11,6 +11,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
+#include "ptt/ptt_NumberComponent.h"
 #include "ptt/ptt_NumberNode.h"
 #include "ptt/ptt_TextureFrameAnimationTable.h"
 #include "ptt/ptt_TextureTable.h"
@@ -118,7 +119,7 @@ namespace test_ptt_numbernode
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
-			DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+			DECLARATION_MAIN( auto number_component = node->GetComponent<ptt::NumberComponent>() );
 
 			std::cout << r2cm::split;
 
@@ -148,34 +149,34 @@ namespace test_ptt_numbernode
 					switch( input )
 					{
 					case '0':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_0 );
+						number_component->SetNumber( 0 );
 						break;
 					case '1':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_1 );
+						number_component->SetNumber( 1 );
 						break;
 					case '2':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_2 );
+						number_component->SetNumber( 2 );
 						break;
 					case '3':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_3 );
+						number_component->SetNumber( 3 );
 						break;
 					case '4':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_4 );
+						number_component->SetNumber( 4 );
 						break;
 					case '5':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_5 );
+						number_component->SetNumber( 5 );
 						break;
 					case '6':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_6 );
+						number_component->SetNumber( 6 );
 						break;
 					case '7':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_7 );
+						number_component->SetNumber( 7 );
 						break;
 					case '8':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_8 );
+						number_component->SetNumber( 8 );
 						break;
 					case '9':
-						tfac->RunAnimation_Once( r2animation::eIndex::Idle_9 );
+						number_component->SetNumber( 9 );
 						break;
 					}
 
