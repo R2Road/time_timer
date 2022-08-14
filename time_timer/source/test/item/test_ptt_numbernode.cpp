@@ -117,12 +117,12 @@ namespace test_ptt_numbernode
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto number_node = ptt::NumberNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				std::cout << r2cm::linefeed;
 
