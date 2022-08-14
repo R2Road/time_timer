@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/test_ptt_minutenode.h"
 #include "item/test_ptt_numbernode.h"
 #include "item/test_ptt_texturetable.h"
 
@@ -25,6 +26,14 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', test_ptt_numbernode::Generate::GetInstance() );
 		ret->AddItem( '3', test_ptt_numbernode::FirstView::GetInstance() );
 		ret->AddItem( '4', test_ptt_numbernode::Animation::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', test_ptt_minutenode::Generate::GetInstance() );
 
 
 

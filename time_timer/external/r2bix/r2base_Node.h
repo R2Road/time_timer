@@ -96,6 +96,10 @@ namespace r2base
 		//
 		//
 		//
+		int GetChildCount() const
+		{
+			return static_cast<int>( mChildContainer.size() );
+		}
 		template<typename NodeT>
 		Node* AddChild()
 		{
