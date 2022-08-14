@@ -11,4 +11,11 @@ namespace test_ptt_minutenode
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class View : public r2cm::iItem, public r2cm::SingleTon<View>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
