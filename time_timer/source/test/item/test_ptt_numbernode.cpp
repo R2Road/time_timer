@@ -1,5 +1,7 @@
 #include "test_ptt_numbernode.h"
 
+#include <conio.h>
+
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2render_Camera.h"
 #include "r2bix/r2component_TextureFrameAnimationComponent.h"
@@ -7,6 +9,7 @@
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "ptt/ptt_NumberNode.h"
 #include "ptt/ptt_TextureFrameAnimationTable.h"
@@ -62,6 +65,104 @@ namespace test_ptt_numbernode
 				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Animation::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "NumberNode : Animation";
+		};
+	}
+	r2cm::iItem::DoFunctionT Animation::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2cm::split;
+
+			PROCESS_SUB( ptt::TextureTable::GetInstance().Load() );
+			PROCESS_SUB( ptt::TextureFrameAnimationTable::GetInstance().Load() );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "# Key" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[0 ~ 9] Play Animation" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				int input = 0;
+				do
+				{
+
+					r2cm::WindowUtility::MoveCursorPoint( pivot_point );
+
+					PROCESS_MAIN( node->Update( 0.003f ) );
+					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2cm::linefeed;
+
+					std::cout << r2cm::linefeed;
+
+					Utility4Test::DrawTexture( render_target );
+
+					input = _getch();
+					switch( input )
+					{
+					case '0':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_0 );
+						break;
+					case '1':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_1 );
+						break;
+					case '2':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_2 );
+						break;
+					case '3':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_3 );
+						break;
+					case '4':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_4 );
+						break;
+					case '5':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_5 );
+						break;
+					case '6':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_6 );
+						break;
+					case '7':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_7 );
+						break;
+					case '8':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_8 );
+						break;
+					case '9':
+						tfac->RunAnimation_Once( r2animation::eIndex::Idle_9 );
+						break;
+					}
+
+				} while( 27 != input );
 			}
 
 			std::cout << r2cm::split;

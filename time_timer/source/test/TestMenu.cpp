@@ -15,7 +15,15 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', test_ptt_texturetable::Number::GetInstance() );
+
+
+
+		ret->AddSplit();
+
+
+
 		ret->AddItem( '2', test_ptt_numbernode::Generate::GetInstance() );
+		ret->AddItem( '3', test_ptt_numbernode::Animation::GetInstance() );
 
 
 

@@ -11,4 +11,11 @@ namespace test_ptt_numbernode
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Animation : public r2cm::iItem, public r2cm::SingleTon<Animation>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
