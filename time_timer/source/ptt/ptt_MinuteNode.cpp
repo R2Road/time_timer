@@ -25,16 +25,14 @@ namespace ptt
 			//
 			{
 				auto number_node = ret->AddChild<ptt::NumberNode>();
-				number_node->mTransformComponent->SetPosition(
+				number_node->mTransformComponent->SetPositionX(
 					-static_cast<int32_t>( std::ceil( number_node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame()->GetWidth() * 0.5f ) )
-					, 0
 				);
 			}
 			{
 				auto number_node = ret->AddChild<ptt::NumberNode>();
-				number_node->mTransformComponent->SetPosition(
+				number_node->mTransformComponent->SetPositionX(
 					static_cast<int32_t>( std::ceil( number_node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame()->GetWidth() * 0.5f ) )
-					, 0
 				);
 			}
 		}

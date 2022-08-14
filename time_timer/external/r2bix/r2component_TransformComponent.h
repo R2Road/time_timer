@@ -43,6 +43,14 @@ namespace r2component
 		{
 			mPosition = new_position;
 		}
+		void SetPositionX( const r2::PointInt::ValueT new_x )
+		{
+			mPosition.SetX( new_x );
+		}
+		void SetPositionY( const r2::PointInt::ValueT new_y )
+		{
+			mPosition.SetY( new_y );
+		}
 		void SetZ( const int32_t new_z_order )
 		{
 			mZOrder = new_z_order;
