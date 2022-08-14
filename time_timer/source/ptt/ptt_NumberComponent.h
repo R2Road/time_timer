@@ -19,6 +19,10 @@ namespace ptt
 		int GetStaticID() const override { return r2base::ComponentStaticID<NumberComponent>::Get(); }
 		static std::unique_ptr<NumberComponent> Create( r2base::Node& owner_node );
 
+		r2component::TextureFrameAnimationComponent* const GetTextureFrameAnimationComponent() const
+		{
+			return mTextureFrameAnimationComponent;
+		}
 		void SetTextureFrameAnimationComponent( r2component::TextureFrameAnimationComponent* const texture_frame_animation_component )
 		{
 			mTextureFrameAnimationComponent = texture_frame_animation_component;

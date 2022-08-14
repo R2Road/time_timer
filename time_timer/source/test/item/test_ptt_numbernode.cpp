@@ -76,6 +76,17 @@ namespace test_ptt_numbernode
 
 			std::cout << r2cm::split;
 
+			{
+				DECLARATION_MAIN( auto number_component = number_node->GetComponent<ptt::NumberComponent>() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_TRUE( number_component );
+				EXPECT_EQ( number_node->GetComponent<r2component::TextureFrameAnimationComponent>(), number_component->GetTextureFrameAnimationComponent() );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
