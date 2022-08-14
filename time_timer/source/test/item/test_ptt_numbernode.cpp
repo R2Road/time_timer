@@ -31,7 +31,7 @@ namespace test_ptt_numbernode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 15, 9 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
