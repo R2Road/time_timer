@@ -12,6 +12,13 @@ namespace test_ptt_numbernode
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class FirstView : public r2cm::iItem, public r2cm::SingleTon<FirstView>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Animation : public r2cm::iItem, public r2cm::SingleTon<Animation>
 	{
 	public:

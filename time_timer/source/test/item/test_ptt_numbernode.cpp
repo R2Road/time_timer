@@ -32,8 +32,6 @@ namespace test_ptt_numbernode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 7 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
 			std::cout << r2cm::linefeed;
@@ -75,6 +73,40 @@ namespace test_ptt_numbernode
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_8 ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_9 ) );
 			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT FirstView::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "NumberNode : FirstView";
+		};
+	}
+	r2cm::iItem::DoFunctionT FirstView::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 7 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2cm::linefeed;
+
+			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
+			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto number_node = ptt::NumberNode::Create( dummy_director ) );
 
 			std::cout << r2cm::split;
 

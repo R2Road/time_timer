@@ -23,7 +23,8 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( '2', test_ptt_numbernode::Generate::GetInstance() );
-		ret->AddItem( '3', test_ptt_numbernode::Animation::GetInstance() );
+		ret->AddItem( '3', test_ptt_numbernode::FirstView::GetInstance() );
+		ret->AddItem( '4', test_ptt_numbernode::Animation::GetInstance() );
 
 
 
