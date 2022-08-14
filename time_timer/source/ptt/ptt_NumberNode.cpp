@@ -14,6 +14,7 @@ namespace ptt
 		if( ret )
 		{
 			auto frame_render_component = ret->AddComponent<r2component::TextureFrameRenderComponent>();
+			frame_render_component->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "number_0" ) );
 
 			auto frame_animation_component = ret->AddComponent<r2component::TextureFrameAnimationComponent>();
 			frame_animation_component->SetTextureFrameRenderComponent( frame_render_component );

@@ -43,19 +43,26 @@ namespace test_ptt_numbernode
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto number_node = ptt::NumberNode::Create( dummy_director ) );
-			EXPECT_TRUE( number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
-			DECLARATION_MAIN( auto animation_component = number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
-			EXPECT_TRUE( animation_component );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_0 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_1 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_2 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_3 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_4 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_5 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_6 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_7 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_8 ) );
-			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_9 ) );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( auto tfrc = number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
+				EXPECT_TRUE( tfrc );
+				EXPECT_EQ( ptt::TextureTable::GetInstance().GetTextureFrame( "number_0" ), tfrc->GetTextureFrame() );
+				DECLARATION_MAIN( auto animation_component = number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+				EXPECT_TRUE( animation_component );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_0 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_1 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_2 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_3 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_4 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_5 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_6 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_7 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_8 ) );
+				EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_9 ) );
+			}
 
 			std::cout << r2cm::split;
 
