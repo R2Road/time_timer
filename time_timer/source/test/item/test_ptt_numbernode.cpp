@@ -9,6 +9,8 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "ptt/ptt_NumberNode.h"
+#include "ptt/ptt_TextureFrameAnimationTable.h"
+#include "ptt/ptt_TextureTable.h"
 #include "test/Utility4Test.h"
 
 namespace test_ptt_numbernode
@@ -32,9 +34,25 @@ namespace test_ptt_numbernode
 
 			std::cout << r2cm::split;
 
+			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
+			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
+
+			std::cout << r2cm::split;
+
 			DECLARATION_MAIN( auto number_node = ptt::NumberNode::Create( dummy_director ) );
-			EXPECT_TRUE( number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
 			EXPECT_TRUE( number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			DECLARATION_MAIN( auto animation_component = number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+			EXPECT_TRUE( animation_component );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_0 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_1 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_2 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_3 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_4 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_5 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_6 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_7 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_8 ) );
+			EXPECT_TRUE( animation_component->HasAnimation( r2animation::eIndex::Idle_9 ) );
 
 			std::cout << r2cm::split;
 
