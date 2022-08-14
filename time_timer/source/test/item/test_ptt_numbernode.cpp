@@ -119,7 +119,7 @@ namespace test_ptt_numbernode
 
 					r2cm::WindowUtility::MoveCursorPoint( pivot_point );
 
-					PROCESS_MAIN( node->Update( 0.003f ) );
+					PROCESS_MAIN( node->Update( 0.1f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 					std::cout << r2cm::linefeed;
