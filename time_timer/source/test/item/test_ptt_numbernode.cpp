@@ -41,12 +41,12 @@ namespace test_ptt_numbernode
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto number_node = ptt::NumberNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto tfrc = number_node->GetComponent<r2component::TextureFrameRenderComponent>() );
+				DECLARATION_MAIN( auto tfrc = node->GetComponent<r2component::TextureFrameRenderComponent>() );
 
 				std::cout << r2cm::linefeed;
 
@@ -57,7 +57,7 @@ namespace test_ptt_numbernode
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto tfac = number_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+				DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
 
 				std::cout << r2cm::linefeed;
 
@@ -77,12 +77,12 @@ namespace test_ptt_numbernode
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto number_component = number_node->GetComponent<ptt::NumberComponent>() );
+				DECLARATION_MAIN( auto number_component = node->GetComponent<ptt::NumberComponent>() );
 
 				std::cout << r2cm::linefeed;
 
 				EXPECT_TRUE( number_component );
-				EXPECT_EQ( number_node->GetComponent<r2component::TextureFrameAnimationComponent>(), number_component->GetTextureFrameAnimationComponent() );
+				EXPECT_EQ( node->GetComponent<r2component::TextureFrameAnimationComponent>(), number_component->GetTextureFrameAnimationComponent() );
 			}
 
 			std::cout << r2cm::split;
