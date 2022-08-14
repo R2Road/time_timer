@@ -147,17 +147,7 @@ void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
 void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
 {
 	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
-
-	for( int y = 0; y < frame.GetHeight(); ++y )
-	{
-		for( int x = 0; x < frame.GetWidth(); ++x )
-		{
-			r2cm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetCharacter( x, y ) );
-			r2cm::WindowUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetColor( x, y ) );
-		}
-	}
-
-	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + frame.GetHeight() ) } );
+	DrawTextureFrame( pivot_point.x, pivot_point.y, frame );
 }
 void Utility4Test::DrawTextureFrame( const short x, const short y, const r2render::TextureFrame& frame )
 {
