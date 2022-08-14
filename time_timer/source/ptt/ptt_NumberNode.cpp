@@ -1,8 +1,5 @@
 #include "ptt_NumberNode.h"
 
-#include <numeric>
-
-#include "r2bix/r2base_Director.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 
 #include "ptt/ptt_TextureTable.h"
