@@ -45,6 +45,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', test_ptt_timer::Generate::GetInstance() );
+		ret->AddItem( 's', test_ptt_timer::Start::GetInstance() );
 
 
 

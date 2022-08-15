@@ -27,4 +27,36 @@ namespace test_ptt_timer
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Start::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Timer : Start";
+		};
+	}
+	r2cm::iItem::DoFunctionT Start::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( ptt::Timer timer );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( timer.Start() );
+				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
+				OUTPUT_VALUE( timer.GetCurrentTime() );
+				OUTPUT_VALUE( timer.GetLastTime() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
