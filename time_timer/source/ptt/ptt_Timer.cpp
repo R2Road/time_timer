@@ -11,13 +11,13 @@ namespace ptt
 	void Timer::Start()
 	{
 		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
-		mElapsedDuration = std::chrono::milliseconds( 0 );
+		mElapsedDuration = std::chrono::duration_cast<std::chrono::milliseconds>( mCurrentTime - mLastTime );
 	}
 	void Timer::Update()
 	{
 		mLastTime = mCurrentTime;
 		mCurrentTime = std::chrono::high_resolution_clock::now();
 
-		mElapsedDuration += std::chrono::duration_cast<std::chrono::nanoseconds>( mCurrentTime - mLastTime );
+		mElapsedDuration += std::chrono::duration_cast<std::chrono::milliseconds>( mCurrentTime - mLastTime );
 	}
 }
