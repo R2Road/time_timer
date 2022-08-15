@@ -122,20 +122,19 @@ namespace test_ptt_timer
 
 			{
 				PROCESS_MAIN( timer.Start() );
-				EXPECT_EQ( timer.GetCurrentTime<std::chrono::milliseconds>(), timer.GetLastTime<std::chrono::milliseconds>() );
-				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::milliseconds>() );
-				OUTPUT_VALUE( timer.GetLastTime<std::chrono::milliseconds>() );
-				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::milliseconds>() );
+				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( timer.Update() );
-				EXPECT_EQ( timer.GetCurrentTime<std::chrono::milliseconds>(), timer.GetLastTime<std::chrono::milliseconds>() );
-				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::milliseconds>() );
-				OUTPUT_VALUE( timer.GetLastTime<std::chrono::milliseconds>() );
-				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::milliseconds>() );
+				EXPECT_NE( timer.GetCurrentTime<std::chrono::microseconds>(), timer.GetLastTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
 			std::cout << r2cm::split;
@@ -152,9 +151,9 @@ namespace test_ptt_timer
 						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						PROCESS_MAIN( timer.Update() );
-						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::milliseconds>() );
-						OUTPUT_VALUE( timer.GetLastTime<std::chrono::milliseconds>() );
-						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::milliseconds>() );
+						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
+						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
+						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 					}
 
 					if( _kbhit() )
