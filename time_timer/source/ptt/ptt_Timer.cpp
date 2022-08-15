@@ -11,4 +11,9 @@ namespace ptt
 	{
 		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
 	}
+	void Timer::Update()
+	{
+		mLastTime = mCurrentTime;
+		mCurrentTime = std::chrono::high_resolution_clock::now();
+	}
 }

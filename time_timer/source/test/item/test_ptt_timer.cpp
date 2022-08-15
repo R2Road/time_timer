@@ -91,4 +91,72 @@ namespace test_ptt_timer
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Update::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Timer : Update";
+		};
+	}
+	r2cm::iItem::DoFunctionT Update::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( ptt::Timer timer );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( timer.Start() );
+				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
+				OUTPUT_VALUE( timer.GetCurrentTime() );
+				OUTPUT_VALUE( timer.GetLastTime() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( timer.Update() );
+				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
+				OUTPUT_VALUE( timer.GetCurrentTime() );
+				OUTPUT_VALUE( timer.GetLastTime() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed2;
+
+				r2::FPSTimer ft( 30 );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				do
+				{
+					if( ft.Update() )
+					{
+						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+						PROCESS_MAIN( timer.Update() );
+						OUTPUT_VALUE( timer.GetCurrentTime() );
+						OUTPUT_VALUE( timer.GetLastTime() );
+					}
+
+					if( _kbhit() )
+					{
+						_getch();
+						break;
+					}
+
+				} while( true );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
