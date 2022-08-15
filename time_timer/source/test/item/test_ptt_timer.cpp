@@ -1,7 +1,12 @@
 #include "test_ptt_timer.h"
 
+#include <conio.h>
+
+#include "r2/r2_FPSTimer.h"
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "ptt/ptt_Timer.h"
 
@@ -52,6 +57,33 @@ namespace test_ptt_timer
 				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
 				OUTPUT_VALUE( timer.GetCurrentTime() );
 				OUTPUT_VALUE( timer.GetLastTime() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed2;
+
+				r2::FPSTimer ft( 30 );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				do
+				{
+					if( ft.Update() )
+					{
+						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+						PROCESS_MAIN( timer.Start() );
+						OUTPUT_VALUE( timer.GetCurrentTime() );
+						OUTPUT_VALUE( timer.GetLastTime() );
+					}
+
+					if( _kbhit() )
+					{
+						_getch();
+						break;
+					}
+
+				} while( true );
 			}
 
 			std::cout << r2cm::split;
