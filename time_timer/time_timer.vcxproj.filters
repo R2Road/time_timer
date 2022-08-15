@@ -242,11 +242,11 @@
     <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\item\test_ptt_timer.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
     <ClCompile Include="source\ptt\ptt_Timer.cpp">
       <Filter>project_time_timer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\item\test_ptt_timer.cpp">
+      <Filter>test\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -518,11 +518,11 @@
     <ClInclude Include="source\ptt\ptt_MinuteComponent.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\item\test_ptt_timer.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
     <ClInclude Include="source\ptt\ptt_Timer.h">
       <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_ptt_timer.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
