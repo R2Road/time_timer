@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdexcept>
 
 #define	R2ASSERT( condition, message )		\
 do {										\
