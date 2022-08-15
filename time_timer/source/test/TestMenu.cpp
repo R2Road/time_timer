@@ -6,6 +6,7 @@
 #include "item/test_ptt_minutenode.h"
 #include "item/test_ptt_numbernode.h"
 #include "item/test_ptt_texturetable.h"
+#include "item/test_ptt_timer.h"
 
 r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 {
@@ -36,6 +37,14 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'q', test_ptt_minutenode::Generate::GetInstance() );
 		ret->AddItem( 'w', test_ptt_minutenode::View::GetInstance() );
 		ret->AddItem( 'e', test_ptt_minutenode::Process::GetInstance() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', test_ptt_timer::Generate::GetInstance() );
 
 
 
