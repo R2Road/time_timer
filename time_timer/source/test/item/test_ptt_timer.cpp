@@ -26,6 +26,20 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 0, timer.GetCurrentTime() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, timer.GetLastTime() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, timer.GetElapsedTime() );
+			}
 			
 			std::cout << r2cm::split;
 
