@@ -137,14 +137,14 @@ namespace test_ptt_numbernode
 
 
 
-	r2cm::iItem::TitleFunctionT Animation::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Process::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "NumberNode : Animation";
+			return "NumberNode : Process";
 		};
 	}
-	r2cm::iItem::DoFunctionT Animation::GetDoFunction()
+	r2cm::iItem::DoFunctionT Process::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

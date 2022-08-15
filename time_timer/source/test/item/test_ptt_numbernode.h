@@ -19,7 +19,7 @@ namespace test_ptt_numbernode
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Animation : public r2cm::iItem, public r2cm::SingleTon<Animation>
+	class Process : public r2cm::iItem, public r2cm::SingleTon<Process>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
