@@ -18,4 +18,11 @@ namespace test_ptt_minutenode
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Process : public r2cm::iItem, public r2cm::SingleTon<Process>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
