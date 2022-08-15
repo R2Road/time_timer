@@ -54,9 +54,17 @@ namespace test_ptt_timer
 
 			{
 				PROCESS_MAIN( timer.Start() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
 				OUTPUT_VALUE( timer.GetCurrentTime() );
 				OUTPUT_VALUE( timer.GetLastTime() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0ll, timer.GetElapsedTime() );
+				OUTPUT_VALUE( timer.GetElapsedTime() );
 			}
 
 			std::cout << r2cm::split;
@@ -75,6 +83,7 @@ namespace test_ptt_timer
 						PROCESS_MAIN( timer.Start() );
 						OUTPUT_VALUE( timer.GetCurrentTime() );
 						OUTPUT_VALUE( timer.GetLastTime() );
+						OUTPUT_VALUE( timer.GetElapsedTime() );
 					}
 
 					if( _kbhit() )
@@ -116,6 +125,7 @@ namespace test_ptt_timer
 				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
 				OUTPUT_VALUE( timer.GetCurrentTime() );
 				OUTPUT_VALUE( timer.GetLastTime() );
+				OUTPUT_VALUE( timer.GetElapsedTime() );
 			}
 
 			std::cout << r2cm::split;
@@ -125,6 +135,7 @@ namespace test_ptt_timer
 				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
 				OUTPUT_VALUE( timer.GetCurrentTime() );
 				OUTPUT_VALUE( timer.GetLastTime() );
+				OUTPUT_VALUE( timer.GetElapsedTime() );
 			}
 
 			std::cout << r2cm::split;
@@ -143,6 +154,7 @@ namespace test_ptt_timer
 						PROCESS_MAIN( timer.Update() );
 						OUTPUT_VALUE( timer.GetCurrentTime() );
 						OUTPUT_VALUE( timer.GetLastTime() );
+						OUTPUT_VALUE( timer.GetElapsedTime() );
 					}
 
 					if( _kbhit() )

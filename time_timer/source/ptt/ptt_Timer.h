@@ -17,6 +17,10 @@ namespace ptt
 		{
 			return std::chrono::duration_cast<std::chrono::seconds>( mLastTime.time_since_epoch() ).count();
 		}
+		int64_t GetElapsedTime() const
+		{
+			return std::chrono::duration_cast<std::chrono::seconds>( mElapsedDuration ).count();
+		}
 
 		void Start();
 		void Update();
@@ -24,5 +28,6 @@ namespace ptt
 	private:
 		std::chrono::steady_clock::time_point mCurrentTime;
 		std::chrono::steady_clock::time_point mLastTime;
+		std::chrono::steady_clock::duration mElapsedDuration;
 	};
 }
