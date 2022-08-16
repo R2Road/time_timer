@@ -25,4 +25,8 @@ namespace ptt
 
 		mElapsedDuration += std::chrono::duration_cast<std::chrono::nanoseconds>( mCurrentTime - mLastTime );
 	}
+	void Timer::Stop()
+	{
+		Update();
+	}
 }

@@ -184,4 +184,72 @@ namespace test_ptt_timer
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFunctionT Stop::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Timer : Stop";
+		};
+	}
+	r2cm::iItem::DoFunctionT Stop::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( ptt::Timer timer );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( timer.Start() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[Any Key] Timer::Stop" << r2cm::linefeed2;
+
+				r2::FPSTimer ft( 30 );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				do
+				{
+					if( ft.Update() )
+					{
+						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+
+						PROCESS_MAIN( timer.Update() );
+						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
+						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
+						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
+					}
+
+					if( _kbhit() )
+					{
+						_getch();
+						break;
+					}
+
+				} while( true );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( timer.Stop() );
+				EXPECT_NE( timer.GetCurrentTime<std::chrono::microseconds>(), timer.GetLastTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
+				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

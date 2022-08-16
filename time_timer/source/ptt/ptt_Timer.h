@@ -41,6 +41,7 @@ namespace ptt
 
 		void Start();
 		void Update();
+		void Stop();
 
 	private:
 		std::chrono::steady_clock::time_point mCurrentTime;

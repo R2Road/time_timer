@@ -25,4 +25,11 @@ namespace test_ptt_timer
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class Stop : public r2cm::iItem, public r2cm::SingleTon<Stop>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
