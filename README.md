@@ -7,7 +7,7 @@
 
 
 ## 개괄 | Overview
-- [r2bix_console_framework]( https://github.com/R2Road/r2_console_menu ) 의 test 를 위해 만들었다. | It was made for the test of [r2bix_console_framework]( https://github.com/R2Road/r2_console_menu ).
+- 그냥 나 쓰려고 만들었다. | It was made for me to use.
 
 
 ## 작업환경 | Environment
