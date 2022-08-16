@@ -48,6 +48,7 @@ namespace test_ptt_demo
 				r2::FPSTimer ft( 30 );
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
+				ptt::Timer::eStatus last_status = timer.GetStatus();
 				do
 				{
 					if( ft.Update() )
@@ -62,6 +63,12 @@ namespace test_ptt_demo
 						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
+
+						if( ptt::Timer::eStatus::Play == last_status && ptt::Timer::eStatus::Stop == timer.GetStatus() )
+						{
+							std::cout << (char)7;
+						}
+						last_status = timer.GetStatus();
 					}
 
 					if( _kbhit() )
