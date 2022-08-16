@@ -7,7 +7,13 @@ namespace ptt
 		, mCurrentTime( std::chrono::nanoseconds( 0 ) )
 		, mLastTime( std::chrono::nanoseconds( 0 ) )
 		, mElapsedDuration( std::chrono::nanoseconds( 0 ) )
+		, mRequiredDuration( std::chrono::nanoseconds( 0 ) )
 	{}
+
+	void Timer::Set( const int seconds )
+	{
+		mRequiredDuration = std::chrono::milliseconds( seconds * 1000 );
+	}
 
 	void Timer::Start()
 	{

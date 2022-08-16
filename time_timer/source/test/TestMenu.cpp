@@ -45,10 +45,11 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'a', test_ptt_timer::Generate::GetInstance() );
-		ret->AddItem( 's', test_ptt_timer::Start::GetInstance() );
-		ret->AddItem( 'd', test_ptt_timer::Update::GetInstance() );
-		ret->AddItem( 'f', test_ptt_timer::Stop::GetInstance() );
-		ret->AddItem( 'g', test_ptt_timer::Pause::GetInstance() );
+		ret->AddItem( 's', test_ptt_timer::Set::GetInstance() );
+		ret->AddItem( 'd', test_ptt_timer::Start::GetInstance() );
+		ret->AddItem( 'f', test_ptt_timer::Update::GetInstance() );
+		ret->AddItem( 'g', test_ptt_timer::Stop::GetInstance() );
+		ret->AddItem( 'h', test_ptt_timer::Pause::GetInstance() );
 
 
 

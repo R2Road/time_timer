@@ -61,9 +61,20 @@ namespace ptt
 			return std::chrono::duration_cast<durationT>( mElapsedDuration ).count();
 		}
 
+		int64_t GetRequiredTime() const
+		{
+			return std::chrono::duration_cast<std::chrono::seconds>( mRequiredDuration ).count();
+		}
+		template<typename durationT>
+		int64_t GetRequiredTime() const
+		{
+			return std::chrono::duration_cast<durationT>( mRequiredDuration ).count();
+		}
+
 		//
 		//
 		//
+		void Set( const int seconds );
 		void Start();
 		void Update();
 		void Stop();
@@ -75,5 +86,6 @@ namespace ptt
 		std::chrono::steady_clock::time_point mCurrentTime;
 		std::chrono::steady_clock::time_point mLastTime;
 		std::chrono::steady_clock::duration mElapsedDuration;
+		std::chrono::steady_clock::duration mRequiredDuration;
 	};
 }

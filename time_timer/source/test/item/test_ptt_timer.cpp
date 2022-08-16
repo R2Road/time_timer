@@ -47,9 +47,51 @@ namespace test_ptt_timer
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 0, timer.GetElapsedTime() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, timer.GetRequiredTime() );
 			}
 			
 			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Set::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Timer : Set";
+		};
+	}
+	r2cm::iItem::DoFunctionT Set::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( ptt::Timer timer );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( timer.Set( 123456 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 123456, timer.GetRequiredTime() );
+				OUTPUT_VALUE( timer.GetRequiredTime() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+
+			}
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
