@@ -81,6 +81,7 @@
     <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="source\DevelopmentMenu.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ptt\ptt_EditorComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_EditorScene.cpp" />
     <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_MinuteNode.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="source\DevelopmentMenu.h" />
     <ClInclude Include="source\ptt\ptt_Config.h" />
+    <ClInclude Include="source\ptt\ptt_EditorComponent.h" />
     <ClInclude Include="source\ptt\ptt_EditorScene.h" />
     <ClInclude Include="source\ptt\ptt_MinuteComponent.h" />
     <ClInclude Include="source\ptt\ptt_MinuteNode.h" />

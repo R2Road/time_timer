@@ -254,6 +254,9 @@
     <ClCompile Include="source\ptt\ptt_EditorScene.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_EditorComponent.cpp">
+      <Filter>project_time_timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -534,6 +537,9 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_EditorScene.h">
+      <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_EditorComponent.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
   </ItemGroup>
