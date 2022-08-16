@@ -75,15 +75,16 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( const int seconds = 123456 );
 				DECLARATION_MAIN( ptt::Timer timer );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( timer.Set( 123456 ) );
+				PROCESS_MAIN( timer.Set( seconds ) );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( 123456, timer.GetRequiredTime() );
+				EXPECT_EQ( seconds, timer.GetRequiredTime() );
 				OUTPUT_VALUE( timer.GetRequiredTime() );
 			}
 
