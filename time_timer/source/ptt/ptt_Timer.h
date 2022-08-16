@@ -11,6 +11,7 @@ namespace ptt
 		{
 			Stop,
 			Play,
+			Pause,
 		};
 
 		Timer();
@@ -66,6 +67,8 @@ namespace ptt
 		void Start();
 		void Update();
 		void Stop();
+		void Pause();
+		void Resume();
 
 	private:
 		eStatus mStatus;

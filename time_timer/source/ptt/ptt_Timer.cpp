@@ -37,4 +37,30 @@ namespace ptt
 		Update();
 		mStatus = eStatus::Stop;
 	}
+
+	void Timer::Pause()
+	{
+		if( eStatus::Play != mStatus )
+		{
+			return;
+		}
+
+		Update();
+		mStatus = eStatus::Pause;
+	}
+
+	void Timer::Resume()
+	{
+		if( eStatus::Pause != mStatus )
+		{
+			return;
+		}
+
+		mStatus = eStatus::Play;
+
+		//
+		// 시간 측정 초기화
+		//
+		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
+	}
 }
