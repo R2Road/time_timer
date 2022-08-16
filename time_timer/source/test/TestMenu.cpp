@@ -24,9 +24,12 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '2', test_ptt_numbernode::Generate::GetInstance() );
-		ret->AddItem( '3', test_ptt_numbernode::FirstView::GetInstance() );
-		ret->AddItem( '4', test_ptt_numbernode::Process::GetInstance() );
+		ret->AddItem( '2', test_ptt_timer::Generate::GetInstance() );
+		ret->AddItem( '3', test_ptt_timer::Set::GetInstance() );
+		ret->AddItem( '4', test_ptt_timer::Start::GetInstance() );
+		ret->AddItem( '5', test_ptt_timer::Update::GetInstance() );
+		ret->AddItem( '6', test_ptt_timer::Stop::GetInstance() );
+		ret->AddItem( '7', test_ptt_timer::Pause::GetInstance() );
 
 
 
@@ -34,9 +37,9 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', test_ptt_minutenode::Generate::GetInstance() );
-		ret->AddItem( 'w', test_ptt_minutenode::View::GetInstance() );
-		ret->AddItem( 'e', test_ptt_minutenode::Process::GetInstance() );
+		ret->AddItem( 'q', test_ptt_numbernode::Generate::GetInstance() );
+		ret->AddItem( 'w', test_ptt_numbernode::FirstView::GetInstance() );
+		ret->AddItem( 'e', test_ptt_numbernode::Process::GetInstance() );
 
 
 
@@ -44,12 +47,9 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', test_ptt_timer::Generate::GetInstance() );
-		ret->AddItem( 's', test_ptt_timer::Set::GetInstance() );
-		ret->AddItem( 'd', test_ptt_timer::Start::GetInstance() );
-		ret->AddItem( 'f', test_ptt_timer::Update::GetInstance() );
-		ret->AddItem( 'g', test_ptt_timer::Stop::GetInstance() );
-		ret->AddItem( 'h', test_ptt_timer::Pause::GetInstance() );
+		ret->AddItem( 'a', test_ptt_minutenode::Generate::GetInstance() );
+		ret->AddItem( 's', test_ptt_minutenode::View::GetInstance() );
+		ret->AddItem( 'd', test_ptt_minutenode::Process::GetInstance() );
 
 
 
