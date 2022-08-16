@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/test_ptt_demo.h"
 #include "item/test_ptt_minutenode.h"
 #include "item/test_ptt_numbernode.h"
 #include "item/test_ptt_texturetable.h"
@@ -50,6 +51,14 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'a', test_ptt_minutenode::Generate::GetInstance() );
 		ret->AddItem( 's', test_ptt_minutenode::View::GetInstance() );
 		ret->AddItem( 'd', test_ptt_minutenode::Process::GetInstance() );
+
+
+
+		ret->AddSplit();
+
+
+
+		ret->AddItem( 32, test_ptt_demo::Play::GetInstance() ); // space
 
 
 
