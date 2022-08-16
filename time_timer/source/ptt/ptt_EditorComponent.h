@@ -2,6 +2,7 @@
 
 #include "r2bix/r2base_Component.h"
 #include "r2bix/r2base_ComponentStaticID.h"
+#include "r2bix/r2input_KeyboardInputListener.h"
 
 namespace ptt
 {
@@ -17,5 +18,11 @@ namespace ptt
 	public:
 		int GetStaticID() const override { return r2base::ComponentStaticID<MyT>::Get(); }
 		static MyUniquePtrT Create( r2base::Node& owner_node );
+
+	public:
+		void Update( const float delta_time ) override;
+
+	private:
+		r2input::KeyboardInputListener mKeyboardInputListener;
 	};
 }
