@@ -13,7 +13,7 @@ namespace ptt
 	{
 		mStatus = eStatus::Play;
 		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
-		mElapsedDuration = std::chrono::duration_cast<std::chrono::nanoseconds>( mCurrentTime - mLastTime );
+		mElapsedDuration = std::chrono::nanoseconds( 0 );
 	}
 	void Timer::Update()
 	{
