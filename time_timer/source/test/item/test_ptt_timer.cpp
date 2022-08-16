@@ -201,11 +201,13 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer );
+			EXPECT_FALSE( timer.IsAlive() );
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( timer.Start() );
+				EXPECT_TRUE( timer.IsAlive() );
 			}
 
 			std::cout << r2cm::split;
@@ -223,6 +225,7 @@ namespace test_ptt_timer
 						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						PROCESS_MAIN( timer.Update() );
+						EXPECT_TRUE( timer.IsAlive() );
 						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
@@ -241,10 +244,16 @@ namespace test_ptt_timer
 
 			{
 				PROCESS_MAIN( timer.Stop() );
-				EXPECT_NE( timer.GetCurrentTime<std::chrono::microseconds>(), timer.GetLastTime<std::chrono::microseconds>() );
+				EXPECT_FALSE( timer.IsAlive() );
 				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
 				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto et = timer.GetElapsedTime<std::chrono::microseconds>() );
+				PROCESS_MAIN( timer.Update() );
+				EXPECT_EQ( et, timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
 			std::cout << r2cm::split;

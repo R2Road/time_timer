@@ -3,13 +3,15 @@
 namespace ptt
 {
 	Timer::Timer() :
-		mCurrentTime( std::chrono::nanoseconds( 0 ) )
+		mbAlive( false )
+		, mCurrentTime( std::chrono::nanoseconds( 0 ) )
 		, mLastTime( std::chrono::nanoseconds( 0 ) )
 		, mElapsedDuration( std::chrono::nanoseconds( 0 ) )
 	{}
 
 	void Timer::Start()
 	{
+		mbAlive = true;
 		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
 		mElapsedDuration = std::chrono::duration_cast<std::chrono::nanoseconds>( mCurrentTime - mLastTime );
 	}
@@ -20,6 +22,11 @@ namespace ptt
 		// > "mCurrentTime = std::chrono::high_resolution_clock::now();" 이 구문을 주석 처리하면 문제가 없다.
 		// > 왜지?
 
+		if( !mbAlive )
+		{
+			return;
+		}
+
 		mLastTime = mCurrentTime;
 		mCurrentTime = std::chrono::high_resolution_clock::now();
 
@@ -28,5 +35,6 @@ namespace ptt
 	void Timer::Stop()
 	{
 		Update();
+		mbAlive = false;
 	}
 }

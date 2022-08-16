@@ -9,6 +9,11 @@ namespace ptt
 	public:
 		Timer();
 
+		bool IsAlive() const
+		{
+			return mbAlive;
+		}
+
 		int64_t GetCurrentTime() const
 		{
 			return std::chrono::duration_cast<std::chrono::seconds>( mCurrentTime.time_since_epoch() ).count();
@@ -44,6 +49,7 @@ namespace ptt
 		void Stop();
 
 	private:
+		bool mbAlive;
 		std::chrono::steady_clock::time_point mCurrentTime;
 		std::chrono::steady_clock::time_point mLastTime;
 		std::chrono::steady_clock::duration mElapsedDuration;
