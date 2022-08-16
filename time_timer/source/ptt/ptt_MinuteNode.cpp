@@ -6,6 +6,7 @@
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2render_TextureFrame.h"
 
+#include "ptt_Config.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_NumberComponent.h"
 #include "ptt_NumberNode.h"
@@ -17,10 +18,6 @@ namespace ptt
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
-			//
-			//
-			//
-			ret->AddChild<r2node::PivotNode>();
 
 			//
 			//
@@ -39,6 +36,15 @@ namespace ptt
 				auto minute_component = ret->AddComponent<ptt::MinuteComponent>();
 				minute_component->SetNumberComponent( number_node_1->GetComponent<ptt::NumberComponent>(), number_node_2->GetComponent<ptt::NumberComponent>() );
 			}
+
+			//
+			//
+			//
+			if( ptt::Config::GetNodeConfig().pivot )
+			{
+				ret->AddChild<r2node::PivotNode>();
+			}
+
 		}
 
 		return ret;

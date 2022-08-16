@@ -9,6 +9,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
+#include "ptt/ptt_Config.h"
 #include "ptt/ptt_MinuteComponent.h"
 #include "ptt/ptt_MinuteNode.h"
 #include "ptt/ptt_TextureFrameAnimationTable.h"
@@ -43,6 +44,11 @@ namespace test_ptt_minutenode
 
 			std::cout << r2cm::split;
 
+			if( ptt::Config::GetNodeConfig().pivot )
+			{
+				EXPECT_EQ( 3, node->GetChildCount() );
+			}
+			else
 			{
 				EXPECT_EQ( 2, node->GetChildCount() );
 			}
