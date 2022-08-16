@@ -362,7 +362,7 @@ namespace test_ptt_timer
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( ptt::Timer timer );
+			DECLARATION_MAIN( ptt::Timer timer( 10000 ) );
 
 			std::cout << r2cm::split;
 
@@ -419,11 +419,11 @@ namespace test_ptt_timer
 					{
 						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-						PROCESS_MAIN( timer.Update() );
+						OUTPUT_VALUE( timer.Update() );
+						OUTPUT_VALUE( static_cast<int>( timer.GetStatus() ) );
 						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
-						OUTPUT_VALUE( static_cast<int>( timer.GetStatus() ) );
 					}
 
 					if( _kbhit() )
