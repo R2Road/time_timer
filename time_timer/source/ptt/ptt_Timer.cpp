@@ -31,9 +31,16 @@ namespace ptt
 		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
 		mElapsedDuration = std::chrono::nanoseconds( 0 );
 	}
-	void Timer::Update()
+	bool Timer::Update()
 	{
 		updateTime();
+
+		if( mRequiredDuration < mElapsedDuration )
+		{
+			mStatus = eStatus::Stop;
+		}
+
+		return IsAlive();
 	}
 	void Timer::Stop()
 	{

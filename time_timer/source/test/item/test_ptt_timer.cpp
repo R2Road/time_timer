@@ -194,7 +194,7 @@ namespace test_ptt_timer
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( ptt::Timer timer );
+			DECLARATION_MAIN( ptt::Timer timer( 3 ) );
 
 			std::cout << r2cm::split;
 
@@ -218,17 +218,21 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[1] Timer::Start" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[ESC] End" << r2cm::linefeed2;
 
 				r2::FPSTimer ft( 30 );
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				int input = 0;
 				do
 				{
 					if( ft.Update() )
 					{
 						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
-						PROCESS_MAIN( timer.Update() );
+						OUTPUT_VALUE( timer.Update() );
+						OUTPUT_VALUE( static_cast<int>( timer.GetStatus() ) );
 						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
@@ -236,11 +240,15 @@ namespace test_ptt_timer
 
 					if( _kbhit() )
 					{
-						_getch();
-						break;
+						input = _getch();
+
+						if( '1' == input )
+						{
+							timer.Start();
+						}
 					}
 
-				} while( true );
+				} while( 27 != input );
 			}
 
 			std::cout << r2cm::split;

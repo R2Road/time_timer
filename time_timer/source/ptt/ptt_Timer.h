@@ -77,7 +77,7 @@ namespace ptt
 		//
 		void Set( const int seconds );
 		void Start();
-		void Update();
+		bool Update();
 		void Stop();
 		void Pause();
 		void Resume();
