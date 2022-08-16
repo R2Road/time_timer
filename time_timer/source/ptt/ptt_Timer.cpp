@@ -33,24 +33,11 @@ namespace ptt
 	}
 	void Timer::Update()
 	{
-		// # Summury - by R 2022.08.16 01:53
-		// > Template Getter 에 std::chrono::nanoseconds 를 인자로 주면 예외가 터지는 경우가 있다.
-		// > "mCurrentTime = std::chrono::high_resolution_clock::now();" 이 구문을 주석 처리하면 문제가 없다.
-		// > 왜지?
-
-		if( eStatus::Play != mStatus )
-		{
-			return;
-		}
-
-		mLastTime = mCurrentTime;
-		mCurrentTime = std::chrono::high_resolution_clock::now();
-
-		mElapsedDuration += std::chrono::duration_cast<std::chrono::nanoseconds>( mCurrentTime - mLastTime );
+		updateTime();
 	}
 	void Timer::Stop()
 	{
-		Update();
+		updateTime();
 		mStatus = eStatus::Stop;
 	}
 
@@ -61,7 +48,7 @@ namespace ptt
 			return;
 		}
 
-		Update();
+		updateTime();
 		mStatus = eStatus::Pause;
 	}
 
@@ -78,5 +65,23 @@ namespace ptt
 		// 시간 측정 초기화
 		//
 		mLastTime = mCurrentTime = std::chrono::high_resolution_clock::now();
+	}
+
+	void Timer::updateTime()
+	{
+		// # Summury - by R 2022.08.16 01:53
+		// > Template Getter 에 std::chrono::nanoseconds 를 인자로 주면 예외가 터지는 경우가 있다.
+		// > "mCurrentTime = std::chrono::high_resolution_clock::now();" 이 구문을 주석 처리하면 문제가 없다.
+		// > 왜지?
+
+		if( eStatus::Play != mStatus )
+		{
+			return;
+		}
+
+		mLastTime = mCurrentTime;
+		mCurrentTime = std::chrono::high_resolution_clock::now();
+
+		mElapsedDuration += std::chrono::duration_cast<std::chrono::nanoseconds>( mCurrentTime - mLastTime );
 	}
 }

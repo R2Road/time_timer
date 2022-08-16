@@ -83,6 +83,9 @@ namespace ptt
 		void Resume();
 
 	private:
+		void updateTime();
+
+	private:
 		eStatus mStatus;
 		std::chrono::steady_clock::time_point mCurrentTime;
 		std::chrono::steady_clock::time_point mLastTime;
