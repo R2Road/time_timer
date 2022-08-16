@@ -90,8 +90,16 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( const int seconds = 654321 );
+				DECLARATION_MAIN( ptt::Timer timer( seconds ) );
 
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( seconds, timer.GetRequiredTime() );
+				OUTPUT_VALUE( timer.GetRequiredTime() );
 			}
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

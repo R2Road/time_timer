@@ -10,6 +10,16 @@ namespace ptt
 		, mRequiredDuration( std::chrono::nanoseconds( 0 ) )
 	{}
 
+	Timer::Timer( const int seconds ) :
+		mStatus( eStatus::Stop )
+		, mCurrentTime( std::chrono::nanoseconds( 0 ) )
+		, mLastTime( std::chrono::nanoseconds( 0 ) )
+		, mElapsedDuration( std::chrono::nanoseconds( 0 ) )
+		, mRequiredDuration( std::chrono::nanoseconds( 0 ) )
+	{
+		Set( seconds );
+	}
+
 	void Timer::Set( const int seconds )
 	{
 		mRequiredDuration = std::chrono::milliseconds( seconds * 1000 );

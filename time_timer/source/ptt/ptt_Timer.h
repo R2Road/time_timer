@@ -15,6 +15,7 @@ namespace ptt
 		};
 
 		Timer();
+		Timer( const int seconds );
 
 		//
 		//
