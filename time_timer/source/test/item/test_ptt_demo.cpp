@@ -45,8 +45,6 @@ namespace test_ptt_demo
 			std::cout << r2cm::split;
 
 			{
-				
-
 				r2::FPSTimer ft( 30 );
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
