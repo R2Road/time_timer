@@ -30,6 +30,10 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_FALSE( timer.IsAlive() );
 
 				std::cout << r2cm::linefeed;
@@ -75,6 +79,7 @@ namespace test_ptt_timer
 
 				std::cout << r2cm::linefeed;
 
+				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 				EXPECT_TRUE( timer.IsAlive() );
 
 				std::cout << r2cm::linefeed;
@@ -248,12 +253,20 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 				EXPECT_TRUE( timer.IsAlive() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( timer.Stop() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
+
+				std::cout << r2cm::linefeed;
+
 				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
 				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );

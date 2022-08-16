@@ -7,14 +7,24 @@ namespace ptt
 	class Timer
 	{
 	public:
+		enum class eStatus
+		{
+			Stop,
+			Play,
+		};
+
 		Timer();
 
 		//
 		//
 		//
+		eStatus GetStatus() const
+		{
+			return mStatus;
+		}
 		bool IsAlive() const
 		{
-			return mbAlive;
+			return mStatus != eStatus::Stop;
 		}
 
 		//
@@ -58,7 +68,7 @@ namespace ptt
 		void Stop();
 
 	private:
-		bool mbAlive;
+		eStatus mStatus;
 		std::chrono::steady_clock::time_point mCurrentTime;
 		std::chrono::steady_clock::time_point mLastTime;
 		std::chrono::steady_clock::duration mElapsedDuration;
