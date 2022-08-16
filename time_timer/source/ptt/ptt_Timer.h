@@ -9,11 +9,17 @@ namespace ptt
 	public:
 		Timer();
 
+		//
+		//
+		//
 		bool IsAlive() const
 		{
 			return mbAlive;
 		}
 
+		//
+		//
+		//
 		int64_t GetCurrentTime() const
 		{
 			return std::chrono::duration_cast<std::chrono::seconds>( mCurrentTime.time_since_epoch() ).count();
@@ -44,6 +50,9 @@ namespace ptt
 			return std::chrono::duration_cast<durationT>( mElapsedDuration ).count();
 		}
 
+		//
+		//
+		//
 		void Start();
 		void Update();
 		void Stop();
