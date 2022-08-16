@@ -219,6 +219,26 @@ namespace test_ptt_timer
 
 			{
 				PROCESS_MAIN( timer.Start() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
+				EXPECT_TRUE( timer.IsAlive() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( timer.Stop() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
+				EXPECT_FALSE( timer.IsAlive() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( timer.Start() );
 			}
 
 			std::cout << r2cm::split;
@@ -243,38 +263,20 @@ namespace test_ptt_timer
 
 					if( _kbhit() )
 					{
+						PROCESS_MAIN( timer.Stop() );
+
 						_getch();
 						break;
 					}
 
 				} while( true );
 			}
-
-			std::cout << r2cm::split;
-
-			{
-				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
-				EXPECT_TRUE( timer.IsAlive() );
-
-				std::cout << r2cm::linefeed;
-
-				PROCESS_MAIN( timer.Stop() );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
-				EXPECT_FALSE( timer.IsAlive() );
-
-				std::cout << r2cm::linefeed;
-
-				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
-				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
-				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
-			}
 			
 			std::cout << r2cm::split;
 
 			{
+				std::cout << r2cm::tab << "+ Stop 을 호출한 이후에는 Update 를 호출해도 시간이 갱신되지 않는다." << r2cm::linefeed2;
+
 				DECLARATION_MAIN( auto et = timer.GetElapsedTime<std::chrono::microseconds>() );
 				PROCESS_MAIN( timer.Update() );
 				EXPECT_EQ( et, timer.GetElapsedTime<std::chrono::microseconds>() );
