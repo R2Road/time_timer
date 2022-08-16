@@ -12,6 +12,13 @@ namespace test_ptt_timer
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class Set : public r2cm::iItem, public r2cm::SingleTon<Set>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Start : public r2cm::iItem, public r2cm::SingleTon<Start>
 	{
 	public:
@@ -34,13 +41,6 @@ namespace test_ptt_timer
 	};
 
 	class Pause : public r2cm::iItem, public r2cm::SingleTon<Pause>
-	{
-	public:
-		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
-	};
-
-	class Set : public r2cm::iItem, public r2cm::SingleTon<Set>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
