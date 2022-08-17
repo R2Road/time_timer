@@ -5,7 +5,6 @@
 #include "r2bix/r2base_Director.h"
 
 #include "ptt_Core.h"
-#include "ptt_EditorComponent.h"
 #include "ptt_EditorScene.h"
 #include "ptt_TextureTable.h"
 
