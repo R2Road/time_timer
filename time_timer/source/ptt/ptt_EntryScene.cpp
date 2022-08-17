@@ -34,9 +34,13 @@ namespace ptt
 			auto core = ptt::Core::Create();
 
 			//
-			// Go Next Scene
+			// Scene
 			//
 			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( core ) );
+
+			//
+			// Go Next 
+			//
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 		}
 	};
