@@ -6,21 +6,10 @@
 
 namespace ptt
 {
-	MinuteComponent::MinuteComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	MinuteComponent::MinuteComponent( r2base::Node& owner_node ) : r2base::Component<MinuteComponent>( owner_node )
 		, mNumberComponent_10_Minute( nullptr )
 		, mNumberComponent_1_Minute( nullptr )
 	{}
-
-	std::unique_ptr<MinuteComponent> MinuteComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<MinuteComponent> ret( new ( std::nothrow ) MinuteComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
 
 	void MinuteComponent::SetMinute( const int new_minute_10_0_to_9, const int new_minute_1_0_to_9 )
 	{

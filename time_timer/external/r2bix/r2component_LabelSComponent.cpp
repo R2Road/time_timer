@@ -5,22 +5,11 @@
 
 namespace r2component
 {
-	LabelSComponent::LabelSComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	LabelSComponent::LabelSComponent( r2base::Node& owner_node ) : r2base::Component<LabelSComponent>( owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mColorValue( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black )
 	{}
-
-	std::unique_ptr<LabelSComponent> LabelSComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<LabelSComponent> ret( new ( std::nothrow ) LabelSComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
 
 	void LabelSComponent::SetString( const std::string_view str )
 	{

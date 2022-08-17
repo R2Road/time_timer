@@ -79,7 +79,7 @@ namespace r2base
 		template<typename ComponentT>
 		ComponentT* AddComponent()
 		{
-			static_assert( std::is_base_of<r2base::Component, ComponentT>() );
+			static_assert( std::is_base_of<r2base::iComponent, ComponentT>() );
 
 			if( GetComponent<ComponentT>() )
 			{

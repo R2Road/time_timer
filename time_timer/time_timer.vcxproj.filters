@@ -548,5 +548,8 @@
     <ClInclude Include="source\ptt\ptt_EntryScene.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2bix\r2base_iComponent.h">
+      <Filter>external\r2bix</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

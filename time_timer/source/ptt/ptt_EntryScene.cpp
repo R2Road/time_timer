@@ -9,32 +9,17 @@
 
 namespace ptt
 {
-	class EntryComponent : public r2base::Component
+	class EntryComponent : public r2base::Component<EntryComponent>
 	{
 	public:
-		using MyT = EntryComponent;
-		using MyUniquePtrT = std::unique_ptr<MyT>;
+		EntryComponent( r2base::Node& owner_node ) : r2base::Component<EntryComponent>( owner_node ) {}
 
-	private:
-		EntryComponent( r2base::Node& owner_node ) : r2base::Component( owner_node ) {}
-
-	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<MyT>::Get(); }
-		static MyUniquePtrT Create( r2base::Node& owner_node )
-		{
-			MyUniquePtrT ret( new ( std::nothrow ) MyT( owner_node ) );
-			if( !ret || !ret->Init() )
-			{
-				ret.reset();
-			}
-
-			return ret;
-		}
-
-	public:
+		//
+		//
+		//
 		void Update( const float delta_time ) override
 		{
-			r2base::Component::Update( delta_time );
+			r2base::iComponent::Update( delta_time );
 
 			//
 			// Table Load

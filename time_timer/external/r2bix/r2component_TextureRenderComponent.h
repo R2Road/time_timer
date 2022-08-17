@@ -1,7 +1,7 @@
 #pragma once
 
 #include "r2base_Component.h"
-#include "r2base_ComponentStaticID.h"
+
 #include "r2base_ColorMaskOption.h"
 
 #include "r2/r2_Point_Float.h"
@@ -14,14 +14,10 @@ namespace r2render
 
 namespace r2component
 {
-	class TextureRenderComponent : public r2base::Component
+	class TextureRenderComponent : public r2base::Component<TextureRenderComponent>
 	{
-	private:
-		TextureRenderComponent( r2base::Node& owner_node );
-
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<TextureRenderComponent>::Get(); }
-		static std::unique_ptr<TextureRenderComponent> Create( r2base::Node& owner_node );
+		TextureRenderComponent( r2base::Node& owner_node );
 
 		//
 		// Override

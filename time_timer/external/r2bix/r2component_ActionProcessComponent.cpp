@@ -2,21 +2,10 @@
 
 namespace r2component
 {
-	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component<ActionProcessComponent>( owner_node )
 		, mAction()
 		, mbStart( false )
 	{}
-
-	std::unique_ptr<ActionProcessComponent> ActionProcessComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<ActionProcessComponent> ret( new ( std::nothrow ) ActionProcessComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
 
 	void ActionProcessComponent::StartAction()
 	{

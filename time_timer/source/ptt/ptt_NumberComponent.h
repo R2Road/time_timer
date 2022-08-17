@@ -1,7 +1,6 @@
 #pragma once
 
 #include "r2bix/r2base_Component.h"
-#include "r2bix/r2base_ComponentStaticID.h"
 
 namespace r2component
 {
@@ -10,15 +9,14 @@ namespace r2component
 
 namespace ptt
 {
-	class NumberComponent : public r2base::Component
+	class NumberComponent : public r2base::Component<NumberComponent>
 	{
-	private:
+	public:
 		NumberComponent( r2base::Node& owner_node );
 
-	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<NumberComponent>::Get(); }
-		static std::unique_ptr<NumberComponent> Create( r2base::Node& owner_node );
-
+		//
+		//
+		//
 		r2component::TextureFrameAnimationComponent* const GetTextureFrameAnimationComponent() const
 		{
 			return mTextureFrameAnimationComponent;

@@ -8,23 +8,12 @@
 
 namespace r2component
 {
-	TextureFrameRenderComponent::TextureFrameRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	TextureFrameRenderComponent::TextureFrameRenderComponent( r2base::Node& owner_node ) : r2base::Component<TextureFrameRenderComponent>( owner_node )
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTextureFrame( nullptr )
 		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
 	{}
-
-	std::unique_ptr<TextureFrameRenderComponent> TextureFrameRenderComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<TextureFrameRenderComponent> ret( new ( std::nothrow ) TextureFrameRenderComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
 
 	void TextureFrameRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{

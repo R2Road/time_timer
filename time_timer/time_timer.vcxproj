@@ -119,6 +119,7 @@
     <ClInclude Include="external\r2bix\r2base_CoutBufferRedirector.h" />
     <ClInclude Include="external\r2bix\r2base_DebugConfig.h" />
     <ClInclude Include="external\r2bix\r2base_Director.h" />
+    <ClInclude Include="external\r2bix\r2base_iComponent.h" />
     <ClInclude Include="external\r2bix\r2base_Node.h" />
     <ClInclude Include="external\r2bix\r2base_ScreenBufferManager.h" />
     <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationInfo.h" />

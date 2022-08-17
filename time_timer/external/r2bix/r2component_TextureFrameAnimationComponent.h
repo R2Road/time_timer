@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "r2base_Component.h"
-#include "r2base_ComponentStaticID.h"
+
 #include "r2/r2_Timer_Float.h"
 #include "r2base_TextureFrameAnimationInfo.h"
 
@@ -19,7 +19,7 @@ namespace r2render
 
 namespace r2component
 {
-	class TextureFrameAnimationComponent : public r2base::Component
+	class TextureFrameAnimationComponent : public r2base::Component<TextureFrameAnimationComponent>
 	{
 	private:
 		struct AnimationFrame
@@ -34,11 +34,8 @@ namespace r2component
 		};
 		using AnimationPackageT = std::vector<Animation>;
 
-		TextureFrameAnimationComponent( r2base::Node& owner_node );
-
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<TextureFrameAnimationComponent>::Get(); }
-		static std::unique_ptr<TextureFrameAnimationComponent> Create( r2base::Node& owner_node );
+		TextureFrameAnimationComponent( r2base::Node& owner_node );
 
 		//
 		//

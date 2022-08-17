@@ -1,21 +1,19 @@
 #pragma once
 
 #include "r2bix/r2base_Component.h"
-#include "r2bix/r2base_ComponentStaticID.h"
 
 namespace ptt
 {
 	class NumberComponent;
 
-	class MinuteComponent : public r2base::Component
+	class MinuteComponent : public r2base::Component<MinuteComponent>
 	{
-	private:
+	public:
 		MinuteComponent( r2base::Node& owner_node );
 
-	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<MinuteComponent>::Get(); }
-		static std::unique_ptr<MinuteComponent> Create( r2base::Node& owner_node );
-
+		//
+		//
+		//
 		void SetNumberComponent( ptt::NumberComponent* const number_component_10_min, ptt::NumberComponent* const number_component_1_min )
 		{
 			mNumberComponent_10_Minute = number_component_10_min;

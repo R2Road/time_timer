@@ -1,36 +1,31 @@
 #pragma once
 
-#include <memory>
-
-#include "r2/r2_Point_Int.h"
-
-namespace r2render
-{
-	class Camera;
-	class iRenderTarget;
-}
+#include "r2base_iComponent.h"
+#include "r2base_ComponentStaticID.h"
 
 namespace r2base
 {
-	class Node;
-
-	using ComponentUp = std::unique_ptr<class Component>;
-	class Component
+	template<typename T>
+	class Component : public iComponent
 	{
-	protected:
-		Component( Node& owner_node ) : mOwnerNode( owner_node ) {}
 	public:
-		virtual ~Component() {}
-
-	public:
-		Node& GetOwnerNode() const { return mOwnerNode; }
-
-		virtual int GetStaticID() const = 0;
-		virtual bool Init() { return true; }
-		virtual void Update( const float /*delta_time*/ ) {}
-		virtual void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) {}
+		using MyT = T;
 
 	protected:
-		Node& mOwnerNode;
+		Component( r2base::Node& owner_node ) : r2base::iComponent( owner_node ) {}
+
+	public:
+		static std::unique_ptr<MyT> Create( r2base::Node& owner_node )
+		{
+			std::unique_ptr<MyT> ret( new ( std::nothrow ) MyT( owner_node ) );
+			if( !ret || !ret->Init() )
+			{
+				ret.reset();
+			}
+
+			return ret;
+		}
+
+		int GetStaticID() const override { return r2base::ComponentStaticID<MyT>::Get(); }
 	};
 }

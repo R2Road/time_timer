@@ -4,7 +4,6 @@
 #include <string_view>
 
 #include "r2base_Component.h"
-#include "r2base_ComponentStaticID.h"
 
 #include "r2base_ColorValue.h"
 #include "r2render_Texture.h"
@@ -19,14 +18,10 @@ namespace r2component
 	class CustomTextureComponent;
 	class TextureRenderComponent;
 
-	class LabelSComponent : public r2base::Component
+	class LabelSComponent : public r2base::Component<LabelSComponent>
 	{
-	private:
-		LabelSComponent( r2base::Node& owner_node );
-
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<LabelSComponent>::Get(); }
-		static std::unique_ptr<LabelSComponent> Create( r2base::Node& owner_node );
+		LabelSComponent( r2base::Node& owner_node );
 
 		//
 		//

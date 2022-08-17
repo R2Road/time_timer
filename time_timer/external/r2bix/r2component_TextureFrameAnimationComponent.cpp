@@ -4,7 +4,7 @@
 
 namespace r2component
 {
-	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2base::Node& owner_node ) : r2base::Component<TextureFrameAnimationComponent>( owner_node )
 		, mTextureFrameRenderComponent( nullptr )
 
 		, mbRepeat( false )
@@ -12,17 +12,6 @@ namespace r2component
 		, mCurrentAnimation( mAnimationPackage.end() )
 		, mCurrentAnimationFrameIndex( 0u )
 	{}
-
-	std::unique_ptr<TextureFrameAnimationComponent> TextureFrameAnimationComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<TextureFrameAnimationComponent> ret( new ( std::nothrow ) TextureFrameAnimationComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
 
 	void TextureFrameAnimationComponent::Update( const float delta_time )
 	{
