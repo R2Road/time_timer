@@ -11,7 +11,7 @@
 #include "r2cm/r2cm_WindowUtility.h"
 
 #include "test/TestMenu.h"
-#include "ptt/ptt_EditorScene.h"
+#include "ptt/ptt_EntryScene.h"
 #include "ptt/ptt_VersionInfo.h"
 
 const char* DevelopmentMenu::GetTitle()
@@ -76,7 +76,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					// Setup
 					//
 					r2base::Director director;
-					director.Setup( ptt::EditorScene::Create( director ) );
+					director.Setup( ptt::EntryScene::Create( director ) );
 
 					r2cm::WindowUtility::ScrollBarVisible( false );
 

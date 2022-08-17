@@ -15,7 +15,7 @@
 #else
 
 	#include "r2bix/r2base_Director.h"
-	#include "ptt/ptt_EditorScene.h"
+	#include "ptt/ptt_EntryScene.h"
 
 #endif
 
@@ -61,7 +61,7 @@ int main()
 	// Setup
 	//
 	r2base::Director director;
-	director.Setup( ptt::EditorScene::Create( director ) );
+	director.Setup( ptt::EntryScene::Create( director ) );
 
 	//
 	// Environment : ScrollBar
