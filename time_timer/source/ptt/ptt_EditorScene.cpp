@@ -8,9 +8,9 @@
 #include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
-#include "ptt/ptt_Config.h"
-#include "ptt/ptt_EditorComponent.h"
-#include "ptt/ptt_TextureTable.h"
+#include "ptt_Config.h"
+#include "ptt_EditorComponent.h"
+#include "ptt_TextureTable.h"
 
 namespace ptt
 {
