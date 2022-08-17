@@ -2,7 +2,7 @@
 
 #include "r2/r2_Assert.h"
 
-#include "ptt/ptt_NumberComponent.h"
+#include "ptt_NumberComponent.h"
 
 namespace ptt
 {
