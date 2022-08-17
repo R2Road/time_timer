@@ -36,8 +36,7 @@ namespace ptt
 			//
 			// Go Next Scene
 			//
-			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector() );
-			next_scene->GetComponent<ptt::EditorComponent>()->SetCore( std::move( core ) );
+			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( core ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 		}
 	};

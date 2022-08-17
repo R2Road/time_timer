@@ -14,7 +14,7 @@
 
 namespace ptt
 {
-	r2node::SceneNodeUp EditorScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp EditorScene::Create( r2base::Director& director, CoreUp&& core )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )
@@ -27,7 +27,8 @@ namespace ptt
 			//
 			// Component
 			//
-			ret->AddComponent<ptt::EditorComponent>();
+			auto editor_component = ret->AddComponent<ptt::EditorComponent>();
+			editor_component->SetCore( std::move( core ) );
 
 
 			//
