@@ -1,7 +1,5 @@
 #include "ptt_EditorComponent.h"
 
-#include <new>
-
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2utility_InputUtil.h"
