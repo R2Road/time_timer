@@ -5,6 +5,8 @@
 
 namespace ptt
 {
+	using CoreUp = std::unique_ptr<class Core>;
+
 	class EditorComponent : public r2base::Component<EditorComponent>
 	{
 	public:
@@ -15,7 +17,13 @@ namespace ptt
 		//
 		void Update( const float delta_time ) override;
 
+		//
+		//
+		//
+		void SetCore( CoreUp&& core );
+
 	private:
 		r2input::KeyboardInputListener mKeyboardInputListener;
+		CoreUp mCore;
 	};
 }

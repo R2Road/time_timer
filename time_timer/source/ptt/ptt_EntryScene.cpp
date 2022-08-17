@@ -4,6 +4,8 @@
 
 #include "r2bix/r2base_Director.h"
 
+#include "ptt/ptt_Core.h"
+#include "ptt/ptt_EditorComponent.h"
 #include "ptt/ptt_EditorScene.h"
 #include "ptt/ptt_TextureTable.h"
 
@@ -27,9 +29,15 @@ namespace ptt
 			ptt::TextureTable::GetInstance().Load();
 
 			//
+			// Core
+			//
+			auto core = ptt::Core::Create();
+
+			//
 			// Go Next Scene
 			//
 			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector() );
+			next_scene->GetComponent<ptt::EditorComponent>()->SetCore( std::move( core ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 		}
 	};

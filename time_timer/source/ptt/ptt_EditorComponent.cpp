@@ -1,8 +1,12 @@
 #include "ptt_EditorComponent.h"
 
+#include <utility>
+
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2utility_InputUtil.h"
+
+#include "ptt_Core.h"
 
 namespace ptt
 {
@@ -30,5 +34,10 @@ namespace ptt
 		}
 
 		r2base::iComponent::Update( delta_time );
+	}
+
+	void EditorComponent::SetCore( CoreUp&& core )
+	{
+		mCore = std::move( core );
 	}
 }

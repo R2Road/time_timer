@@ -260,6 +260,9 @@
     <ClCompile Include="source\ptt\ptt_EntryScene.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_Core.cpp">
+      <Filter>project_time_timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -550,6 +553,9 @@
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_iComponent.h">
       <Filter>external\r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_Core.h">
+      <Filter>project_time_timer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
