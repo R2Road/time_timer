@@ -3,8 +3,8 @@
 #include "r2bix/r2component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 
-#include "ptt/ptt_TextureFrameAnimationTable.h"
-#include "ptt/ptt_TextureTable.h"
+#include "ptt_TextureFrameAnimationTable.h"
+#include "ptt_TextureTable.h"
 #include "ptt_NumberComponent.h"
 
 namespace ptt
