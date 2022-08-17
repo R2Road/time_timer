@@ -2,6 +2,8 @@
 
 #include <utility>
 
+#include "r2/r2_Assert.h"
+
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2utility_InputUtil.h"
@@ -38,6 +40,9 @@ namespace ptt
 
 	void EditorComponent::SetCore( CoreUp&& core )
 	{
+		R2ASSERT( nullptr == mCore, "" );
+		R2ASSERT( nullptr != core, "" );
+
 		mCore = std::move( core );
 	}
 }
