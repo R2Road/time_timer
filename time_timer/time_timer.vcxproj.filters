@@ -22,6 +22,18 @@
     <Filter Include="external\r2cm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_time_timer\minute_node">
+      <UniqueIdentifier>{2b638d19-b0d3-4368-8279-09f0caf8f087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project_time_timer\number_node">
+      <UniqueIdentifier>{155c22a1-8008-4b34-b266-780dbacc5f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project_time_timer\scene">
+      <UniqueIdentifier>{d580499f-06bb-4e5b-acf5-0b3791089e3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project_time_timer\table">
+      <UniqueIdentifier>{7aacd882-f426-41a8-af14-b0f667a328e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\DevelopmentMenu.cpp" />
@@ -212,35 +224,14 @@
     <ClCompile Include="external\r2\r2_Timer_Float.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="source\ptt\ptt_TextureTable.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_NumberNode.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_numbernode.cpp">
       <Filter>test\item</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_TimerScene.cpp">
-      <Filter>project_time_timer</Filter>
     </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_texturetable.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
-    <ClCompile Include="source\ptt\ptt_TextureFrameAnimationTable.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_NumberComponent.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_MinuteNode.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_minutenode.cpp">
       <Filter>test\item</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp">
-      <Filter>project_time_timer</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_Timer.cpp">
       <Filter>project_time_timer</Filter>
@@ -251,20 +242,41 @@
     <ClCompile Include="source\test\item\test_ptt_demo.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
-    <ClCompile Include="source\ptt\ptt_EditorScene.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_EditorComponent.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ptt\ptt_EntryScene.cpp">
-      <Filter>project_time_timer</Filter>
-    </ClCompile>
     <ClCompile Include="source\ptt\ptt_Core.cpp">
       <Filter>project_time_timer</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp">
+      <Filter>project_time_timer\minute_node</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_MinuteNode.cpp">
+      <Filter>project_time_timer\minute_node</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_NumberComponent.cpp">
+      <Filter>project_time_timer\number_node</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_NumberNode.cpp">
+      <Filter>project_time_timer\number_node</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_TimerScene.cpp">
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
     <ClCompile Include="source\ptt\ptt_TimerSceneComponent.cpp">
-      <Filter>project_time_timer</Filter>
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_EditorComponent.cpp">
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_EditorScene.cpp">
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_EntryScene.cpp">
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_TextureFrameAnimationTable.cpp">
+      <Filter>project_time_timer\table</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_TextureTable.cpp">
+      <Filter>project_time_timer\table</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -506,35 +518,14 @@
     <ClInclude Include="source\ptt\ptt_Config.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
-    <ClInclude Include="source\ptt\ptt_TextureTable.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_NumberNode.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_numbernode.h">
       <Filter>test\item</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_TimerScene.h">
-      <Filter>project_time_timer</Filter>
     </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_texturetable.h">
       <Filter>test\item</Filter>
     </ClInclude>
-    <ClInclude Include="source\ptt\ptt_TextureFrameAnimationTable.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_NumberComponent.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_MinuteNode.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_minutenode.h">
       <Filter>test\item</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_MinuteComponent.h">
-      <Filter>project_time_timer</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_Timer.h">
       <Filter>project_time_timer</Filter>
@@ -545,23 +536,44 @@
     <ClInclude Include="source\test\item\test_ptt_demo.h">
       <Filter>test\item</Filter>
     </ClInclude>
-    <ClInclude Include="source\ptt\ptt_EditorScene.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_EditorComponent.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ptt\ptt_EntryScene.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2bix\r2base_iComponent.h">
       <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_Core.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
+    <ClInclude Include="source\ptt\ptt_MinuteNode.h">
+      <Filter>project_time_timer\minute_node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_MinuteComponent.h">
+      <Filter>project_time_timer\minute_node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_NumberComponent.h">
+      <Filter>project_time_timer\number_node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_NumberNode.h">
+      <Filter>project_time_timer\number_node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_TimerScene.h">
+      <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
     <ClInclude Include="source\ptt\ptt_TimerSceneComponent.h">
-      <Filter>project_time_timer</Filter>
+      <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_EditorComponent.h">
+      <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_EditorScene.h">
+      <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_EntryScene.h">
+      <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_TextureFrameAnimationTable.h">
+      <Filter>project_time_timer\table</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_TextureTable.h">
+      <Filter>project_time_timer\table</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
