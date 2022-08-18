@@ -7,6 +7,8 @@ namespace ptt
 {
 	using CoreUp = std::unique_ptr<class Core>;
 
+	class MinuteComponent;
+
 	class EditorComponent : public r2base::Component<EditorComponent>
 	{
 	public:
@@ -21,9 +23,11 @@ namespace ptt
 		//
 		//
 		void SetCore( CoreUp&& core );
+		void SetMinuteComponent( MinuteComponent* const minute_component );
 
 	private:
 		r2input::KeyboardInputListener mKeyboardInputListener;
 		CoreUp mCore;
+		MinuteComponent* mMinuteComponent;
 	};
 }

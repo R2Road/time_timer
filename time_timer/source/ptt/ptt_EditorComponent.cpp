@@ -21,6 +21,8 @@ namespace ptt
 			, 0x53		// s - down
 			, 0x57		// w - up
 		} )
+		, mCore()
+		, mMinuteComponent( nullptr )
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
@@ -47,5 +49,11 @@ namespace ptt
 		R2ASSERT( nullptr != core, "" );
 
 		mCore = std::move( core );
+	}
+	void EditorComponent::SetMinuteComponent( MinuteComponent* const minute_component )
+	{
+		R2ASSERT( nullptr != minute_component, "" );
+
+		mMinuteComponent = minute_component;
 	}
 }

@@ -10,6 +10,7 @@
 
 #include "ptt_Config.h"
 #include "ptt_EditorComponent.h"
+#include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
 #include "ptt_TextureTable.h"
 
@@ -41,6 +42,8 @@ namespace ptt
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
+
+				editor_component->SetMinuteComponent( node->GetComponent<ptt::MinuteComponent>() );
 			}
 
 			//
