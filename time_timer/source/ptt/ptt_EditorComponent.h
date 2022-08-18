@@ -17,6 +17,12 @@ namespace ptt
 	class EditorComponent : public r2base::Component<EditorComponent>
 	{
 	public:
+		enum class eNumberIndicator
+		{
+			M10,
+			M1,
+		};
+
 		EditorComponent( r2base::Node& owner_node );
 
 		//
@@ -30,6 +36,11 @@ namespace ptt
 		void SetCore( CoreUp&& core );
 		void SetMinuteComponent( MinuteComponent* const minute_component );
 		void SetIndicatorComponent( r2component::TransformComponent* const indicator_component );
+
+		//
+		//
+		//
+		void SelectNumber( const eNumberIndicator number_indicator );
 
 	private:
 		r2input::KeyboardInputListener mKeyboardInputListener;

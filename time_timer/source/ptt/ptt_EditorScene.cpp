@@ -4,6 +4,7 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
+#include "r2bix/r2component_TransformComponent.h"
 #include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
 #include "r2bix/r2node_LabelSNode.h"
@@ -79,6 +80,11 @@ namespace ptt
 
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() * 0.5f, director.GetScreenBufferSize().GetHeight() * 0.5f );
 			}
+
+			//
+			// Setup
+			//
+			editor_component->SelectNumber( ptt::EditorComponent::eNumberIndicator::M1 );
 		}
 
 		return ret;

@@ -9,6 +9,7 @@
 #include "r2bix/r2utility_InputUtil.h"
 
 #include "ptt_Core.h"
+#include "ptt_MinuteComponent.h"
 
 namespace ptt
 {
@@ -62,5 +63,21 @@ namespace ptt
 		R2ASSERT( nullptr != indicator_component, "" );
 
 		mIndicatorComponent = indicator_component;
+	}
+
+	void EditorComponent::SelectNumber( const eNumberIndicator number_indicator )
+	{
+		if( eNumberIndicator::M1 == number_indicator )
+		{
+			mIndicatorComponent->SetPosition(
+				mMinuteComponent->GetOwnerNode().mTransformComponent->GetPosition() + r2::PointInt( 5, 0 )
+			);
+		}
+		else if( eNumberIndicator::M1 == number_indicator )
+		{
+			mIndicatorComponent->SetPosition(
+				mMinuteComponent->GetOwnerNode().mTransformComponent->GetPosition() - r2::PointInt( 5, 0 )
+			);
+		}
 	}
 }
