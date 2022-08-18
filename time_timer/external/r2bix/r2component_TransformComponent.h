@@ -12,11 +12,19 @@ namespace r2component
 		TransformComponent( r2base::Node& owner_node );
 
 		//
-		//
+		// Getter
 		//
 		r2::PointInt GetPosition() const
 		{
 			return mPosition;
+		}
+		int32_t GetPositionX() const
+		{
+			return mPosition.GetX();
+		}
+		int32_t GetPositionY() const
+		{
+			return mPosition.GetY();
 		}
 		int32_t GetZ() const
 		{
@@ -24,7 +32,7 @@ namespace r2component
 		}
 
 		//
-		//
+		// Setter
 		//
 		void SetPosition( const int32_t new_x, const int32_t new_y )
 		{
