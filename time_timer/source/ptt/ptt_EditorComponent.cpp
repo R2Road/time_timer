@@ -83,6 +83,7 @@ namespace ptt
 		{
 			r2utility::ClearCInputBuffer();
 			GetOwnerNode().GetDirector().RequestAbort();
+			return;
 		}
 
 		r2base::iComponent::Update( delta_time );
