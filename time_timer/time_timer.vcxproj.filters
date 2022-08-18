@@ -263,9 +263,6 @@
     <ClCompile Include="source\ptt\ptt_TimerSceneComponent.cpp">
       <Filter>project_time_timer\scene</Filter>
     </ClCompile>
-    <ClCompile Include="source\ptt\ptt_EditorComponent.cpp">
-      <Filter>project_time_timer\scene</Filter>
-    </ClCompile>
     <ClCompile Include="source\ptt\ptt_EditorScene.cpp">
       <Filter>project_time_timer\scene</Filter>
     </ClCompile>
@@ -277,6 +274,9 @@
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_TextureTable.cpp">
       <Filter>project_time_timer\table</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_EditorSceneComponent.cpp">
+      <Filter>project_time_timer\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -560,9 +560,6 @@
     <ClInclude Include="source\ptt\ptt_TimerSceneComponent.h">
       <Filter>project_time_timer\scene</Filter>
     </ClInclude>
-    <ClInclude Include="source\ptt\ptt_EditorComponent.h">
-      <Filter>project_time_timer\scene</Filter>
-    </ClInclude>
     <ClInclude Include="source\ptt\ptt_EditorScene.h">
       <Filter>project_time_timer\scene</Filter>
     </ClInclude>
@@ -574,6 +571,9 @@
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TextureTable.h">
       <Filter>project_time_timer\table</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_EditorSceneComponent.h">
+      <Filter>project_time_timer\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

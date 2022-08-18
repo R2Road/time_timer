@@ -1,4 +1,4 @@
-#include "ptt_EditorComponent.h"
+#include "ptt_EditorSceneComponent.h"
 
 #include <utility>
 

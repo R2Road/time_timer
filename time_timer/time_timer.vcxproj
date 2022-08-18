@@ -82,7 +82,7 @@
     <ClCompile Include="source\DevelopmentMenu.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ptt\ptt_Core.cpp" />
-    <ClCompile Include="source\ptt\ptt_EditorComponent.cpp" />
+    <ClCompile Include="source\ptt\ptt_EditorSceneComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_EditorScene.cpp" />
     <ClCompile Include="source\ptt\ptt_EntryScene.cpp" />
     <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp" />
@@ -182,7 +182,7 @@
     <ClInclude Include="source\DevelopmentMenu.h" />
     <ClInclude Include="source\ptt\ptt_Config.h" />
     <ClInclude Include="source\ptt\ptt_Core.h" />
-    <ClInclude Include="source\ptt\ptt_EditorComponent.h" />
+    <ClInclude Include="source\ptt\ptt_EditorSceneComponent.h" />
     <ClInclude Include="source\ptt\ptt_EditorScene.h" />
     <ClInclude Include="source\ptt\ptt_EntryScene.h" />
     <ClInclude Include="source\ptt\ptt_MinuteComponent.h" />
