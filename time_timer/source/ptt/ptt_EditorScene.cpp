@@ -10,6 +10,7 @@
 
 #include "ptt_Config.h"
 #include "ptt_EditorComponent.h"
+#include "ptt_MinuteNode.h"
 #include "ptt_TextureTable.h"
 
 namespace ptt
@@ -32,11 +33,10 @@ namespace ptt
 
 
 			//
-			// Title
+			// Minute
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "editor scene" );
+				auto node = ret->AddChild<ptt::MinuteNode>();
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
