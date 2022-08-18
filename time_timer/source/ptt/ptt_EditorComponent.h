@@ -47,5 +47,7 @@ namespace ptt
 		CoreUp mCore;
 		MinuteComponent* mMinuteComponent;
 		r2component::TransformComponent* mIndicatorComponent;
+
+		eNumberIndicator mCurrentNumberIndicator;
 	};
 }

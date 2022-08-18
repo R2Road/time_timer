@@ -25,6 +25,7 @@ namespace ptt
 		, mCore()
 		, mMinuteComponent( nullptr )
 		, mIndicatorComponent( nullptr )
+		, mCurrentNumberIndicator( eNumberIndicator::M1 )
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
@@ -79,13 +80,15 @@ namespace ptt
 
 	void EditorComponent::SelectNumber( const eNumberIndicator number_indicator )
 	{
-		if( eNumberIndicator::M1 == number_indicator )
+		mCurrentNumberIndicator = number_indicator;
+
+		if( eNumberIndicator::M1 == mCurrentNumberIndicator )
 		{
 			mIndicatorComponent->SetPosition(
 				mMinuteComponent->GetOwnerNode().mTransformComponent->GetPosition() + r2::PointInt( 5, 0 )
 			);
 		}
-		else if( eNumberIndicator::M10 == number_indicator )
+		else if( eNumberIndicator::M10 == mCurrentNumberIndicator )
 		{
 			mIndicatorComponent->SetPosition(
 				mMinuteComponent->GetOwnerNode().mTransformComponent->GetPosition() - r2::PointInt( 5, 0 )
