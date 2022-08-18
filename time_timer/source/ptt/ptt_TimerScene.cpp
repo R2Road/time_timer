@@ -9,7 +9,6 @@
 #include "r2bix/r2node_PivotNode.h"
 
 #include "ptt_Config.h"
-#include "ptt_TextureTable.h"
 #include "ptt_TimerSceneComponent.h"
 
 namespace ptt
@@ -19,11 +18,6 @@ namespace ptt
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )
 		{
-			//
-			// Table Load
-			//
-			ptt::TextureTable::GetInstance().Load();
-
 			//
 			// Component
 			//
