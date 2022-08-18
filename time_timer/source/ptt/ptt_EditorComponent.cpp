@@ -15,12 +15,12 @@ namespace ptt
 {
 	EditorComponent::EditorComponent( r2base::Node& owner_node ) : r2base::Component<EditorComponent>( owner_node )
 		, mKeyboardInputListener( {
-			  0x1B		// esc
-			, 0x20		// space
-			, 0x41		// a - left
-			, 0x44		// d - right
-			, 0x53		// s - down
-			, 0x57		// w - up
+			  0x1B		// 0 : esc
+			, 0x20		// 1 : space
+			, 0x41		// 2 : a - left
+			, 0x44		// 3 : d - right
+			, 0x53		// 4 : s - down
+			, 0x57		// 5 : w - up
 		} )
 		, mCore()
 		, mMinuteComponent( nullptr )
