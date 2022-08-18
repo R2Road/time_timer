@@ -47,6 +47,36 @@ namespace ptt
 		}
 
 		//
+		// Number Change
+		//
+		if( mKeyboardInputListener.IsPushed( 5 ) )
+		{
+			if( eNumberIndicator::M10 == mCurrentNumberIndicator )
+			{
+				mCore->IncreaseMinute10();
+			}
+			else //if( eNumberIndicator::M1 == mCurrentNumberIndicator )
+			{
+				mCore->IncreaseMinute1();
+			}
+
+			mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+		}
+		if( mKeyboardInputListener.IsPushed( 4 ) )
+		{
+			if( eNumberIndicator::M10 == mCurrentNumberIndicator )
+			{
+				mCore->DecreaseMinute10();
+			}
+			else //if( eNumberIndicator::M1 == mCurrentNumberIndicator )
+			{
+				mCore->DecreaseMinute1();
+			}
+
+			mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+		}
+
+		//
 		// End
 		//
 		if( mKeyboardInputListener.IsRelease( 0 ) )

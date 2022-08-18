@@ -19,4 +19,21 @@ namespace ptt
 
 		return ret;
 	}
+
+	void Core::IncreaseMinute10()
+	{
+		mMinute_10 = std::min( 9, mMinute_10 + 1 );
+	}
+	void Core::DecreaseMinute10()
+	{
+		mMinute_10 = std::max( 0, mMinute_10 - 1 );
+	}
+	void Core::IncreaseMinute1()
+	{
+		mMinute_1 = std::min( 9, mMinute_1 + 1 );
+	}
+	void Core::DecreaseMinute1()
+	{
+		mMinute_1 = std::max( 0, mMinute_1 - 1 );
+	}
 }

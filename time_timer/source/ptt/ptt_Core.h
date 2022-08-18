@@ -16,6 +16,14 @@ namespace ptt
 		//
 		//
 		//
+		void IncreaseMinute10();
+		void DecreaseMinute10();
+		void IncreaseMinute1();
+		void DecreaseMinute1();
+
+		//
+		//
+		//
 		int GetMinute10() const
 		{
 			return mMinute_10;
