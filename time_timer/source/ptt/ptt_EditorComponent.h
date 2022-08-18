@@ -40,7 +40,11 @@ namespace ptt
 		//
 		//
 		//
+		void Setup();
+
+	private:
 		void SelectNumber( const eNumberIndicator number_indicator );
+
 
 	private:
 		r2input::KeyboardInputListener mKeyboardInputListener;

@@ -84,7 +84,7 @@ namespace ptt
 			//
 			// Setup
 			//
-			editor_component->SelectNumber( ptt::EditorComponent::eNumberIndicator::M1 );
+			editor_component->Setup();
 		}
 
 		return ret;

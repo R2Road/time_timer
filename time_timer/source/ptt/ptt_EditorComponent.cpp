@@ -78,6 +78,11 @@ namespace ptt
 		mIndicatorComponent = indicator_component;
 	}
 
+	void EditorComponent::Setup()
+	{
+		SelectNumber( ptt::EditorComponent::eNumberIndicator::M1 );
+	}
+
 	void EditorComponent::SelectNumber( const eNumberIndicator number_indicator )
 	{
 		mCurrentNumberIndicator = number_indicator;
