@@ -42,10 +42,13 @@ namespace ptt
 				auto tfrc = node->AddComponent<r2component::TextureFrameRenderComponent>();
 				tfrc->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "indicator_0" ) );
 
-				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				auto transform_component = node->GetComponent<r2component::TransformComponent>();
+				transform_component->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
+
+				editor_component->SetIndicatorComponent( transform_component );
 			}
 
 			//

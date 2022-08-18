@@ -23,6 +23,7 @@ namespace ptt
 		} )
 		, mCore()
 		, mMinuteComponent( nullptr )
+		, mIndicatorComponent( nullptr )
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
@@ -55,5 +56,11 @@ namespace ptt
 		R2ASSERT( nullptr != minute_component, "" );
 
 		mMinuteComponent = minute_component;
+	}
+	void EditorComponent::SetIndicatorComponent( r2component::TransformComponent* const indicator_component )
+	{
+		R2ASSERT( nullptr != indicator_component, "" );
+
+		mIndicatorComponent = indicator_component;
 	}
 }
