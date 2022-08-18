@@ -80,6 +80,7 @@ namespace ptt
 
 	void EditorComponent::Setup()
 	{
+		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
 		SelectNumber( ptt::EditorComponent::eNumberIndicator::M1 );
 	}
 
