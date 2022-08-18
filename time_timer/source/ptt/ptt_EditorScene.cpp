@@ -52,7 +52,7 @@ namespace ptt
 			// Minute
 			//
 			{
-				auto node = ret->AddChild<ptt::MinuteNode>( 1 );
+				auto node = ret->AddChild<ptt::MinuteNode>();
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
