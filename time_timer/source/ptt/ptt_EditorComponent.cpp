@@ -82,7 +82,7 @@ namespace ptt
 		//
 		if( mKeyboardInputListener.IsRelease( 1 ) )
 		{
-			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector() );
+			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 			return;
 		}
