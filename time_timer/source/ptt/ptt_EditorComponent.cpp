@@ -10,6 +10,7 @@
 
 #include "ptt_Core.h"
 #include "ptt_MinuteComponent.h"
+#include "ptt_TimerScene.h"
 
 namespace ptt
 {
@@ -74,6 +75,16 @@ namespace ptt
 			}
 
 			mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+		}
+
+		//
+		// Start Timer
+		//
+		if( mKeyboardInputListener.IsRelease( 1 ) )
+		{
+			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector() );
+			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+			return;
 		}
 
 		//
