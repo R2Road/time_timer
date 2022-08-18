@@ -10,10 +10,11 @@
 
 #include "ptt_Config.h"
 #include "ptt_TextureTable.h"
+#include "ptt_TimerSceneComponent.h"
 
 namespace ptt
 {
-	r2node::SceneNodeUp TimerScene::Create( r2base::Director& director, CoreUp&& /*core*/ )
+	r2node::SceneNodeUp TimerScene::Create( r2base::Director& director, CoreUp&& core )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )
@@ -22,6 +23,12 @@ namespace ptt
 			// Table Load
 			//
 			ptt::TextureTable::GetInstance().Load();
+
+			//
+			// Component
+			//
+			auto editor_component = ret->AddComponent<ptt::TimerSceneComponent>();
+			editor_component->SetCore( std::move( core ) );
 
 
 			//
