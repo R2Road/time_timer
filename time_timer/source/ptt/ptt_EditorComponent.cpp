@@ -32,7 +32,19 @@ namespace ptt
 	void EditorComponent::Update( const float delta_time )
 	{
 		mKeyboardInputListener.Update();
-		
+
+		//
+		// Number Select
+		//
+		if( mKeyboardInputListener.IsPushed( 2 ) )
+		{
+			SelectNumber( eNumberIndicator::M10 );
+		}
+		if( mKeyboardInputListener.IsPushed( 3 ) )
+		{
+			SelectNumber( eNumberIndicator::M1 );
+		}
+
 		//
 		// End
 		//
@@ -73,7 +85,7 @@ namespace ptt
 				mMinuteComponent->GetOwnerNode().mTransformComponent->GetPosition() + r2::PointInt( 5, 0 )
 			);
 		}
-		else if( eNumberIndicator::M1 == number_indicator )
+		else if( eNumberIndicator::M10 == number_indicator )
 		{
 			mIndicatorComponent->SetPosition(
 				mMinuteComponent->GetOwnerNode().mTransformComponent->GetPosition() - r2::PointInt( 5, 0 )
