@@ -23,8 +23,8 @@ namespace ptt
 			//
 			// Component
 			//
-			auto editor_component = ret->AddComponent<ptt::EditorComponent>();
-			editor_component->SetCore( std::move( core ) );
+			auto editor_scene_component = ret->AddComponent<ptt::EditorSceneComponent>();
+			editor_scene_component->SetCore( std::move( core ) );
 
 			//
 			// Indicator
@@ -41,7 +41,7 @@ namespace ptt
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
 
-				editor_component->SetIndicatorComponent( transform_component );
+				editor_scene_component->SetIndicatorComponent( transform_component );
 			}
 
 			//
@@ -54,7 +54,7 @@ namespace ptt
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
 
-				editor_component->SetMinuteComponent( node->GetComponent<ptt::MinuteComponent>() );
+				editor_scene_component->SetMinuteComponent( node->GetComponent<ptt::MinuteComponent>() );
 			}
 
 			//
@@ -76,7 +76,7 @@ namespace ptt
 			//
 			// Setup
 			//
-			editor_component->Setup();
+			editor_scene_component->Setup();
 		}
 
 		return ret;

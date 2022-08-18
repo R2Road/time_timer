@@ -14,7 +14,7 @@ namespace ptt
 
 	class MinuteComponent;
 
-	class EditorComponent : public r2base::Component<EditorComponent>
+	class EditorSceneComponent : public r2base::Component<EditorSceneComponent>
 	{
 	public:
 		enum class eNumberIndicator
@@ -23,7 +23,7 @@ namespace ptt
 			M1,
 		};
 
-		EditorComponent( r2base::Node& owner_node );
+		EditorSceneComponent( r2base::Node& owner_node );
 
 		//
 		//

@@ -14,7 +14,7 @@
 
 namespace ptt
 {
-	EditorComponent::EditorComponent( r2base::Node& owner_node ) : r2base::Component<EditorComponent>( owner_node )
+	EditorSceneComponent::EditorSceneComponent( r2base::Node& owner_node ) : r2base::Component<EditorSceneComponent>( owner_node )
 		, mKeyboardInputListener( {
 			  0x1B		// 0 : esc
 			, 0x20		// 1 : space
@@ -31,7 +31,7 @@ namespace ptt
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
 
-	void EditorComponent::Update( const float delta_time )
+	void EditorSceneComponent::Update( const float delta_time )
 	{
 		mKeyboardInputListener.Update();
 
@@ -100,33 +100,33 @@ namespace ptt
 		r2base::iComponent::Update( delta_time );
 	}
 
-	void EditorComponent::SetCore( CoreUp&& core )
+	void EditorSceneComponent::SetCore( CoreUp&& core )
 	{
 		R2ASSERT( nullptr == mCore, "" );
 		R2ASSERT( nullptr != core, "" );
 
 		mCore = std::move( core );
 	}
-	void EditorComponent::SetMinuteComponent( MinuteComponent* const minute_component )
+	void EditorSceneComponent::SetMinuteComponent( MinuteComponent* const minute_component )
 	{
 		R2ASSERT( nullptr != minute_component, "" );
 
 		mMinuteComponent = minute_component;
 	}
-	void EditorComponent::SetIndicatorComponent( r2component::TransformComponent* const indicator_component )
+	void EditorSceneComponent::SetIndicatorComponent( r2component::TransformComponent* const indicator_component )
 	{
 		R2ASSERT( nullptr != indicator_component, "" );
 
 		mIndicatorComponent = indicator_component;
 	}
 
-	void EditorComponent::Setup()
+	void EditorSceneComponent::Setup()
 	{
 		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
-		SelectNumber( ptt::EditorComponent::eNumberIndicator::M1 );
+		SelectNumber( ptt::EditorSceneComponent::eNumberIndicator::M1 );
 	}
 
-	void EditorComponent::SelectNumber( const eNumberIndicator number_indicator )
+	void EditorSceneComponent::SelectNumber( const eNumberIndicator number_indicator )
 	{
 		mCurrentNumberIndicator = number_indicator;
 
