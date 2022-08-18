@@ -100,6 +100,10 @@ namespace r2base
 		{
 			return static_cast<int>( mChildContainer.size() );
 		}
+		const ChildContainerT& GetChildContainer() const
+		{
+			return mChildContainer;
+		}
 		template<typename NodeT>
 		Node* AddChild()
 		{
@@ -121,10 +125,31 @@ namespace r2base
 			auto cur = mChildContainer.begin();
 			for( auto end = mChildContainer.end(); end != cur; ++cur )
 			{
-				if( z_order <= ( *cur )->mTransformComponent->GetZ() )
+				if( z_order > ( *cur )->mTransformComponent->GetZ() )
+				{
+					continue;
+				}
+
+				if( z_order < ( *cur )->mTransformComponent->GetZ() )
 				{
 					break;
 				}
+
+				//if( z_order == ( *cur )->mTransformComponent->GetZ() )
+				{
+					auto temp = cur;
+					++temp;
+					for( auto end = mChildContainer.end(); end != temp; ++temp )
+					{
+						if( z_order != ( *cur )->mTransformComponent->GetZ() )
+						{
+							break;
+						}
+					}
+					cur = temp;
+				}
+
+				break;
 			}
 
 			//
