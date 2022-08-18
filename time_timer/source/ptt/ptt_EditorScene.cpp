@@ -24,11 +24,6 @@ namespace ptt
 		if( ret )
 		{
 			//
-			// Table Load
-			//
-			ptt::TextureTable::GetInstance().Load();
-
-			//
 			// Component
 			//
 			auto editor_component = ret->AddComponent<ptt::EditorComponent>();

@@ -7,6 +7,7 @@
 #include "ptt_Core.h"
 #include "ptt_EditorScene.h"
 #include "ptt_TextureTable.h"
+#include "ptt_TextureFrameAnimationTable.h"
 
 namespace ptt
 {
@@ -26,6 +27,7 @@ namespace ptt
 			// Table Load
 			//
 			ptt::TextureTable::GetInstance().Load();
+			ptt::TextureFrameAnimationTable::GetInstance().Load();
 
 			//
 			// Core
