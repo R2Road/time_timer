@@ -29,6 +29,9 @@ namespace ptt
 	{
 		mKeyboardInputListener.Update();
 		
+		//
+		// End
+		//
 		if( mKeyboardInputListener.IsRelease( 0 ) )
 		{
 			r2utility::ClearCInputBuffer();
