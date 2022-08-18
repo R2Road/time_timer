@@ -139,7 +139,7 @@ namespace r2base
 				{
 					auto temp = cur;
 					++temp;
-					for( auto end = mChildContainer.end(); end != temp; ++temp )
+					for( ; end != temp; ++temp )
 					{
 						if( z_order != ( *cur )->mTransformComponent->GetZ() )
 						{
