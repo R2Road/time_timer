@@ -1,13 +1,10 @@
 #include "ptt_EditorScene.h"
 
 #include <numeric>
+#include <utility>
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
-#include "r2bix/r2component_TransformComponent.h"
-#include "r2bix/r2component_LabelSComponent.h"
-#include "r2bix/r2node_CustomTextureNode.h"
-#include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
 #include "ptt_Config.h"
