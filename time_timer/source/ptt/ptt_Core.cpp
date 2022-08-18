@@ -1,6 +1,7 @@
 #include "ptt_Core.h"
 
 #include <algorithm>
+#include <new>
 
 namespace ptt
 {
