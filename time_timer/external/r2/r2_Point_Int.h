@@ -1,10 +1,12 @@
 #pragma once
 
+#include <stdint.h>
+
 #include "r2_Point.h"
 
 namespace r2
 {
-	using PointInt = r2::Point<int>;
+	using PointInt = r2::Point<int32_t>;
 
 	struct Hash4PointInt
 	{
