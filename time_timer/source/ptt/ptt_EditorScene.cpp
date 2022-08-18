@@ -3,6 +3,7 @@
 #include <numeric>
 
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
 #include "r2bix/r2node_LabelSNode.h"
@@ -32,12 +33,26 @@ namespace ptt
 			auto editor_component = ret->AddComponent<ptt::EditorComponent>();
 			editor_component->SetCore( std::move( core ) );
 
+			//
+			// Indicator
+			//
+			{
+				auto node = ret->AddChild<r2base::Node>();
+
+				auto tfrc = node->AddComponent<r2component::TextureFrameRenderComponent>();
+				tfrc->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "indicator_0" ) );
+
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					( director.GetScreenBufferSize().GetWidth() * 0.5f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
+				);
+			}
 
 			//
 			// Minute
 			//
 			{
-				auto node = ret->AddChild<ptt::MinuteNode>();
+				auto node = ret->AddChild<ptt::MinuteNode>( 1 );
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
