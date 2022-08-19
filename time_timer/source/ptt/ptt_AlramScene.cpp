@@ -1,10 +1,12 @@
 #include "ptt_AlramScene.h"
 
 #include <numeric>
+#include <utility>
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2node_PivotNode.h"
 
+#include "ptt_AlramSceneComponent.h"
 #include "ptt_Config.h"
 
 namespace ptt
@@ -14,6 +16,11 @@ namespace ptt
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )
 		{
+			//
+			//
+			//
+			auto alram_scene_component = ret->AddComponent<ptt::AlramSceneComponent>();
+			alram_scene_component->SetCore( std::move( core ) );
 
 			//
 			// Debug

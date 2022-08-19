@@ -296,6 +296,9 @@
     <ClCompile Include="source\ptt\ptt_AlramScene.cpp">
       <Filter>project_time_timer\scene</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_AlramSceneComponent.cpp">
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -609,6 +612,9 @@
       <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_AlramScene.h">
+      <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_AlramSceneComponent.h">
       <Filter>project_time_timer\scene</Filter>
     </ClInclude>
   </ItemGroup>
