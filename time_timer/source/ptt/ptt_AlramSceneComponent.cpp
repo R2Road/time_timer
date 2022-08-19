@@ -1,6 +1,7 @@
 #include "ptt_AlramSceneComponent.h"
 
 #include <utility>
+#include <iostream>
 
 #include "r2/r2_Assert.h"
 
@@ -45,5 +46,7 @@ namespace ptt
 		R2ASSERT( nullptr != core, "" );
 
 		mCore = std::move( core );
+
+		std::cout << (char)7;
 	}
 }
