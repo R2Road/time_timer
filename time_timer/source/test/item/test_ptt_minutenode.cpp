@@ -80,8 +80,8 @@ namespace test_ptt_minutenode
 
 			std::cout << r2cm::linefeed;
 
-			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
-			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
+			PROCESS_SUB( ptt::TextureTable::GetInstance().Load() );
+			PROCESS_SUB( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
 			std::cout << r2cm::split;
 
