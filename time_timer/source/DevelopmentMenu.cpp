@@ -63,7 +63,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem(
-			'q'
+			32
 			, r2cm::eColor::FG_White
 			, []()->const char* { return "Time Timer"; }
 			, []()->r2cm::eItemLeaveAction
