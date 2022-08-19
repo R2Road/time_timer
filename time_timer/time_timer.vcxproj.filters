@@ -34,6 +34,9 @@
     <Filter Include="project_time_timer\table">
       <UniqueIdentifier>{7aacd882-f426-41a8-af14-b0f667a328e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_time_timer\second_node">
+      <UniqueIdentifier>{faf83c34-978e-423e-9b79-d27167b29af9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\DevelopmentMenu.cpp" />
@@ -277,6 +280,12 @@
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_EditorSceneComponent.cpp">
       <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\item\test_ptt_secondsnode.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_SecondsNode.cpp">
+      <Filter>project_time_timer\second_node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -574,6 +583,12 @@
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_EditorSceneComponent.h">
       <Filter>project_time_timer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_ptt_secondsnode.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_SecondsNode.h">
+      <Filter>project_time_timer\second_node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
