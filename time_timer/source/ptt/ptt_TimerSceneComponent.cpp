@@ -31,6 +31,26 @@ namespace ptt
 		mKeyboardInputListener.Update();
 
 		//
+		// Timer
+		//
+		const auto update_result = mTimer.Update();
+		const auto current_elapsed_minutes = mTimer.GetElapsedTime<std::chrono::minutes>();
+		
+		const int minute_1 = current_elapsed_minutes % 10;
+		const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
+		mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
+
+		//
+		// Time Over
+		//
+		if( !update_result )
+		{
+			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+			return;
+		}
+
+		//
 		// Move 2 Editor Scene
 		//
 		if( mKeyboardInputListener.IsRelease( 0 ) )
@@ -61,5 +81,6 @@ namespace ptt
 	{
 		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
 		mTimer.Set( ( mCore->GetMinute10() + mCore->GetMinute1() ) * 60 );
+		mTimer.Start();
 	}
 }
