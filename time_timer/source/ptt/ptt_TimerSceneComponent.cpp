@@ -43,12 +43,22 @@ namespace ptt
 			const auto update_result = mTimer.Update();
 			const auto current_elapsed_minutes = mTimer.GetElapsedTime<std::chrono::minutes>();
 
-			const int minute_1 = current_elapsed_minutes % 10;
-			const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
-			mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
+			//
+			// Minute View
+			//
+			{
+				const int minute_1 = current_elapsed_minutes % 10;
+				const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
+				mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
+			}
 
-			const auto seconds_0_to_9 = mTimer.GetElapsedTime<std::chrono::seconds>() % 10;
-			mSecondsComponent->Toggle( seconds_0_to_9 );
+			//
+			// Seconds View
+			//
+			{
+				const auto seconds_0_to_9 = mTimer.GetElapsedTime<std::chrono::seconds>() % 10;
+				mSecondsComponent->Toggle( seconds_0_to_9 );
+			}
 
 			//
 			// Time Over
