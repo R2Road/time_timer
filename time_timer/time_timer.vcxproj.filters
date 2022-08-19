@@ -34,7 +34,7 @@
     <Filter Include="project_time_timer\table">
       <UniqueIdentifier>{7aacd882-f426-41a8-af14-b0f667a328e7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_time_timer\second_node">
+    <Filter Include="project_time_timer\seconds_node">
       <UniqueIdentifier>{faf83c34-978e-423e-9b79-d27167b29af9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -285,10 +285,10 @@
       <Filter>test\item</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_SecondsNode.cpp">
-      <Filter>project_time_timer\second_node</Filter>
+      <Filter>project_time_timer\seconds_node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_SecondsComponent.cpp">
-      <Filter>project_time_timer\second_node</Filter>
+      <Filter>project_time_timer\seconds_node</Filter>
     </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_core.cpp">
       <Filter>test\item</Filter>
@@ -594,10 +594,10 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SecondsNode.h">
-      <Filter>project_time_timer\second_node</Filter>
+      <Filter>project_time_timer\seconds_node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SecondsComponent.h">
-      <Filter>project_time_timer\second_node</Filter>
+      <Filter>project_time_timer\seconds_node</Filter>
     </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_core.h">
       <Filter>test\item</Filter>
