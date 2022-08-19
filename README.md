@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://img.shields.io/badge/version-0.0.0-green" alt="version">
+  <img src="https://img.shields.io/badge/version-1.0.0-green" alt="version">
   <a href="https://discord.gg/VSpW9FUSxX"><img src="https://img.shields.io/badge/Discord-R2Road-orange" alt="discord"></a>
 </p>
 
@@ -31,4 +31,6 @@
 
 
 ## ( '_')y-~
-...
+<img src="https://github.com/R2Road/time_timer/blob/main/wiki/timetimer_v100_20220820_1.png"></img>
+<img src="https://github.com/R2Road/time_timer/blob/main/wiki/timetimer_v100_20220820_2.png"></img>
+<img src="https://github.com/R2Road/time_timer/blob/main/wiki/timetimer_v100_20220820_3.png"></img>
