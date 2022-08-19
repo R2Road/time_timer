@@ -48,7 +48,7 @@ namespace ptt
 					"number_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 6, 4 ) );
 			}
 
 			{
@@ -56,7 +56,7 @@ namespace ptt
 					"number_1"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 9, 0, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 10, 1, 6, 4 ) );
 			}
 
 			{
@@ -64,7 +64,7 @@ namespace ptt
 					"number_2"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 18, 0, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 19, 1, 6, 4 ) );
 			}
 
 			{
@@ -72,7 +72,7 @@ namespace ptt
 					"number_3"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 27, 0, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 28, 1, 6, 4 ) );
 			}
 
 			{
@@ -80,7 +80,7 @@ namespace ptt
 					"number_4"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 36, 0, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 37, 1, 6, 4 ) );
 			}
 
 			{
@@ -88,7 +88,7 @@ namespace ptt
 					"number_5"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 7, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 8, 6, 4 ) );
 			}
 
 			{
@@ -96,7 +96,7 @@ namespace ptt
 					"number_6"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 9, 7, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 10, 8, 6, 4 ) );
 			}
 
 			{
@@ -104,7 +104,7 @@ namespace ptt
 					"number_7"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 18, 7, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 19, 8, 6, 4 ) );
 			}
 
 			{
@@ -112,7 +112,7 @@ namespace ptt
 					"number_8"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 27, 7, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 28, 8, 6, 4 ) );
 			}
 
 			{
@@ -120,7 +120,7 @@ namespace ptt
 					"number_9"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 36, 7, 8, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 37, 8, 6, 4 ) );
 			}
 
 			{

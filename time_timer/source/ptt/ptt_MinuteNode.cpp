@@ -25,12 +25,12 @@ namespace ptt
 			{
 				auto number_node_1 = ret->AddChild<ptt::NumberNode>();
 				number_node_1->mTransformComponent->SetPositionX(
-					-static_cast<int32_t>( std::ceil( number_node_1->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame()->GetWidth() * 0.5f ) )
+					-static_cast<int32_t>( std::ceil( number_node_1->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame()->GetWidth() * 0.5f ) + 1 )
 				);
 
 				auto number_node_2 = ret->AddChild<ptt::NumberNode>();
 				number_node_2->mTransformComponent->SetPositionX(
-					static_cast<int32_t>( std::ceil( number_node_2->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame()->GetWidth() * 0.5f ) )
+					static_cast<int32_t>( std::ceil( number_node_2->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame()->GetWidth() * 0.5f ) + 1 )
 				);
 
 				auto minute_component = ret->AddComponent<ptt::MinuteComponent>();
