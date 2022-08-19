@@ -24,6 +24,10 @@ namespace ptt
 		//
 		//
 		//
+		int GetMinute() const
+		{
+			return ( mMinute_10 * 10 ) + mMinute_1;
+		}
 		int GetMinute10() const
 		{
 			return mMinute_10;
