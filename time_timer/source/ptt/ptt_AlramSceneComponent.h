@@ -1,6 +1,7 @@
 #pragma once
 
 #include "r2bix/r2base_Component.h"
+#include "r2bix/r2input_KeyboardInputListener.h"
 
 namespace ptt
 {
@@ -14,9 +15,15 @@ namespace ptt
 		//
 		//
 		//
+		void Update( const float delta_time ) override;
+
+		//
+		//
+		//
 		void SetCore( CoreUp&& core );
 
 	private:
+		r2input::KeyboardInputListener mKeyboardInputListener;
 		CoreUp mCore;
 	};
 }
