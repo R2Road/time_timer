@@ -12,7 +12,7 @@ namespace ptt
 	static struct
 	{
 
-		const char VersionNumber_1 = '0';
+		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '0';
 
