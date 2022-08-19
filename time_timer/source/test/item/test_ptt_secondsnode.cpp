@@ -145,24 +145,26 @@ namespace test_ptt_secondsnode
 
 			{
 				std::cout << r2cm::tab << "# Key" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[Any Key] Toggle" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[Q/A] Seconds Up/Down" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[Space] Apply Seconds" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
 
-			{
-				int minute_10 = 0;
-				int minute_1 = 0;
+			DECLARATION_MAIN( int seconds = 0 );
 
+			std::cout << r2cm::split;
+
+			{
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
 
-					r2cm::WindowUtility::MoveCursorPoint( pivot_point );
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
+					std::cout << "Current Seconds : " << seconds << r2cm::linefeed;
 					PROCESS_MAIN( render_target.FillCharacterAll( 'x' ) );
-					PROCESS_MAIN( seconds_component->Toggle() );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 					std::cout << r2cm::linefeed;
@@ -170,6 +172,18 @@ namespace test_ptt_secondsnode
 					Utility4Test::DrawTexture( render_target );
 
 					input = _getch();
+					switch( input )
+					{
+					case 'q':
+						seconds = ++seconds;
+						break;
+					case 'a':
+						seconds = --seconds;
+						break;
+
+					case 32:
+						seconds_component->Toggle( seconds );
+					}
 
 				} while( 27 != input );
 			}

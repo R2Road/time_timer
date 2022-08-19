@@ -9,6 +9,9 @@ namespace ptt
 	public:
 		SecondsComponent( r2base::Node& owner_node );
 
-		void Toggle();
+		void Toggle( const int new_seconds_0_to_9 );
+
+	private:
+		int mLastSeconds;
 	};
 }
