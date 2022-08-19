@@ -1,5 +1,6 @@
 #include "ptt_EditorSceneComponent.h"
 
+#include <iostream>
 #include <utility>
 
 #include "r2/r2_Assert.h"
@@ -82,9 +83,19 @@ namespace ptt
 		//
 		if( mKeyboardInputListener.IsRelease( 1 ) )
 		{
-			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
-			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
-			return;
+			if( 0 < mCore->GetMinute() )
+			{
+				auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+				mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+				return;
+			}
+			else
+			{
+				//
+				// beep
+				//
+				std::cout << '\a';
+			}
 		}
 
 		//
