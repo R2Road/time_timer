@@ -6,7 +6,6 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
-#include "r2bix/r2utility_InputUtil.h"
 
 #include "ptt_Core.h"
 #include "ptt_MinuteComponent.h"
