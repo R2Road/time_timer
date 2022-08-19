@@ -1,7 +1,5 @@
 #include "ptt_EntryScene.h"
 
-#include <numeric>
-
 #include "r2bix/r2base_Director.h"
 
 #include "ptt_Core.h"
