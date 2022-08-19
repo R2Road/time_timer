@@ -44,6 +44,12 @@ namespace test_ptt_minutenode
 
 			std::cout << r2cm::split;
 
+			{
+				EXPECT_TRUE( node->GetComponent<ptt::MinuteComponent>() );
+			}
+
+			std::cout << r2cm::split;
+
 			if( ptt::Config::GetNodeConfig().pivot )
 			{
 				EXPECT_EQ( 3, node->GetChildCount() );
