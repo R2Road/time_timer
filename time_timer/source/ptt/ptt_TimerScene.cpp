@@ -55,6 +55,11 @@ namespace ptt
 
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() * 0.5f, director.GetScreenBufferSize().GetHeight() * 0.5f );
 			}
+
+			//
+			// Setup
+			//
+			timer_scene_component->Setup();
 		}
 
 		return ret;

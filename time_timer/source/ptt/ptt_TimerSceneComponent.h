@@ -25,6 +25,10 @@ namespace ptt
 		void SetCore( CoreUp&& core );
 		void SetMinuteComponent( MinuteComponent* const minute_component );
 
+		//
+		//
+		//
+		void Setup();
 
 	private:
 		r2input::KeyboardInputListener mKeyboardInputListener;

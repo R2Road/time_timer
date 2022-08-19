@@ -55,4 +55,9 @@ namespace ptt
 
 		mMinuteComponent = minute_component;
 	}
+
+	void TimerSceneComponent::Setup()
+	{
+		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+	}
 }
