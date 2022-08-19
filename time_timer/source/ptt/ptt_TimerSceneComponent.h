@@ -10,6 +10,7 @@ namespace ptt
 	using CoreUp = std::unique_ptr<class Core>;
 
 	class MinuteComponent;
+	class SecondsComponent;
 
 	class TimerSceneComponent : public r2base::Component<TimerSceneComponent>
 	{
@@ -26,6 +27,7 @@ namespace ptt
 		//
 		void SetCore( CoreUp&& core );
 		void SetMinuteComponent( MinuteComponent* const minute_component );
+		void SetSecondsComponent( SecondsComponent* const seconds_component );
 
 		//
 		//
@@ -37,6 +39,7 @@ namespace ptt
 		CoreUp mCore;
 
 		MinuteComponent* mMinuteComponent;
+		SecondsComponent* mSecondsComponent;
 		ptt::Timer mTimer;
 	};
 }

@@ -11,6 +11,7 @@
 #include "ptt_Config.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
+#include "ptt_SecondsComponent.h"
 #include "ptt_SecondsNode.h"
 #include "ptt_TimerSceneComponent.h"
 
@@ -50,6 +51,8 @@ namespace ptt
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) + 5
 				);
+
+				timer_scene_component->SetSecondsComponent( node->GetComponent<ptt::SecondsComponent>() );
 			}
 
 			//

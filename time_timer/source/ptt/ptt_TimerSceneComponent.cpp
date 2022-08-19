@@ -11,6 +11,7 @@
 #include "ptt_Core.h"
 #include "ptt_EditorScene.h"
 #include "ptt_MinuteComponent.h"
+#include "ptt_SecondsComponent.h"
 
 namespace ptt
 {
@@ -22,6 +23,7 @@ namespace ptt
 		, mCore()
 
 		, mMinuteComponent( nullptr )
+		, mSecondsComponent( nullptr )
 		, mTimer()
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
@@ -103,6 +105,12 @@ namespace ptt
 		R2ASSERT( nullptr != minute_component, "" );
 
 		mMinuteComponent = minute_component;
+	}
+	void TimerSceneComponent::SetSecondsComponent( SecondsComponent* const seconds_component )
+	{
+		R2ASSERT( nullptr != seconds_component, "" );
+
+		mSecondsComponent = seconds_component;
 	}
 
 	void TimerSceneComponent::Setup()
