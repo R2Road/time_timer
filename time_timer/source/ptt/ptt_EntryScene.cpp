@@ -11,10 +11,10 @@
 
 namespace ptt
 {
-	class EntryComponent : public r2base::Component<EntryComponent>
+	class EntrySceneComponent : public r2base::Component<EntrySceneComponent>
 	{
 	public:
-		EntryComponent( r2base::Node& owner_node ) : r2base::Component<EntryComponent>( owner_node ) {}
+		EntrySceneComponent( r2base::Node& owner_node ) : r2base::Component<EntrySceneComponent>( owner_node ) {}
 
 		//
 		//
@@ -51,7 +51,7 @@ namespace ptt
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )
 		{
-			ret->AddComponent<EntryComponent>();
+			ret->AddComponent<EntrySceneComponent>();
 		}
 
 		return ret;
