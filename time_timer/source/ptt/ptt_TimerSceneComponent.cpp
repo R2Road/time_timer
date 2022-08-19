@@ -47,6 +47,9 @@ namespace ptt
 			const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
 			mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
 
+			const auto seconds_0_to_9 = mTimer.GetElapsedTime<std::chrono::seconds>() % 10;
+			mSecondsComponent->Toggle( seconds_0_to_9 );
+
 			//
 			// Time Over
 			//
