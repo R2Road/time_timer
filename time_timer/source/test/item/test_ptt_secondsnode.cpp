@@ -13,6 +13,7 @@
 #include "ptt/ptt_SecondsNode.h"
 #include "ptt/ptt_TextureFrameAnimationTable.h"
 #include "ptt/ptt_TextureTable.h"
+#include "test/Utility4Test.h"
 
 namespace test_ptt_secondsnode
 {
@@ -58,6 +59,50 @@ namespace test_ptt_secondsnode
 				EXPECT_EQ( 0, node->GetChildCount() );
 			}
 			
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT View::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "SecondsNode : View";
+		};
+	}
+	r2cm::iItem::DoFunctionT View::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 7 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), 'x' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2cm::linefeed;
+
+			PROCESS_SUB( ptt::TextureTable::GetInstance().Load() );
+			PROCESS_SUB( ptt::TextureFrameAnimationTable::GetInstance().Load() );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto node = ptt::SecondsNode::Create( dummy_director ) );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2cm::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
 			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
