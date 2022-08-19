@@ -17,7 +17,8 @@ namespace ptt
 	TimerSceneComponent::TimerSceneComponent( r2base::Node& owner_node ) : r2base::Component<TimerSceneComponent>( owner_node )
 		, mKeyboardInputListener( {
 			  0x1B		// 0 : esc
-			} )
+			, 0x20		// 1 : space
+		} )
 		, mCore()
 
 		, mMinuteComponent( nullptr )
@@ -30,24 +31,51 @@ namespace ptt
 	{
 		mKeyboardInputListener.Update();
 
-		//
-		// Timer
-		//
-		const auto update_result = mTimer.Update();
-		const auto current_elapsed_minutes = mTimer.GetElapsedTime<std::chrono::minutes>();
-		
-		const int minute_1 = current_elapsed_minutes % 10;
-		const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
-		mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
-
-		//
-		// Time Over
-		//
-		if( !update_result )
+		switch( mTimer.GetStatus() )
 		{
-			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
-			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
-			return;
+		case ptt::Timer::eStatus::Play:
+		{
+			//
+			// Timer
+			//
+			const auto update_result = mTimer.Update();
+			const auto current_elapsed_minutes = mTimer.GetElapsedTime<std::chrono::minutes>();
+
+			const int minute_1 = current_elapsed_minutes % 10;
+			const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
+			mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
+
+			//
+			// Time Over
+			//
+			if( !update_result )
+			{
+				auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+				mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+				return;
+			}
+
+			//
+			// Pause
+			//
+			if( mKeyboardInputListener.IsRelease( 1 ) )
+			{
+				mTimer.Pause();
+			}
+		}
+		break;
+
+		case ptt::Timer::eStatus::Pause:
+		{
+			//
+			// Resume
+			//
+			if( mKeyboardInputListener.IsRelease( 1 ) )
+			{
+				mTimer.Resume();
+			}
+		}
+		break;
 		}
 
 		//
