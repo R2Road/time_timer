@@ -293,6 +293,9 @@
     <ClCompile Include="source\test\item\test_ptt_core.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_AlramScene.cpp">
+      <Filter>project_time_timer\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -604,6 +607,9 @@
     </ClInclude>
     <ClInclude Include="external\r2bix\r2base_DirectorConfig.h">
       <Filter>external\r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_AlramScene.h">
+      <Filter>project_time_timer\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

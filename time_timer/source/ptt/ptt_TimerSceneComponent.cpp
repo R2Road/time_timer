@@ -9,9 +9,11 @@
 #include "r2bix/r2utility_InputUtil.h"
 
 #include "ptt_Core.h"
-#include "ptt_EditorScene.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_SecondsComponent.h"
+
+#include "ptt_AlramScene.h"
+#include "ptt_EditorScene.h"
 
 namespace ptt
 {
@@ -67,7 +69,7 @@ namespace ptt
 			//
 			if( !update_result )
 			{
-				auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+				auto next_scene = ptt::AlramScene::Create( mOwnerNode.GetDirector() );
 				mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 				return;
 			}
