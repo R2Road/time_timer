@@ -10,5 +10,7 @@ namespace ptt
 	{
 	public:
 		SecondsComponent( r2base::Node& owner_node );
+
+		void Toggle();
 	};
 }

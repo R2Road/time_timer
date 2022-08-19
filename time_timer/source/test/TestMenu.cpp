@@ -61,6 +61,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'z', test_ptt_secondsnode::Generate::GetInstance() );
 		ret->AddItem( 'x', test_ptt_secondsnode::View::GetInstance() );
+		ret->AddItem( 'c', test_ptt_secondsnode::Process::GetInstance() );
 
 
 
