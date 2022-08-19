@@ -50,9 +50,35 @@ namespace test_ptt_texturetable
 			std::cout << r2cm::split;
 
 			{
-				auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "indicator_0" );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
-				Utility4Test::DrawTextureFrame( *tf_num );
+				std::string temp = "indicator_up_ ";
+				for( short i = 0; 5 > i; ++i )
+				{
+					temp.pop_back();
+					temp += std::to_string( i );
+
+					auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
+
+					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf_num->GetWidth() + 2 ) ), pivot_point.y, *tf_num );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
+				std::string temp = "indicator_down_ ";
+				for( short i = 0; 5 > i; ++i )
+				{
+					temp.pop_back();
+					temp += std::to_string( i );
+
+					auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
+
+					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf_num->GetWidth() + 2 ) ), pivot_point.y, *tf_num );
+				}
 			}
 
 			std::cout << r2cm::split;
