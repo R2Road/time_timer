@@ -17,10 +17,11 @@ namespace ptt
 	TimerSceneComponent::TimerSceneComponent( r2base::Node& owner_node ) : r2base::Component<TimerSceneComponent>( owner_node )
 		, mKeyboardInputListener( {
 			  0x1B		// 0 : esc
-		} )
+			} )
 		, mCore()
 
 		, mMinuteComponent( nullptr )
+		, mTimer()
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
@@ -59,5 +60,6 @@ namespace ptt
 	void TimerSceneComponent::Setup()
 	{
 		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+		mTimer.Set( ( mCore->GetMinute10() + mCore->GetMinute1() ) * 60 );
 	}
 }
