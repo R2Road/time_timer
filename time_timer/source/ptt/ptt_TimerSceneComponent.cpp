@@ -69,7 +69,7 @@ namespace ptt
 			//
 			if( !update_result )
 			{
-				auto next_scene = ptt::AlramScene::Create( mOwnerNode.GetDirector() );
+				auto next_scene = ptt::AlramScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 				mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 				return;
 			}

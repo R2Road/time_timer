@@ -9,7 +9,7 @@
 
 namespace ptt
 {
-	r2node::SceneNodeUp AlramScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp AlramScene::Create( r2base::Director& director, CoreUp&& core )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )
