@@ -9,6 +9,8 @@
 #include "r2bix/r2node_PivotNode.h"
 
 #include "ptt_Config.h"
+#include "ptt_MinuteComponent.h"
+#include "ptt_MinuteNode.h"
 #include "ptt_TimerSceneComponent.h"
 
 namespace ptt
@@ -26,15 +28,16 @@ namespace ptt
 
 
 			//
-			// Title
+			// Minute
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "time timer" );
+				auto node = ret->AddChild<ptt::MinuteNode>();
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
+
+				timer_scene_component->SetMinuteComponent( node->GetComponent<ptt::MinuteComponent>() );
 			}
 
 			//
