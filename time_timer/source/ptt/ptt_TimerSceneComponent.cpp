@@ -131,7 +131,7 @@ namespace ptt
 	void TimerSceneComponent::Setup()
 	{
 		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
-		mTimer.Set( mCore->GetMinute() * 60 );
+		mTimer.Set( mCore->GetSeconds() );
 		mTimer.Start();
 	}
 }

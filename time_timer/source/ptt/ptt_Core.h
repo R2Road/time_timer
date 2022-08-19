@@ -36,6 +36,10 @@ namespace ptt
 		{
 			return mMinute_1;
 		}
+		int GetSeconds() const
+		{
+			return GetMinute() * 60;
+		}
 
 	private:
 		int mMinute_10;
