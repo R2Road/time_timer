@@ -31,9 +31,9 @@ namespace ptt
 				/* 1 */ "x      5xx6     6xx      7xx8     8xx      9x  x       x    "
 				/* 2 */ "x555555 xx 66666 xx      7xx 88888 xx 99999 x  x       x    "
 				/* 3 */ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  x       x    "
-				/* 4 */ "                                               x   *   x    "
-				/* 5 */ "                                               x  ***  x    "
-				/* 6 */ "                                               x ***** x    "
+				/* 4 */ "xxxxxxxxxxxxxxxxxx                             x   *   x    "
+				/* 5 */ "x================x                             x  ***  x    "
+				/* 6 */ "xxxxxxxxxxxxxxxxxx                             x ***** x    "
 				/* 7 */ "                                               x*******x    "
 				/* 8 */ "                                               xxxxxxxxx    "
 				/* 9 */ "                                                            "
@@ -129,6 +129,14 @@ namespace ptt
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 48, 1, 6, 16 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"seconds_0"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 15, 15, 0 ) );
 			}
 		}
 	}
