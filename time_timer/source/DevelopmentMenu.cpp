@@ -68,7 +68,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			, []()->const char* { return "Time Timer"; }
 			, []()->r2cm::eItemLeaveAction
 			{
-				r2cm::WindowUtility::Resize( 960, 960 );
+				r2cm::WindowUtility::Resize( 548, 548 );
 				r2cm::WindowUtility::Move( 0, 0 );
 
 				{
