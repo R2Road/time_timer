@@ -4,6 +4,9 @@
 #include <utility>
 
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2component_LabelSComponent.h"
+#include "r2bix/r2component_TextureRenderComponent.h"
+#include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
 #include "ptt_AlramSceneComponent.h"
@@ -21,6 +24,33 @@ namespace ptt
 			//
 			auto alram_scene_component = ret->AddComponent<ptt::AlramSceneComponent>();
 			alram_scene_component->SetCore( std::move( core ) );
+
+			//
+			// You Win
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelSNode>();
+				node->GetComponent<r2component::LabelSComponent>()->SetString( "### You Win ###" );
+
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					( director.GetScreenBufferSize().GetWidth() * 0.5f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
+				);
+			}
+
+			//
+			// Exit Indicator
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelSNode>();
+				node->GetComponent<r2component::LabelSComponent>()->SetString( "<<< ESC" );
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					0
+					, 0
+				);
+			}
 
 			//
 			// Debug
