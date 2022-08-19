@@ -163,7 +163,6 @@ namespace test_ptt_secondsnode
 
 					PROCESS_MAIN( render_target.FillCharacterAll( 'x' ) );
 					PROCESS_MAIN( seconds_component->Toggle() );
-					PROCESS_MAIN( node->Update( 0.1f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 					std::cout << r2cm::linefeed;
