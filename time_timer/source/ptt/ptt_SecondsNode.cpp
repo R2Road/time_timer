@@ -6,6 +6,7 @@
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 
 #include "ptt_Config.h"
+#include "ptt_SecondsComponent.h"
 #include "ptt_TextureTable.h"
 
 namespace ptt
@@ -15,6 +16,7 @@ namespace ptt
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
+			ret->AddComponent<ptt::SecondsComponent>();
 
 			//
 			//

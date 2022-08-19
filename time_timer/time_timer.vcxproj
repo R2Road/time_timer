@@ -88,6 +88,7 @@
     <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_MinuteNode.cpp" />
     <ClCompile Include="source\ptt\ptt_NumberComponent.cpp" />
+    <ClCompile Include="source\ptt\ptt_SecondsComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_SecondsNode.cpp" />
     <ClCompile Include="source\ptt\ptt_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="source\ptt\ptt_Timer.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="source\ptt\ptt_MinuteComponent.h" />
     <ClInclude Include="source\ptt\ptt_MinuteNode.h" />
     <ClInclude Include="source\ptt\ptt_NumberComponent.h" />
+    <ClInclude Include="source\ptt\ptt_SecondsComponent.h" />
     <ClInclude Include="source\ptt\ptt_SecondsNode.h" />
     <ClInclude Include="source\ptt\ptt_TextureFrameAnimationTable.h" />
     <ClInclude Include="source\ptt\ptt_Timer.h" />

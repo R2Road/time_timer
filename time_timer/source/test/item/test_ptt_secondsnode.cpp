@@ -10,6 +10,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "ptt/ptt_Config.h"
+#include "ptt/ptt_SecondsComponent.h"
 #include "ptt/ptt_SecondsNode.h"
 #include "ptt/ptt_TextureFrameAnimationTable.h"
 #include "ptt/ptt_TextureTable.h"
@@ -44,6 +45,10 @@ namespace test_ptt_secondsnode
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_TRUE( node->GetComponent<ptt::SecondsComponent>() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 			}

@@ -287,6 +287,9 @@
     <ClCompile Include="source\ptt\ptt_SecondsNode.cpp">
       <Filter>project_time_timer\second_node</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_SecondsComponent.cpp">
+      <Filter>project_time_timer\second_node</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -588,6 +591,9 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SecondsNode.h">
+      <Filter>project_time_timer\second_node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_SecondsComponent.h">
       <Filter>project_time_timer\second_node</Filter>
     </ClInclude>
   </ItemGroup>
