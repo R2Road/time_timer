@@ -3,8 +3,10 @@
 #include <cmath>
 
 #include "r2bix/r2node_PivotNode.h"
+#include "r2bix/r2component_TextureFrameRenderComponent.h"
 
 #include "ptt_Config.h"
+#include "ptt_TextureTable.h"
 
 namespace ptt
 {
@@ -13,6 +15,15 @@ namespace ptt
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
+
+			//
+			//
+			//
+			{
+				auto texture_frame_render_component = ret->AddComponent<r2component::TextureFrameRenderComponent>();
+				texture_frame_render_component->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" ) );
+			}
+
 
 			//
 			//

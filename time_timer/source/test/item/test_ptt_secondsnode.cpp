@@ -3,6 +3,7 @@
 #include <conio.h>
 
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2render_Camera.h"
 
 #include "r2cm/r2cm_Inspector.h"
@@ -38,6 +39,13 @@ namespace test_ptt_secondsnode
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto node = ptt::SecondsNode::Create( dummy_director ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
+				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
+			}
 
 			std::cout << r2cm::split;
 
