@@ -47,9 +47,11 @@ namespace ptt
 			// Minute View
 			//
 			{
-				const int minute_1 = current_elapsed_minutes % 10;
-				const int minute_10 = ( current_elapsed_minutes % 100 ) - minute_1;
-				mMinuteComponent->SetMinute( mCore->GetMinute10() - minute_10, mCore->GetMinute1() - minute_1 );
+				const int result_minute = mCore->GetMinute() - ( current_elapsed_minutes % 100 );
+
+				const int result_minute_1 = result_minute % 10;
+				const int result_minute_10 = ( result_minute - result_minute_1 ) / 10;
+				mMinuteComponent->SetMinute( result_minute_10, result_minute_1 );
 			}
 
 			//
