@@ -30,7 +30,11 @@ namespace ptt
 
 		if( !mTimer.Update() )
 		{
-			std::cout << (char)7;
+			//
+			// beep
+			//
+			std::cout << '\a';
+
 			mTimer.Start();
 		}
 		//
