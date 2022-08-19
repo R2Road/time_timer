@@ -602,5 +602,8 @@
     <ClInclude Include="source\test\item\test_ptt_core.h">
       <Filter>test\item</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2bix\r2base_DirectorConfig.h">
+      <Filter>external\r2bix</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

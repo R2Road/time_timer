@@ -75,7 +75,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					//
 					// Setup
 					//
-					r2base::Director director;
+					r2base::Director director( { { 57, 27 }, 30u } );
 					director.Setup( ptt::EntryScene::Create( director ) );
 
 					r2cm::WindowUtility::ScrollBarVisible( false );

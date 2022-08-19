@@ -6,11 +6,11 @@
 
 namespace r2base
 {
-	Director::Director() :
+	Director::Director( const DirectorConfig& director_config ) :
 		mScreenBufferManager()
-		, mFPSTimer()
+		, mFPSTimer( director_config.FramePerSeconds )
 		, mbAbort( false )
-		, mScreenBufferSIze( 57, 27 )
+		, mScreenBufferSIze( director_config.ScreenBufferSIze )
 
 		, mKeyboardInputCollector()
 

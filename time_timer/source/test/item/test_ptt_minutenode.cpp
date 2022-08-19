@@ -31,7 +31,7 @@ namespace test_ptt_minutenode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -82,7 +82,7 @@ namespace test_ptt_minutenode
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 7 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -129,7 +129,7 @@ namespace test_ptt_minutenode
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 7 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
 
 			std::cout << r2cm::split;
 
