@@ -21,8 +21,8 @@ namespace ptt
 			//
 			// Component
 			//
-			auto editor_component = ret->AddComponent<ptt::TimerSceneComponent>();
-			editor_component->SetCore( std::move( core ) );
+			auto timer_scene_component = ret->AddComponent<ptt::TimerSceneComponent>();
+			timer_scene_component->SetCore( std::move( core ) );
 
 
 			//
