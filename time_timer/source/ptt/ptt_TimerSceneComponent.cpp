@@ -56,7 +56,7 @@ namespace ptt
 			// Seconds View
 			//
 			{
-				const auto seconds_0_to_9 = mTimer.GetElapsedTime<std::chrono::seconds>() % 10;
+				const int seconds_0_to_9 = mTimer.GetElapsedTime<std::chrono::seconds>() % 10;
 				mSecondsComponent->Toggle( seconds_0_to_9 );
 			}
 
