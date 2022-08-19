@@ -3,6 +3,8 @@
 #include "r2bix/r2base_Component.h"
 #include "r2bix/r2input_KeyboardInputListener.h"
 
+#include "ptt_Timer.h"
+
 namespace ptt
 {
 	using CoreUp = std::unique_ptr<class Core>;
@@ -25,5 +27,7 @@ namespace ptt
 	private:
 		r2input::KeyboardInputListener mKeyboardInputListener;
 		CoreUp mCore;
+
+		ptt::Timer mTimer;
 	};
 }

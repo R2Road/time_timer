@@ -19,6 +19,7 @@ namespace ptt
 			  0x1B		// 0 : esc
 		} )
 		, mCore()
+		, mTimer( 5 )
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
@@ -27,6 +28,11 @@ namespace ptt
 	{
 		mKeyboardInputListener.Update();
 
+		if( !mTimer.Update() )
+		{
+			std::cout << (char)7;
+			mTimer.Start();
+		}
 		//
 		// Move 2 Editor Scene
 		//
@@ -46,7 +52,5 @@ namespace ptt
 		R2ASSERT( nullptr != core, "" );
 
 		mCore = std::move( core );
-
-		std::cout << (char)7;
 	}
 }
