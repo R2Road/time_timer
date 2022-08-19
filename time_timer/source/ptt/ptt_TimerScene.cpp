@@ -11,6 +11,7 @@
 #include "ptt_Config.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
+#include "ptt_SecondsNode.h"
 #include "ptt_TimerSceneComponent.h"
 
 namespace ptt
@@ -38,6 +39,17 @@ namespace ptt
 				);
 
 				timer_scene_component->SetMinuteComponent( node->GetComponent<ptt::MinuteComponent>() );
+			}
+
+			//
+			// Seconds
+			//
+			{
+				auto node = ret->AddChild<ptt::SecondsNode>();
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					( director.GetScreenBufferSize().GetWidth() * 0.5f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) + 5
+				);
 			}
 
 			//
