@@ -4,8 +4,6 @@
 
 namespace ptt
 {
-	class NumberComponent;
-
 	class SecondsComponent : public r2base::Component<SecondsComponent>
 	{
 	public:
