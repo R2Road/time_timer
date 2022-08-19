@@ -63,6 +63,7 @@ namespace test_ptt_demo
 						OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 						OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
+						OUTPUT_VALUE( timer.GetLastTime<std::chrono::seconds>() );
 
 						if( ptt::Timer::eStatus::Play == last_status && ptt::Timer::eStatus::Stop == timer.GetStatus() )
 						{
