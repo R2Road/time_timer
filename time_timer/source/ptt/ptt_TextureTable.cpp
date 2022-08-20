@@ -44,6 +44,12 @@ namespace ptt
 				/* 4 */ "x  sss  x  sss  x  sss  x       x  sss  x                   "
 				/* 5 */ "x   s   x   s   x   s   x   s   x       x                   "
 				/* 6 */ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                   "
+				/* 7 */ "x    aaxdd     x                                            "
+				/* 8 */ "x  aaaaxdddd   x                                            "
+				/* 9 */ "xaaaaaaxdddddddx                                            "
+				/* 0 */ "x  aaaaxdddd   x                                            "
+				/* 1 */ "x    aaxdd     x                                            "
+				/* 2 */ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                   "
 			) ) );
 
 			{
@@ -224,6 +230,28 @@ namespace ptt
 						, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 					);
 					frame_result.first->second->SetVisibleRect( r2::RectInt( 33, 22, 6, 3 ) );
+				}
+			}
+
+
+			//
+			//
+			//
+			{
+				{
+					auto frame_result = mTextureFrameContainer.emplace(
+						"select_indicator_left_0"
+						, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					);
+					frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 27, 5, 4 ) );
+				}
+
+				{
+					auto frame_result = mTextureFrameContainer.emplace(
+						"select_indicator_right_0"
+						, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					);
+					frame_result.first->second->SetVisibleRect( r2::RectInt( 8, 27, 5, 4 ) );
 				}
 			}
 		}

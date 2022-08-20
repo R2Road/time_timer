@@ -91,6 +91,22 @@ namespace test_ptt_texturetable
 
 			std::cout << r2cm::split;
 
+			{
+				auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_left_0" );
+
+				Utility4Test::DrawTextureFrame( *tf_num );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_right_0" );
+
+				Utility4Test::DrawTextureFrame( *tf_num );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
