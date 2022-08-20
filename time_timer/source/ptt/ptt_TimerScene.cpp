@@ -81,6 +81,20 @@ namespace ptt
 			}
 
 			//
+			// Pause Indicator
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelSNode>();
+				node->GetComponent<r2component::LabelSComponent>()->SetString( "SPACE || " );
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 1.f );
+
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					director.GetScreenBufferSize().GetWidth()
+					, director.GetScreenBufferSize().GetHeight()
+				);
+			}
+
+			//
 			// Debug
 			//
 			if( ptt::Config::GetNodeConfig().pivot )
