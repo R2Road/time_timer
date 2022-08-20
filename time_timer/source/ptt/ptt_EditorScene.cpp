@@ -44,10 +44,10 @@ namespace ptt
 			}
 
 			//
-			// Indicator
+			// Change Indicator
 			//
 			{
-				auto node = ret->AddChild<ptt::IndicatorNode>();
+				auto node = ret->AddChild<ptt::ChangeIndicatorNode>();
 
 				auto transform_component = node->GetComponent<r2component::TransformComponent>();
 				transform_component->SetPosition(

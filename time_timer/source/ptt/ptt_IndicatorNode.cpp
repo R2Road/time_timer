@@ -10,7 +10,7 @@
 
 namespace ptt
 {
-	r2base::NodeUp IndicatorNode::Create( r2base::Director& director )
+	r2base::NodeUp ChangeIndicatorNode::Create( r2base::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

@@ -4,10 +4,10 @@
 
 namespace ptt
 {
-	class IndicatorNode : public r2base::Node
+	class ChangeIndicatorNode : public r2base::Node
 	{
 	private:
-		IndicatorNode() = delete;
+		ChangeIndicatorNode() = delete;
 
 	public:
 		static r2base::NodeUp Create( r2base::Director& director );
