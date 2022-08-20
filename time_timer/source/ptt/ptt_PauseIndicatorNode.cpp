@@ -29,7 +29,7 @@ namespace ptt
 
 				custome_texture_component->GetTexture()->FillColorAll( r2base::eBackgroundColor::BG_LightBlue );
 
-				const std::string_view str = "pause";
+				const std::string_view str = "pause ";
 				auto current_c = str.begin();
 				for( int y = 0, y_end = custome_texture_component->GetTexture()->GetHeight(); y_end > y; ++y )
 				{
