@@ -40,6 +40,9 @@
     <Filter Include="project_time_timer\indicator_node">
       <UniqueIdentifier>{b101f314-7dd6-4cfe-a4a6-fb80c8d77e9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_time_timer\select_indicator_node">
+      <UniqueIdentifier>{d03a500b-9501-4326-b745-ba0eb69fb89f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\DevelopmentMenu.cpp" />
@@ -304,6 +307,9 @@
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_IndicatorNode.cpp">
       <Filter>project_time_timer\indicator_node</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_SelectIndicatorNode.cpp">
+      <Filter>project_time_timer\select_indicator_node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -625,6 +631,9 @@
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_IndicatorNode.h">
       <Filter>project_time_timer\indicator_node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_SelectIndicatorNode.h">
+      <Filter>project_time_timer\select_indicator_node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

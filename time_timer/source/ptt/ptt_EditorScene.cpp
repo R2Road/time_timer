@@ -14,6 +14,7 @@
 #include "ptt_IndicatorNode.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
+#include "ptt_SelectIndicatorNode.h"
 #include "ptt_TextureTable.h"
 
 namespace ptt
@@ -28,6 +29,19 @@ namespace ptt
 			//
 			auto editor_scene_component = ret->AddComponent<ptt::EditorSceneComponent>();
 			editor_scene_component->SetCore( std::move( core ) );
+
+			//
+			// Select Indicator
+			//
+			{
+				auto node = ret->AddChild<ptt::SelectIndicatorNode>();
+
+				auto transform_component = node->GetComponent<r2component::TransformComponent>();
+				transform_component->SetPosition(
+					( director.GetScreenBufferSize().GetWidth() * 0.5f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
+				);
+			}
 
 			//
 			// Indicator
