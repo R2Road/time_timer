@@ -275,9 +275,6 @@
     <ClCompile Include="source\ptt\ptt_AlramSceneComponent.cpp">
       <Filter>project_time_timer\scene</Filter>
     </ClCompile>
-    <ClCompile Include="source\ptt\ptt_IndicatorNode.cpp">
-      <Filter>project_time_timer\node</Filter>
-    </ClCompile>
     <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp">
       <Filter>project_time_timer\node</Filter>
     </ClCompile>
@@ -297,6 +294,9 @@
       <Filter>project_time_timer\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_SecondsNode.cpp">
+      <Filter>project_time_timer\node</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ptt\ptt_ChangeIndicatorNode.cpp">
       <Filter>project_time_timer\node</Filter>
     </ClCompile>
   </ItemGroup>
@@ -599,9 +599,6 @@
     <ClInclude Include="source\ptt\ptt_AlramSceneComponent.h">
       <Filter>project_time_timer\scene</Filter>
     </ClInclude>
-    <ClInclude Include="source\ptt\ptt_IndicatorNode.h">
-      <Filter>project_time_timer\node</Filter>
-    </ClInclude>
     <ClInclude Include="source\ptt\ptt_MinuteComponent.h">
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
@@ -621,6 +618,9 @@
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SecondsNode.h">
+      <Filter>project_time_timer\node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_ChangeIndicatorNode.h">
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
   </ItemGroup>
