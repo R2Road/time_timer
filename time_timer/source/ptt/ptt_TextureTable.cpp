@@ -44,11 +44,11 @@ namespace ptt
 				/* 4 */ "x  sss  x  sss  x  sss  x       x  sss  x                   "
 				/* 5 */ "x   s   x   s   x   s   x   s   x       x                   "
 				/* 6 */ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                   "
-				/* 7 */ "x    aaxdd     x                                            "
-				/* 8 */ "x  aaaaxdddd   x                                            "
-				/* 9 */ "xaaaaaaxdddddddx                                            "
-				/* 0 */ "x  aaaaxdddd   x                                            "
-				/* 1 */ "x    aaxdd     x                                            "
+				/* 7 */ "x    axd     x                                              "
+				/* 8 */ "x  aaaxddd   x                                              "
+				/* 9 */ "xaaaaaxddddddx                                              "
+				/* 0 */ "x  aaaxddd   x                                              "
+				/* 1 */ "x    axd     x                                              "
 				/* 2 */ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                   "
 			) ) );
 
@@ -243,7 +243,7 @@ namespace ptt
 						"select_indicator_left_0"
 						, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 					);
-					frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 27, 5, 4 ) );
+					frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 27, 4, 4 ) );
 				}
 
 				{
@@ -251,7 +251,7 @@ namespace ptt
 						"select_indicator_right_0"
 						, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 					);
-					frame_result.first->second->SetVisibleRect( r2::RectInt( 8, 27, 5, 4 ) );
+					frame_result.first->second->SetVisibleRect( r2::RectInt( 7, 27, 4, 4 ) );
 				}
 			}
 		}
