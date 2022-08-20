@@ -4,7 +4,9 @@
 #include <utility>
 
 #include "r2bix/r2base_Director.h"
-#include "r2bix/r2component_TextureFrameRenderComponent.h"
+#include "r2bix/r2component_LabelSComponent.h"
+#include "r2bix/r2component_TextureRenderComponent.h"
+#include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
 #include "ptt_Config.h"
@@ -53,6 +55,15 @@ namespace ptt
 				);
 
 				editor_scene_component->SetMinuteComponent( node->GetComponent<ptt::MinuteComponent>() );
+			}
+
+			//
+			// Exit Indicator
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelSNode>();
+				node->GetComponent<r2component::LabelSComponent>()->SetString( "<<< ESC" );
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 			}
 
 			//
