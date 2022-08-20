@@ -86,7 +86,7 @@ namespace test_ptt_secondsnode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 7 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 11 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), 'x' ) );
 			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
 
@@ -127,7 +127,7 @@ namespace test_ptt_secondsnode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 7 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 11 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), 'x' ) );
 			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
 

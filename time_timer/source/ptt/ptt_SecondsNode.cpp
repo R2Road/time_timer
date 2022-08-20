@@ -4,6 +4,7 @@
 
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
+#include "r2bix/r2component_TransformComponent.h"
 
 #include "ptt_Config.h"
 #include "ptt_SecondsComponent.h"
@@ -22,8 +23,21 @@ namespace ptt
 			//
 			//
 			{
-				auto texture_frame_render_component = ret->AddComponent<r2component::TextureFrameRenderComponent>();
-				texture_frame_render_component->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" ) );
+				{
+					auto node = ret->AddChild<r2base::Node>();
+
+					auto texture_frame_render_component = node->AddComponent<r2component::TextureFrameRenderComponent>();
+					texture_frame_render_component->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" ) );
+					node->GetComponent<r2component::TransformComponent>()->SetPositionY( 4 );
+				}
+
+				{
+					auto node = ret->AddChild<r2base::Node>();
+
+					auto texture_frame_render_component = node->AddComponent<r2component::TextureFrameRenderComponent>();
+					texture_frame_render_component->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" ) );
+					node->GetComponent<r2component::TransformComponent>()->SetPositionY( -4 );
+				}
 			}
 
 
