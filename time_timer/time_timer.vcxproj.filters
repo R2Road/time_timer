@@ -299,6 +299,9 @@
     <ClCompile Include="source\ptt\ptt_ChangeIndicatorNode.cpp">
       <Filter>project_time_timer\node</Filter>
     </ClCompile>
+    <ClCompile Include="source\ptt\ptt_PauseIndicatorNode.cpp">
+      <Filter>project_time_timer\node</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -621,6 +624,9 @@
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_ChangeIndicatorNode.h">
+      <Filter>project_time_timer\node</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_PauseIndicatorNode.h">
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
   </ItemGroup>

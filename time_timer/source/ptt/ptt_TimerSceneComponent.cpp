@@ -23,6 +23,7 @@ namespace ptt
 		} )
 		, mCore()
 
+		, mPauseIndicatorNode( nullptr )
 		, mMinuteComponent( nullptr )
 		, mSecondsComponent( nullptr )
 		, mTimer()
@@ -79,6 +80,7 @@ namespace ptt
 			if( mKeyboardInputListener.IsRelease( 1 ) )
 			{
 				mTimer.Pause();
+				mPauseIndicatorNode->SetVisible( true );
 			}
 		}
 		break;
@@ -91,6 +93,7 @@ namespace ptt
 			if( mKeyboardInputListener.IsRelease( 1 ) )
 			{
 				mTimer.Resume();
+				mPauseIndicatorNode->SetVisible( false );
 			}
 		}
 		break;
@@ -115,6 +118,12 @@ namespace ptt
 		R2ASSERT( nullptr != core, "" );
 
 		mCore = std::move( core );
+	}
+	void TimerSceneComponent::SetPauseIndicatorNode( r2base::Node* const pause_indicator_node )
+	{
+		R2ASSERT( nullptr != pause_indicator_node, "" );
+
+		mPauseIndicatorNode = pause_indicator_node;
 	}
 	void TimerSceneComponent::SetMinuteComponent( MinuteComponent* const minute_component )
 	{

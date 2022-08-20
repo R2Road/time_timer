@@ -12,6 +12,7 @@
 #include "ptt_Config.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
+#include "ptt_PauseIndicatorNode.h"
 #include "ptt_SecondsComponent.h"
 #include "ptt_SecondsNode.h"
 #include "ptt_TimerSceneComponent.h"
@@ -29,6 +30,15 @@ namespace ptt
 			auto timer_scene_component = ret->AddComponent<ptt::TimerSceneComponent>();
 			timer_scene_component->SetCore( std::move( core ) );
 
+			//
+			// Pause
+			//
+			{
+				auto node = ret->AddChild<ptt::PauseIndicatorNode>();
+				node->SetVisible( false );
+
+				timer_scene_component->SetPauseIndicatorNode( node );
+			}
 
 			//
 			// Minute
