@@ -92,17 +92,17 @@ namespace test_ptt_texturetable
 			std::cout << r2cm::split;
 
 			{
-				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_left_0" );
+				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
-				Utility4Test::DrawTextureFrame( *tf );
-			}
+				{
+					auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_left_0" );
+					Utility4Test::DrawTextureFrame( pivot_point.x, pivot_point.y, *tf );
+				}
 
-			std::cout << r2cm::split;
-
-			{
-				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_right_0" );
-
-				Utility4Test::DrawTextureFrame( *tf );
+				{
+					auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_right_0" );
+					Utility4Test::DrawTextureFrame( pivot_point.x + static_cast<short>( tf->GetWidth() + 3 ), pivot_point.y, *tf );
+				}
 			}
 
 			std::cout << r2cm::split;
