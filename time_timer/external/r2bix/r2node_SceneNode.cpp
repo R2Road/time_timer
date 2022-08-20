@@ -24,6 +24,7 @@ namespace r2node
 	void SceneNode::Render()
 	{
 		mRenderTarget.FillCharacterAll( ' ' );
+		mRenderTarget.FillColorAll( r2base::DefaultColorValue );
 
 		r2base::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
 
