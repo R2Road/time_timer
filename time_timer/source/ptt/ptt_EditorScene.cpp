@@ -9,6 +9,7 @@
 
 #include "ptt_Config.h"
 #include "ptt_EditorSceneComponent.h"
+#include "ptt_IndicatorNode.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
 #include "ptt_TextureTable.h"
@@ -30,10 +31,7 @@ namespace ptt
 			// Indicator
 			//
 			{
-				auto node = ret->AddChild<r2base::Node>();
-
-				auto tfrc = node->AddComponent<r2component::TextureFrameRenderComponent>();
-				tfrc->SetTextureFrame( ptt::TextureTable::GetInstance().GetTextureFrame( "indicator_0" ) );
+				auto node = ret->AddChild<ptt::IndicatorNode>();
 
 				auto transform_component = node->GetComponent<r2component::TransformComponent>();
 				transform_component->SetPosition(
