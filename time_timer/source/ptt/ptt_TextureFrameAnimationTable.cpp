@@ -17,10 +17,9 @@ namespace ptt
 		r2base::TextureFrameAnimationInfo::AnimationPackageT animation_package;
 
 		//
-		//
+		// Number
 		//
 		{
-			// Number
 			{
 				animation.Index = r2animation::eIndex::Idle_0;
 				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.f, TextureTable::GetInstance().GetTextureFrame( "number_0" ) } );
@@ -64,6 +63,40 @@ namespace ptt
 			}
 
 			mContainer.emplace( 1, std::move( animation_package ) );
+		}
+
+		//
+		// Indicator Up
+		//
+		{
+			{
+				animation.Index = r2animation::eIndex::Idle_0;
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_up_0" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_up_1" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_up_2" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_up_3" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_up_4" ) } );
+				animation_package.push_back( std::move( animation ) );
+			}
+
+			mContainer.emplace( 2, std::move( animation_package ) );
+		}
+
+		//
+		// Indicator Down
+		//
+		{
+			{
+				animation.Index = r2animation::eIndex::Idle_0;
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_down_0" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_down_1" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_down_2" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_down_3" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.2f, TextureTable::GetInstance().GetTextureFrame( "indicator_down_4" ) } );
+				animation_package.push_back( std::move( animation ) );
+			}
+
+			mContainer.emplace( 3, std::move( animation_package ) );
 		}
 	}
 }
