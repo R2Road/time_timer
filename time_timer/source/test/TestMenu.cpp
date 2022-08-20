@@ -19,7 +19,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', test_ptt_texturetable::Number::GetInstance() );
+		ret->AddItem( '1', test_ptt_texturetable::Basic::GetInstance() );
 
 
 

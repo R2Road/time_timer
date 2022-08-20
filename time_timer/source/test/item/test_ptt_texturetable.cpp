@@ -15,14 +15,14 @@
 
 namespace test_ptt_texturetable
 {
-	r2cm::iItem::TitleFunctionT Number::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Texture Table : Number";
+			return "Texture Table";
 		};
 	}
-	r2cm::iItem::DoFunctionT Number::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

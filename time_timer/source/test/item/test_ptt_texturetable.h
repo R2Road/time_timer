@@ -5,7 +5,7 @@
 
 namespace test_ptt_texturetable
 {
-	class Number : public r2cm::iItem, public r2cm::SingleTon<Number>
+	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
