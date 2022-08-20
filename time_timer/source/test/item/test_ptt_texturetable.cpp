@@ -67,6 +67,14 @@ namespace test_ptt_texturetable
 			std::cout << r2cm::split;
 
 			{
+				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" );
+
+				Utility4Test::DrawTextureFrame( *tf );
+			}
+
+			std::cout << r2cm::split;
+
+			{
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
 				std::string temp = "indicator_down_ ";
@@ -79,14 +87,6 @@ namespace test_ptt_texturetable
 
 					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf->GetWidth() + 2 ) ), pivot_point.y, *tf );
 				}
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" );
-
-				Utility4Test::DrawTextureFrame( *tf );
 			}
 
 			std::cout << r2cm::split;
