@@ -14,7 +14,7 @@ namespace ptt
 
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '0';
+		const char VersionNumber_3 = '1';
 
 		const char String4Version[19] = { 'T', 'i', 'm', 'e', 'T', 'i', 'm', 'e', 'r', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '\0' };
 
