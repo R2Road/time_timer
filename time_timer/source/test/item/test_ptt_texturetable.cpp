@@ -41,9 +41,9 @@ namespace test_ptt_texturetable
 					temp.pop_back();
 					temp += std::to_string( i );
 
-					auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
+					auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
 
-					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf_num->GetWidth() + 2 ) ), pivot_point.y, *tf_num );
+					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf->GetWidth() + 2 ) ), pivot_point.y, *tf );
 				}
 			}
 
@@ -58,9 +58,9 @@ namespace test_ptt_texturetable
 					temp.pop_back();
 					temp += std::to_string( i );
 
-					auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
+					auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
 
-					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf_num->GetWidth() + 2 ) ), pivot_point.y, *tf_num );
+					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf->GetWidth() + 2 ) ), pivot_point.y, *tf );
 				}
 			}
 
@@ -75,34 +75,34 @@ namespace test_ptt_texturetable
 					temp.pop_back();
 					temp += std::to_string( i );
 
-					auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
+					auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( temp.c_str() );
 
-					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf_num->GetWidth() + 2 ) ), pivot_point.y, *tf_num );
+					Utility4Test::DrawTextureFrame( pivot_point.x + ( i * static_cast<short>( tf->GetWidth() + 2 ) ), pivot_point.y, *tf );
 				}
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" );
+				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" );
 
-				Utility4Test::DrawTextureFrame( *tf_num );
+				Utility4Test::DrawTextureFrame( *tf );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_left_0" );
+				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_left_0" );
 
-				Utility4Test::DrawTextureFrame( *tf_num );
+				Utility4Test::DrawTextureFrame( *tf );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				auto tf_num = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_right_0" );
+				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "select_indicator_right_0" );
 
-				Utility4Test::DrawTextureFrame( *tf_num );
+				Utility4Test::DrawTextureFrame( *tf );
 			}
 
 			std::cout << r2cm::split;
