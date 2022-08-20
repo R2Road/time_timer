@@ -21,7 +21,7 @@ namespace ptt
 					auto arrow_node = ret->AddChild<r2base::Node>();
 
 					//
-					arrow_node->GetComponent<r2component::TransformComponent>()->SetPositionX( -15 );
+					arrow_node->GetComponent<r2component::TransformComponent>()->SetPositionX( -16 );
 
 					//
 					auto texture_frame_render_component = arrow_node->AddComponent<r2component::TextureFrameRenderComponent>();
