@@ -23,7 +23,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddSplit();
+		ret->AddLineFeed();
 
 
 
