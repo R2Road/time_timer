@@ -64,7 +64,7 @@ int main()
 	director.Setup( ptt::EntryScene::Create( director ) );
 
 	//
-	// Environment : ScrollBar | Maximize Button
+	// Environment : ScrollBar | Maximize Button | Frame Lock
 	//
 	r2cm::WindowUtility::ScrollBarVisible( false );
 	r2cm::WindowUtility::MaximizeButtonEnable( false );
