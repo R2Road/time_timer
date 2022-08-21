@@ -78,7 +78,11 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					r2base::Director director( { { 57, 27 }, 30u } );
 					director.Setup( ptt::EntryScene::Create( director ) );
 
+					//
+					// Environment : ScrollBar | Maximize Button
+					//
 					r2cm::WindowUtility::ScrollBarVisible( false );
+					r2cm::WindowUtility::MaximizeButtonEnable( false );
 
 					//
 					// Process
@@ -89,6 +93,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				r2cm::WindowUtility::Resize( 960, 960 );
 				r2cm::WindowUtility::Move( 0, 0 );
 				r2cm::WindowUtility::ScrollBarVisible( true );
+				r2cm::WindowUtility::MaximizeButtonEnable( true );
 
 				return r2cm::eItemLeaveAction::None;
 			}
