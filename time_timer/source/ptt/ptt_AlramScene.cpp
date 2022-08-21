@@ -43,7 +43,7 @@ namespace ptt
 			//
 			{
 				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "<<< ESC" );
+				node->GetComponent<r2component::LabelSComponent>()->SetString( "<<< ESC | SPACE" );
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(

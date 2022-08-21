@@ -17,6 +17,7 @@ namespace ptt
 	AlramSceneComponent::AlramSceneComponent( r2base::Node& owner_node ) : r2base::Component<AlramSceneComponent>( owner_node )
 		, mKeyboardInputListener( {
 			  0x1B		// 0 : esc
+			, 0x20		// 1 : space
 		} )
 		, mCore()
 		, mTimer( 5 )
@@ -40,7 +41,7 @@ namespace ptt
 		//
 		// Move 2 Editor Scene
 		//
-		if( mKeyboardInputListener.IsRelease( 0 ) )
+		if( mKeyboardInputListener.IsRelease( 0 ) || mKeyboardInputListener.IsRelease( 1 ) )
 		{
 			auto next_scene = ptt::EditorScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
