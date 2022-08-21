@@ -13,6 +13,7 @@ namespace r2cm
 		static void ScrollBarVisible( const bool visible );
 		static void MaximizeButtonEnable( const bool enable );
 		static void ResizingByDraggingEnable( const bool enable );
+		static void QuickEditEnable( const bool enable );
 
 		struct CursorPoint
 		{
