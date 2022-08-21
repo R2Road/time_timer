@@ -10,9 +10,10 @@
 #include "r2cm/r2cm_VersionInfo.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "test/TestMenu.h"
 #include "ptt/ptt_EntryScene.h"
 #include "ptt/ptt_VersionInfo.h"
+
+#include "test/TestMenu.h"
 
 const char* DevelopmentMenu::GetTitle()
 {
