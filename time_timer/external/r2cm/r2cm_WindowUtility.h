@@ -12,6 +12,7 @@ namespace r2cm
 		static void Move( const int x, const int y );
 		static void ScrollBarVisible( const bool visible );
 		static void MaximizeButtonEnable( const bool enable );
+		static void ResizingByDraggingEnable( const bool enable );
 
 		struct CursorPoint
 		{
