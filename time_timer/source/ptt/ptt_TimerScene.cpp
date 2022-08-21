@@ -58,6 +58,7 @@ namespace ptt
 			//
 			{
 				auto node = ret->AddChild<ptt::SecondsNode>();
+				node->SetVisible( false );
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
