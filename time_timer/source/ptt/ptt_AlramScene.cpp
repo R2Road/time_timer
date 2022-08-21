@@ -9,6 +9,7 @@
 #include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
+#include "ptt_AlramEffectNode.h"
 #include "ptt_AlramSceneComponent.h"
 #include "ptt_Config.h"
 
@@ -24,6 +25,13 @@ namespace ptt
 			//
 			auto alram_scene_component = ret->AddComponent<ptt::AlramSceneComponent>();
 			alram_scene_component->SetCore( std::move( core ) );
+
+			//
+			// Effect
+			//
+			{
+				ret->AddChild<ptt::AlramEffectNode>();
+			}
 
 			//
 			// You Win

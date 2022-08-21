@@ -81,6 +81,7 @@
     <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="source\DevelopmentMenu.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ptt\ptt_AlramEffectNode.cpp" />
     <ClCompile Include="source\ptt\ptt_AlramScene.cpp" />
     <ClCompile Include="source\ptt\ptt_AlramSceneComponent.cpp" />
     <ClCompile Include="source\ptt\ptt_Core.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="external\r2\r2_Timer_Float.h" />
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="source\DevelopmentMenu.h" />
+    <ClInclude Include="source\ptt\ptt_AlramEffectNode.h" />
     <ClInclude Include="source\ptt\ptt_AlramScene.h" />
     <ClInclude Include="source\ptt\ptt_AlramSceneComponent.h" />
     <ClInclude Include="source\ptt\ptt_Config.h" />
