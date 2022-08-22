@@ -13,6 +13,10 @@ namespace r2cm
 		static void ScrollBarVisible( const bool visible );
 		static void MaximizeButtonEnable( const bool enable );
 		static void ResizingByDraggingEnable( const bool enable );
+
+		//
+		// 마우스를 사용한 커서 이동, 영역 선택 On/Off
+		//
 		static void QuickEditEnable( const bool enable );
 
 		struct CursorPoint

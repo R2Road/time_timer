@@ -47,6 +47,7 @@ namespace r2cm
 		eItemLeaveAction Do( const int key_code );
 
 		void AddItem( const char key_code, const int color_code, const iItem::TitleFunctionT func_title, iItem::DoFunctionT func_do );
+		void AddItem( const char key_code, const iItem::TitleFunctionT func_title, iItem::DoFunctionT func_do );
 		void AddItem( const char key_code, iItem& item_obj );
 		
 		template<typename menu_T>
