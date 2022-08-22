@@ -12,6 +12,6 @@ namespace ptt
 		void Toggle( const bool new_flag );
 
 	private:
-		int mbFlag;
+		bool mbFlag;
 	};
 }
