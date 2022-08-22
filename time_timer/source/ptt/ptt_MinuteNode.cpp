@@ -20,7 +20,7 @@ namespace ptt
 		{
 
 			//
-			//
+			// Setup
 			//
 			{
 				auto number_node_1 = ret->AddChild<ptt::NumberNode>();
@@ -38,7 +38,7 @@ namespace ptt
 			}
 
 			//
-			//
+			// Debug
 			//
 			if( ptt::Config::GetNodeConfig().pivot )
 			{

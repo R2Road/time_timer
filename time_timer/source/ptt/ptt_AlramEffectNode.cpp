@@ -27,7 +27,7 @@ namespace ptt
 			ret->SetVisible( false );
 
 			//
-			//
+			// Setup
 			//
 			{
 				auto custome_texture_component = ret->AddComponent<r2component::CustomTextureComponent>();
@@ -80,7 +80,7 @@ namespace ptt
 
 
 			//
-			//
+			// Debug
 			//
 			if( ptt::Config::GetNodeConfig().pivot )
 			{

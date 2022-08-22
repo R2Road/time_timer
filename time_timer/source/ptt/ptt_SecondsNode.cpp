@@ -20,7 +20,7 @@ namespace ptt
 			ret->AddComponent<ptt::SecondsComponent>();
 
 			//
-			//
+			// Setup
 			//
 			{
 				{
@@ -42,7 +42,7 @@ namespace ptt
 
 
 			//
-			//
+			// Debug
 			//
 			if( ptt::Config::GetNodeConfig().pivot )
 			{

@@ -21,12 +21,11 @@ namespace ptt
 			ret->AddComponent<ptt::SecondsComponent>();
 
 			//
-			//
+			// Setup
 			//
 			{
 				auto custome_texture_component = ret->AddComponent<r2component::CustomTextureComponent>();
 				custome_texture_component->GetTexture()->Reset( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), ' ' );
-
 				custome_texture_component->GetTexture()->FillColorAll( r2base::eBackgroundColor::BG_LightBlue );
 
 				const std::string_view str = "pause ";
@@ -52,7 +51,7 @@ namespace ptt
 
 
 			//
-			//
+			// Debug
 			//
 			if( ptt::Config::GetNodeConfig().pivot )
 			{

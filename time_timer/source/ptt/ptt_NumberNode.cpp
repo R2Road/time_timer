@@ -17,7 +17,7 @@ namespace ptt
 		if( ret )
 		{
 			//
-			//
+			// Setup
 			//
 			{
 				auto frame_render_component = ret->AddComponent<r2component::TextureFrameRenderComponent>();
