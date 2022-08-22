@@ -30,6 +30,10 @@ namespace ptt
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
+	TimerSceneComponent::~TimerSceneComponent()
+	{
+		GetOwnerNode().GetDirector().RemoveInputListener( &mKeyboardInputListener );
+	}
 
 	void TimerSceneComponent::Update( const float delta_time )
 	{

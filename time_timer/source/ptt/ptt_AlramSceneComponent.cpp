@@ -24,6 +24,10 @@ namespace ptt
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
+	AlramSceneComponent::~AlramSceneComponent()
+	{
+		GetOwnerNode().GetDirector().RemoveInputListener( &mKeyboardInputListener );
+	}
 
 	void AlramSceneComponent::Update( const float delta_time )
 	{

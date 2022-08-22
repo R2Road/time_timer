@@ -16,6 +16,7 @@ namespace ptt
 	{
 	public:
 		TimerSceneComponent( r2base::Node& owner_node );
+		~TimerSceneComponent();
 
 		//
 		//

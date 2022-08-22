@@ -24,6 +24,7 @@ namespace ptt
 		};
 
 		EditorSceneComponent( r2base::Node& owner_node );
+		~EditorSceneComponent();
 
 		//
 		//

@@ -13,6 +13,7 @@ namespace ptt
 	{
 	public:
 		AlramSceneComponent( r2base::Node& owner_node );
+		~AlramSceneComponent();
 
 		//
 		//

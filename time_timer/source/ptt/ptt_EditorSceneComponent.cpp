@@ -32,6 +32,10 @@ namespace ptt
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
+	EditorSceneComponent::~EditorSceneComponent()
+	{
+		GetOwnerNode().GetDirector().RemoveInputListener( &mKeyboardInputListener );
+	}
 
 	void EditorSceneComponent::Update( const float delta_time )
 	{
