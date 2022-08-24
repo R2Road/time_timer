@@ -60,7 +60,7 @@ int main()
 	//
 	// Setup
 	//
-	r2base::Director director( { { 57, 27 }, 30u } );
+	r2base::Director director( { { 57, 27 }, 20u } );
 	director.Setup( ptt::EntryScene::Create( director ) );
 
 	//

@@ -76,7 +76,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					//
 					// Setup
 					//
-					r2base::Director director( { { 57, 27 }, 30u } );
+					r2base::Director director( { { 57, 27 }, 20u } );
 					director.Setup( ptt::EntryScene::Create( director ) );
 
 					//
