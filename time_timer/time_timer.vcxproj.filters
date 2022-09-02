@@ -194,9 +194,6 @@
     <ClCompile Include="external\r2bix\r2utility_StringSize.cpp">
       <Filter>external\r2bix</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -207,9 +204,6 @@
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Point_Int.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Random.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Rect_Int.cpp">
@@ -500,9 +494,6 @@
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -516,9 +507,6 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Point_Int.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Random.h">
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Rect.h">
@@ -537,9 +525,6 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Timer_Float.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_UniqueIndex.h">
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_Config.h">
