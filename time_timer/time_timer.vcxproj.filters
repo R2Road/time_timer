@@ -623,12 +623,18 @@
     <ClInclude Include="source\ptt\ptt_AlramEffectNode.h">
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource.h">
+      <Filter>resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="time_timer.rc" />
+    <Image Include="resource\icon1.ico">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resource\icon1.ico" />
+    <ResourceCompile Include="time_timer.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
