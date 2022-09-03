@@ -31,6 +31,9 @@
     <Filter Include="project_time_timer\node">
       <UniqueIdentifier>{342e4b94-6495-4512-b3ae-92231f2d7377}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{a47b3b82-309a-453e-84b5-e9ce259efa6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\DevelopmentMenu.cpp" />
@@ -620,5 +623,12 @@
     <ClInclude Include="source\ptt\ptt_AlramEffectNode.h">
       <Filter>project_time_timer\node</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="time_timer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\icon1.ico" />
   </ItemGroup>
 </Project>

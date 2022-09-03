@@ -185,6 +185,7 @@
     <ClInclude Include="external\r2\r2_Size_Int.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />
     <ClInclude Include="external\r2\r2_Timer_Float.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="source\DevelopmentMenu.h" />
     <ClInclude Include="source\ptt\ptt_AlramEffectNode.h" />
     <ClInclude Include="source\ptt\ptt_AlramScene.h" />
@@ -218,6 +219,12 @@
     <ClInclude Include="source\test\item\test_ptt_timer.h" />
     <ClInclude Include="source\test\TestMenu.h" />
     <ClInclude Include="source\test\Utility4Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="time_timer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\icon1.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
