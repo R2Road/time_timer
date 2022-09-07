@@ -9,7 +9,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "ptt/ptt_Config.h"
+#include "ptt/ptt_DebugConfig.h"
 #include "ptt/ptt_MinuteComponent.h"
 #include "ptt/ptt_MinuteNode.h"
 #include "ptt/ptt_TextureFrameAnimationTable.h"

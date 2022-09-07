@@ -530,9 +530,6 @@
     <ClInclude Include="external\r2\r2_Timer_Float.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="source\ptt\ptt_Config.h">
-      <Filter>project_time_timer</Filter>
-    </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_numbernode.h">
       <Filter>test\item</Filter>
     </ClInclude>
@@ -625,6 +622,9 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ptt\ptt_DebugConfig.h">
+      <Filter>project_time_timer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

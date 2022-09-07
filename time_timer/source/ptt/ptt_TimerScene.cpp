@@ -9,7 +9,7 @@
 #include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
-#include "ptt_Config.h"
+#include "ptt_DebugConfig.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_MinuteNode.h"
 #include "ptt_PauseIndicatorNode.h"

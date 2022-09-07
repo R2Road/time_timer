@@ -4,7 +4,7 @@
 #include "r2bix/r2component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2node_PivotNode.h"
 
-#include "ptt_Config.h"
+#include "ptt_DebugConfig.h"
 #include "ptt_TextureFrameAnimationTable.h"
 #include "ptt_TextureTable.h"
 

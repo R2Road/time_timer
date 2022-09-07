@@ -12,7 +12,7 @@
 #include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 
-#include "ptt_Config.h"
+#include "ptt_DebugConfig.h"
 #include "ptt_SecondsComponent.h"
 #include "ptt_TextureTable.h"
 

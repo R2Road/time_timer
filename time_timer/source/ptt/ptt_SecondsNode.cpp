@@ -6,7 +6,7 @@
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2component_TransformComponent.h"
 
-#include "ptt_Config.h"
+#include "ptt_DebugConfig.h"
 #include "ptt_SecondsComponent.h"
 #include "ptt_TextureTable.h"
 

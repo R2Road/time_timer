@@ -11,7 +11,7 @@
 
 #include "ptt_AlramEffectNode.h"
 #include "ptt_AlramSceneComponent.h"
-#include "ptt_Config.h"
+#include "ptt_DebugConfig.h"
 
 namespace ptt
 {

@@ -190,7 +190,7 @@
     <ClInclude Include="source\ptt\ptt_AlramEffectNode.h" />
     <ClInclude Include="source\ptt\ptt_AlramScene.h" />
     <ClInclude Include="source\ptt\ptt_AlramSceneComponent.h" />
-    <ClInclude Include="source\ptt\ptt_Config.h" />
+    <ClInclude Include="source\ptt\ptt_DebugConfig.h" />
     <ClInclude Include="source\ptt\ptt_Core.h" />
     <ClInclude Include="source\ptt\ptt_EditorSceneComponent.h" />
     <ClInclude Include="source\ptt\ptt_EditorScene.h" />

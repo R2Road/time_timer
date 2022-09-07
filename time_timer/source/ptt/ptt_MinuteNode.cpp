@@ -6,7 +6,7 @@
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2render_TextureFrame.h"
 
-#include "ptt_Config.h"
+#include "ptt_DebugConfig.h"
 #include "ptt_MinuteComponent.h"
 #include "ptt_NumberComponent.h"
 #include "ptt_NumberNode.h"
