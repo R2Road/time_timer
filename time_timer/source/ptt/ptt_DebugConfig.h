@@ -2,10 +2,10 @@
 
 namespace ptt
 {
-	class Config
+	class DebugConfig
 	{
 	private:
-		Config() = delete;
+		DebugConfig() = delete;
 
 	public:
 		struct NodeConfig

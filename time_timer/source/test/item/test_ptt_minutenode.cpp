@@ -50,7 +50,7 @@ namespace test_ptt_minutenode
 
 			std::cout << r2cm::split;
 
-			if( ptt::Config::GetNodeConfig().pivot )
+			if( ptt::DebugConfig::GetNodeConfig().pivot )
 			{
 				EXPECT_EQ( 3, node->GetChildCount() );
 			}

@@ -63,7 +63,7 @@ namespace ptt
 			//
 			// Debug
 			//
-			if( ptt::Config::GetNodeConfig().pivot )
+			if( ptt::DebugConfig::GetNodeConfig().pivot )
 			{
 				//
 				//
