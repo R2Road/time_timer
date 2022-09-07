@@ -10,6 +10,7 @@
 #include "r2cm/r2cm_VersionInfo.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
+#include "ptt/ptt_DirectorConfig.h"
 #include "ptt/ptt_EntryScene.h"
 #include "ptt/ptt_VersionInfo.h"
 
@@ -76,7 +77,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					//
 					// Setup
 					//
-					r2base::Director director( { { 57, 27 }, 30u } );
+					r2base::Director director( ptt::DirectorConfig );
 					director.Setup( ptt::EntryScene::Create( director ) );
 
 					//

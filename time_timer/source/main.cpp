@@ -15,6 +15,7 @@
 #else
 
 	#include "r2bix/r2base_Director.h"
+	#include "ptt/ptt_DirectorConfig.h"
 	#include "ptt/ptt_EntryScene.h"
 
 #endif
@@ -60,7 +61,7 @@ int main()
 	//
 	// Setup
 	//
-	r2base::Director director( { { 57, 27 }, 30u } );
+	r2base::Director director( ptt::DirectorConfig );
 	director.Setup( ptt::EntryScene::Create( director ) );
 
 	//

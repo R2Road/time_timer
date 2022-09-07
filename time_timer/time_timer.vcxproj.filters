@@ -626,6 +626,9 @@
     <ClInclude Include="source\ptt\ptt_DebugConfig.h">
       <Filter>project_time_timer</Filter>
     </ClInclude>
+    <ClInclude Include="source\ptt\ptt_DirectorConfig.h">
+      <Filter>project_time_timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resource\icon1.ico">

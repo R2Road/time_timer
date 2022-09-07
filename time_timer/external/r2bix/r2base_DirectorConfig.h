@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdint.h>
 
 #include "r2/r2_Size_Int.h"
