@@ -7,7 +7,7 @@
 
 
 ## 개괄 | Overview
-- 그냥 나 쓰려고 만들었다. | It was made for me to use.
+- 나 쓰려고 만듬. | It was made for me.
 
 
 ## 작업환경 | Environment
