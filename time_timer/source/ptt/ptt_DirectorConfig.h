@@ -7,6 +7,7 @@ namespace ptt
 	const r2base::DirectorConfig DirectorConfig
 	{
 		{ 57, 27 } // Screen Buffer Size
-		, 30u // FPS
+		, 60u // Update FPS
+		, 30u // Render FPS
 	};
 }
