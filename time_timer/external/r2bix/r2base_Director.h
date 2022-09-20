@@ -6,7 +6,7 @@
 #include "r2input_KeyboardInputCollector.h"
 #include "r2node_SceneNode.h"
 #include "r2/r2_FPSTimer.h"
-#include "r2/r2_Size_Int.h"
+#include "r2/r2_SizeInt.h"
 
 #include "r2base_DirectorConfig.h"
 
@@ -41,7 +41,8 @@ namespace r2base
 
 	private:
 		ScreenBufferManager mScreenBufferManager;
-		r2::FPSTimer mFPSTimer;
+		r2::FPSTimer mUpdateTimer;
+		r2::FPSTimer mRenderTimer;
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 

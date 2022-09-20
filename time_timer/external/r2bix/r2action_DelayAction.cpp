@@ -16,12 +16,12 @@ namespace r2action
 
 	void DelayAction::Enter()
 	{
-		mTimer.reset();
+		mTimer.Start();
 	}
 	bool DelayAction::Update( const float delta_time )
 	{
-		mTimer.update( delta_time );
+		mTimer.Update( delta_time );
 
-		return mTimer.isAlive();
+		return mTimer.IsAlive();
 	}
 }

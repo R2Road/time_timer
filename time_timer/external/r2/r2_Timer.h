@@ -1,9 +1,10 @@
 #pragma once
 
-#include <type_traits>
-#include <limits>
 #include <algorithm>
-#include <cassert>
+#include <limits>
+#include <type_traits>
+
+#include "r2_Assert.h"
 
 namespace r2
 {
@@ -11,59 +12,121 @@ namespace r2
 	class Timer
 	{
 	public:
+		static_assert(
+			std::is_same<float, T>::value
+			|| std::is_same<double, T>::value
+			, "r2::Timer - Not Allowed Type"
+			);
 		using ValueT = T;
 		const ValueT ValueMAX = std::numeric_limits<ValueT>::max();
 		const ValueT ValueZERO = static_cast<ValueT>( 0 );
 		const ValueT ValueONE = static_cast<ValueT>( 1 );
 
-		Timer( const ValueT _limitTime, const bool _onTimer = false ) :
-			onTimer( _onTimer )
-			, mLimitTime( _limitTime )
+		Timer() :
+			mAlive( false )
+			, mLimitTime( ValueZERO )
 			, mElapsedTime( ValueZERO )
-		{
-			static_assert(
-				std::is_same<float, T>::value
-				|| std::is_same<double, T>::value
-				, "r2r::Timer - Not Allowed Type"
-			);
-		}
+		{}
+		Timer( const ValueT limit_time ) :
+			mAlive( false )
+			, mLimitTime( limit_time )
+			, mElapsedTime( ValueZERO )
+		{}
+		Timer( const ValueT limit_time, const bool on_timer ) :
+			mAlive( on_timer )
+			, mLimitTime( limit_time )
+			, mElapsedTime( ValueZERO )
+		{}
 
-		void reset( const bool on_timer = true )
+		//
+		//
+		//
+		void Start()
 		{
-			onTimer = on_timer;
 			mElapsedTime = ValueZERO;
+			mAlive = true;
 		}
-		void reset( const ValueT limit_time, const bool on_timer = true )
+		void Stop()
 		{
-			mLimitTime = limit_time;
-			reset( on_timer );
+			mAlive = false;
+		}
+		void Clear()
+		{
+			mElapsedTime = ValueZERO;
+			mAlive = false;
 		}
 
-		bool update( const ValueT dt )
+		//
+		//
+		//
+		void Flip()
 		{
-			if( !onTimer )
+			mElapsedTime = std::min( mElapsedTime, mLimitTime );
+			mElapsedTime = mLimitTime - mElapsedTime;
+		}
+		void KeepGoing()
+		{
+			mAlive = true;
+		}
+
+		//
+		//
+		//
+		void SetLimitTime( const ValueT new_limit_time )
+		{
+			mLimitTime = new_limit_time;
+		}
+		void IncreaseLimitTime( const ValueT additional_time )
+		{
+			mLimitTime += additional_time;
+		}
+
+		//
+		//
+		//
+		bool Update( const ValueT dt )
+		{
+			if( !mAlive )
 			{
 				return false;
 			}
 
-			assert( dt <= ( ValueMAX - mElapsedTime ) );
+			R2ASSERT( dt <= ( ValueMAX - mElapsedTime ), "" );
 
 			mElapsedTime += dt;
 
 			if( mLimitTime <= mElapsedTime )
 			{
-				onTimer = false;
+				mAlive = false;
 			}
 
-			return onTimer;
+			return mAlive;
 		}
 
-		bool isAlive() const { return onTimer; }
-		bool isDie() const { return !onTimer; }
-		ValueT getElapsedTime() const { return mElapsedTime; }
-		ValueT getLimitTime() const { return mLimitTime; }
+		//
+		//
+		//
+		bool IsAlive() const
+		{
+			return mAlive;
+		}
+		bool IsDie() const
+		{
+			return !IsAlive();
+		}
+		ValueT GetElapsedTime() const
+		{
+			return mElapsedTime;
+		}
+		ValueT GetLimitTime() const
+		{
+			return mLimitTime;
+		}
 
-		ValueT getElapsedTimeRate() const
+		//
+		//
+		//
+		ValueT GetElapsedTimeRate() const
 		{
 			if( mElapsedTime >= mLimitTime )
 			{
@@ -74,18 +137,17 @@ namespace r2
 				return ( ValueZERO >= mLimitTime ? ValueZERO : mElapsedTime / mLimitTime );
 			}
 		}
-		ValueT getElapsedTimeInverseRate() const
+		ValueT GetElapsedTimeInverseRate() const
 		{
-			return 1.f - getElapsedTimeRate();
+			return 1.f - GetElapsedTimeRate();
 		}
-
-		const ValueT getElapsedTimePureRate() const
+		const ValueT GetElapsedTimePureRate() const
 		{
 			return ( ValueZERO >= mLimitTime ? ValueZERO : mElapsedTime / mLimitTime );
 		}
 
 	private:
-		bool onTimer;
+		bool mAlive;
 		ValueT mLimitTime;
 		ValueT mElapsedTime;
 	};

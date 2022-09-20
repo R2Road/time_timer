@@ -7,7 +7,7 @@
 #include "r2render_iRenderTarget.h"
 
 #include "r2/r2_GridIndexConverter.h"
-#include "r2/r2_Rect_Int.h"
+#include "r2/r2_RectInt.h"
 
 namespace r2render
 {

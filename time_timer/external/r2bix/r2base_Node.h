@@ -4,7 +4,7 @@
 #include <memory>
 #include <type_traits>
 
-#include "r2/r2_Point_Int.h"
+#include "r2/r2_PointInt.h"
 #include "r2component_TransformComponent.h"
 
 //

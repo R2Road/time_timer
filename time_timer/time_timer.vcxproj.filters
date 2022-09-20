@@ -197,27 +197,6 @@
     <ClCompile Include="external\r2bix\r2utility_StringSize.cpp">
       <Filter>external\r2bix</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Point_Float.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Point_Int.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Rect_Int.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Size_Int.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Timer_Float.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_numbernode.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
@@ -301,6 +280,33 @@
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_AlramEffectNode.cpp">
       <Filter>project_time_timer\node</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_PointFloat.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_PointInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Random.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_RectInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_SizeInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_TimerFloat.cpp">
+      <Filter>external\r2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -494,42 +500,6 @@
     <ClInclude Include="external\r2bix\r2utility_StringSize.h">
       <Filter>external\r2bix</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_FPSTimer.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Point.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Point_Float.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Point_Int.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Rect.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Rect_Int.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Size.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Size_Int.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Timer.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Timer_Float.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_numbernode.h">
       <Filter>test\item</Filter>
     </ClInclude>
@@ -628,6 +598,51 @@
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_DirectorConfig.h">
       <Filter>project_time_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Assert.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_FPSTimer.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Point.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_PointFloat.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_PointInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Random.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Rect.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RectInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Size.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_SizeInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Timer.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_TimerFloat.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_UniqueIndex.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -19,15 +19,15 @@ namespace r2action
 	void MoveByAction::Enter()
 	{
 		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();
-		mTimer.reset();
+		mTimer.Start();
 	}
 	bool MoveByAction::Update( const float delta_time )
 	{
-		if( mTimer.update( delta_time ) )
+		if( mTimer.Update( delta_time ) )
 		{
 			mOwnerNode->mTransformComponent->SetPosition(
-				mStartPoint.GetX() + ( mMoveAmount.GetX() * mTimer.getElapsedTimeRate() )
-				, mStartPoint.GetY() + ( mMoveAmount.GetY() * mTimer.getElapsedTimeRate() )
+				mStartPoint.GetX() + ( mMoveAmount.GetX() * mTimer.GetElapsedTimeRate() )
+				, mStartPoint.GetY() + ( mMoveAmount.GetY() * mTimer.GetElapsedTimeRate() )
 			);
 		}
 		else
@@ -35,6 +35,6 @@ namespace r2action
 			mOwnerNode->mTransformComponent->SetPosition( mStartPoint + mMoveAmount );
 		}
 
-		return mTimer.isAlive();
+		return mTimer.IsAlive();
 	}
 }

@@ -2,8 +2,8 @@
 
 #include "r2base_Action.h"
 
-#include "r2/r2_Point_Int.h"
-#include "r2/r2_Timer_Float.h"
+#include "r2/r2_PointInt.h"
+#include "r2/r2_TimerFloat.h"
 
 namespace r2action
 {
@@ -30,13 +30,13 @@ namespace r2action
 		}
 		void SetTimeLimit( const float time_limit )
 		{
-			mTimer.reset( time_limit );
+			mTimer.SetLimitTime( time_limit );
 		}
 
 	private:
 		r2::PointInt mMoveAmount;
 
 		r2::PointInt mStartPoint;
-		r2::Timer_Float mTimer;
+		r2::TimerFloat mTimer;
 	};
 }

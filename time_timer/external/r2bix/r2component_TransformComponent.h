@@ -2,7 +2,7 @@
 
 #include "r2base_Component.h"
 
-#include "r2/r2_Point_Int.h"
+#include "r2/r2_PointInt.h"
 
 namespace r2component
 {

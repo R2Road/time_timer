@@ -4,6 +4,13 @@
 #include <iostream>
 #include <Windows.h>
 
+//
+// for Windows.h
+// - wtf... o_o;;;
+//
+#undef min
+#undef max
+
 #include "r2render_Texture.h"
 
 namespace r2base

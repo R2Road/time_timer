@@ -20,15 +20,15 @@ namespace r2action
 		mbLastVisible = mOwnerNode->IsVisible();
 		mOwnerNode->SetVisible( !mbLastVisible );
 
-		mTimer.reset();
+		mTimer.Start();
 	}
 	bool BlinkAction::Update( const float delta_time )
 	{
-		if( !mTimer.update( delta_time ) )
+		if( !mTimer.Update( delta_time ) )
 		{
 			mOwnerNode->SetVisible( mbLastVisible );
 		}
 
-		return mTimer.isAlive();
+		return mTimer.IsAlive();
 	}
 }

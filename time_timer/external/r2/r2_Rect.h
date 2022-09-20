@@ -6,13 +6,6 @@
 #include "r2_Point.h"
 #include "r2_Size.h"
 
-//
-// for Windows.h
-// - wtf... o_o;;;
-//
-#undef min
-#undef max
-
 namespace r2
 {
 	template<typename T>
@@ -32,18 +25,21 @@ namespace r2
 
 		Rect() : mOrigin( 0, 0 ), mSize( 0, 0 )
 		{}
-		Rect( const ElementT x, const ElementT y, const ElementT width, const ElementT height )
+		explicit Rect( const ElementT x, const ElementT y, const ElementT width, const ElementT height ) : mOrigin( x, y ), mSize( width, height )
+		{}
+		explicit Rect( const MyPointT origin, const MySizeT size ) : mOrigin( origin ), mSize( size )
+		{}
+		explicit Rect( const MyPointT origin, const ElementT width, const ElementT height ) : mOrigin( origin ), mSize( width, height )
+		{}
+		explicit Rect( const ElementT x, const ElementT y, const MySizeT size ) : mOrigin( x, y ), mSize( size )
+		{}
+		explicit Rect( const MyPointT origin ) : mOrigin( origin ), mSize( 0, 0 )
+		{}
+		explicit Rect( const MySizeT size ) : mOrigin( 0, 0 ), mSize( size )
+		{}
+		explicit Rect( const MyPointT point1, const MyPointT point2 )
 		{
-			Set( x, y, width, height );
-		}
-		Rect( const MyPointT origin, const MySizeT size )
-		{
-			mOrigin = origin;
-			mSize = size;
-		}
-		Rect( const MyT& other )
-		{
-			Set( other.mOrigin.GetX(), other.mOrigin.GetY(), other.mSize.GetWidth(), other.mSize.GetHeight() );
+			Set( point1, point2 );
 		}
 
 		bool operator==( const MyT& rhs ) const
@@ -61,32 +57,9 @@ namespace r2
 			return ( mOrigin.Equals( rect.mOrigin ) && mSize.equals( rect.mSize ) );
 		}
 
-		inline void SetOrigin( const ElementT x, const ElementT y )
-		{
-			mOrigin.Set( x, y );
-		}
-		inline void SetOrigin( const MyPointT point )
-		{
-			mOrigin = ( point );
-		}
-		inline void MoveOrigin( const ElementT move_x, const ElementT move_y )
-		{
-			mOrigin.Add( move_x, move_y );
-		}
-
-		inline void SetSize( const ElementT width, const ElementT height )
-		{
-			mSize.Set( width, height );
-		}
-		inline void SetSize( const MySizeT size )
-		{
-			mSize = ( size );
-		}
-		inline void ChangeSize( const ElementT change_w, const ElementT change_h )
-		{
-			mSize.Add( change_w, change_h );
-		}
-
+		//
+		//
+		//
 		inline void Set( const ElementT x, const ElementT y, const ElementT width, const ElementT height )
 		{
 			mOrigin.Set( x, y );
@@ -102,6 +75,41 @@ namespace r2
 			);
 		}
 
+		//
+		//
+		//
+		inline void SetOrigin( const ElementT x, const ElementT y )
+		{
+			mOrigin.Set( x, y );
+		}
+		inline void SetOrigin( const MyPointT point )
+		{
+			mOrigin = ( point );
+		}
+		inline void MoveOrigin( const ElementT move_x, const ElementT move_y )
+		{
+			mOrigin.Add( move_x, move_y );
+		}
+
+		//
+		//
+		//
+		inline void SetSize( const ElementT width, const ElementT height )
+		{
+			mSize.Set( width, height );
+		}
+		inline void SetSize( const MySizeT size )
+		{
+			mSize = ( size );
+		}
+		inline void ChangeSize( const ElementT change_w, const ElementT change_h )
+		{
+			mSize.Add( change_w, change_h );
+		}
+
+		//
+		//
+		//
 		inline const MyPointT& GetOrigin() const
 		{
 			return mOrigin;
@@ -110,43 +118,38 @@ namespace r2
 		{
 			return mSize;
 		}
-
-		/// return the leftmost x-value of current rect
 		inline ElementT GetMaxX() const
 		{
 			return mOrigin.GetX() + mSize.GetWidth();
 		}
-		/// return the midpoint x-value of current rect
 		inline ElementT GetMidX() const
 		{
 			return mOrigin.GetX() + ( mSize.GetWidth() / 2 );
 		}
-		/// return the rightmost x-value of current rect
 		inline ElementT GetMinX() const
 		{
 			return mOrigin.GetX();
 		}
-		/// return the bottommost y-value of current rect
 		inline ElementT GetMaxY() const
 		{
 			return mOrigin.GetY() + mSize.GetHeight();
 		}
-		/// return the midpoint y-value of current rect
 		inline ElementT GetMidY() const
 		{
 			return mOrigin.GetY() + ( mSize.GetHeight() / 2 );
 		}
-		/// return the topmost y-value of current rect
 		inline ElementT GetMinY() const
 		{
 			return mOrigin.GetY();
 		}
-
 		inline ElementT GetWidth() const
 		{
-			// summury
+			//
+			// Summury
 			// - default size is "1"
 			//
+			// Example
+			// - size 4, 3
 			//  @***	- "@" is origin
 			//  ****	- "*" is size
 			//  ****
@@ -166,7 +169,9 @@ namespace r2
 			return std::sqrt( ( GetWidth() * GetWidth() ) + ( GetHeight() * GetHeight() ) );
 		}
 
-
+		//
+		//
+		//
 		bool ContainsPoint( const MyPointT& point ) const
 		{
 			bool bRet = false;
@@ -192,6 +197,9 @@ namespace r2
 			return bRet;
 		}
 
+		//
+		//
+		//
 		MyPointT Distance( const MyPointT& point ) const
 		{
 			return Distance( point.GetX(), point.GetY() );
@@ -209,6 +217,9 @@ namespace r2
 			);
 		}
 
+		//
+		//
+		//
 		bool IntersectsRect( const MyT& rect ) const
 		{
 			return !(
@@ -228,6 +239,9 @@ namespace r2
 			);
 		}
 
+		//
+		//
+		//
 		void Merge( const MyT& rect )
 		{
 			const ElementT minX = std::min( GetMinX(), rect.GetMinX() );
@@ -237,6 +251,9 @@ namespace r2
 			Set( minX, minY, maxX - minX, maxY - minY );
 		}
 
+		//
+		//
+		//
 		MyT UnionWithRect( const MyT & rect ) const
 		{
 			ElementT thisLeftX = GetMinX();
@@ -277,6 +294,9 @@ namespace r2
 			return MyT( combinedLeftX, combinedTopY, combinedRightX - combinedLeftX, combinedBottomY - combinedTopY );
 		}
 
+		//
+		//
+		//
 		MyT IntersectsWithRect( const MyT & rect ) const
 		{
 			ElementT thisLeftX = GetMinX();

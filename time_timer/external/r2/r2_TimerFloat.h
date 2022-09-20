@@ -4,5 +4,5 @@
 
 namespace r2
 {
-	using Timer_Float = r2::Timer<float>;
+	using TimerFloat = r2::Timer<float>;
 }

@@ -4,7 +4,7 @@
 
 #include "r2base_Component.h"
 
-#include "r2/r2_Timer_Float.h"
+#include "r2/r2_TimerFloat.h"
 #include "r2base_TextureFrameAnimationInfo.h"
 
 namespace r2component
@@ -24,7 +24,7 @@ namespace r2component
 	private:
 		struct AnimationFrame
 		{
-			r2::Timer_Float Timer;
+			r2::TimerFloat Timer;
 			const r2render::TextureFrame* Frame = nullptr;
 		};
 		struct Animation

@@ -9,9 +9,18 @@ namespace r2
 	class Point
 	{
 	public:
+		static_assert(
+			std::is_same<int, T>::value
+			|| std::is_same<float, T>::value
+			, "r2r::Point - Not Allowed Type"
+		);
 		using ValueT = T;
 		using MyT = Point<T>;
 
+
+		//
+		//
+		//
 		static const MyT& GetZERO()
 		{
 			static const MyT ZERO( 0, 0 );
@@ -23,23 +32,17 @@ namespace r2
 			return MINUS_ONE;
 		}
 
+		//
+		//
+		//
 		Point() : mX( 0 ), mY( 0 )
-		{
-			static_assert(
-				std::is_same<int, ValueT>::value
-				|| std::is_same<float, ValueT>::value
-				, "r2r::Point - Not Allowed Type"
-			);
-		}
+		{}
 		Point( const ValueT x, const ValueT y ) : mX( x ), mY( y )
-		{
-			static_assert(
-				std::is_same<int, ValueT>::value
-				|| std::is_same<float, ValueT>::value
-				, "r2r::Point - Not Allowed Type"
-			);
-		}
+		{}
 
+		//
+		//
+		//
 		bool operator==( const MyT& right ) const
 		{
 			return right.mX == mX && right.mY == mY;
@@ -75,6 +78,14 @@ namespace r2
 			return *this;
 		}
 
+		inline bool Equals( const MyT& point ) const
+		{
+			return point.mX == mX && point.mY == mY;
+		}
+
+		//
+		//
+		//
 		inline void SetZero()
 		{
 			mX = MyT::GetZERO().mX;
@@ -92,26 +103,24 @@ namespace r2
 		}
 		inline void SetX( const ValueT x ) { mX = x; }
 		inline void SetY( const ValueT y ) { mY = y; }
+		inline ValueT GetX() const { return mX; }
+		inline ValueT GetY() const { return mY; }		
+
+		//
+		//
+		//
 		inline void Add( const ValueT add_x, const ValueT add_y )
 		{
 			mX += add_x;
 			mY += add_y;
 		}
-
-		inline ValueT GetX() const { return mX; }
-		inline ValueT GetY() const { return mY; }
-
-		inline bool Equals( const MyT& point ) const
+		inline ValueT Distance( const ValueT x, const ValueT y ) const
 		{
-			return point.mX == mX && point.mY == mY;
+			return std::abs( mX - x ) + std::abs( mY - y );
 		}
 		inline ValueT Distance( const MyT& target ) const
 		{
 			return Distance( target.mX, target.mY );
-		}
-		inline ValueT Distance( const ValueT x, const ValueT y ) const
-		{
-			return std::abs( mX - x ) + std::abs( mY - y );
 		}
 		inline ValueT Distance_DiagonalIsOne( const MyT& target ) const
 		{
@@ -119,8 +128,8 @@ namespace r2
 			const ValueT tempY = std::abs( mY - target.mY );
 			return (
 				tempX >= tempY
-				? ( tempX + tempY ) - tempY
-				: ( tempX + tempY ) - tempX
+				? tempX
+				: tempY
 			);
 		}
 

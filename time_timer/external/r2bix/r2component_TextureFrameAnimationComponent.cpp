@@ -15,29 +15,33 @@ namespace r2component
 
 	void TextureFrameAnimationComponent::Update( const float delta_time )
 	{
-		if( mAnimationPackage.end() != mCurrentAnimation )
+		if( mAnimationPackage.end() == mCurrentAnimation )
 		{
-			if( !mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.update( delta_time ) )
-			{
-				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.reset();
+			return;
+		}
 
-				if( mCurrentAnimation->Container.size() > mCurrentAnimationFrameIndex + 1u )
-				{
-					mCurrentAnimationFrameIndex = mCurrentAnimationFrameIndex + 1u;
-					mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
-				}
-				else
-				{
-					if( mbRepeat )
-					{
-						mCurrentAnimationFrameIndex = 0u;
-						mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
-					}
-					else
-					{
-						mCurrentAnimation = mAnimationPackage.end();
-					}
-				}
+		if( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Update( delta_time ) )
+		{
+			return;
+		}
+
+		if( mCurrentAnimation->Container.size() > mCurrentAnimationFrameIndex + 1u )
+		{
+			mCurrentAnimationFrameIndex = mCurrentAnimationFrameIndex + 1u;
+			mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
+			mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+		}
+		else
+		{
+			if( mbRepeat )
+			{
+				mCurrentAnimationFrameIndex = 0u;
+				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
+				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+			}
+			else
+			{
+				mCurrentAnimation = mAnimationPackage.end();
 			}
 		}
 	}
@@ -83,6 +87,7 @@ namespace r2component
 			{
 				mbRepeat = false;
 				mCurrentAnimation = cur;
+				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
 				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 				break;
 			}
@@ -98,6 +103,7 @@ namespace r2component
 			{
 				mbRepeat = true;
 				mCurrentAnimation = cur;
+				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
 				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 				break;
 			}
@@ -106,6 +112,10 @@ namespace r2component
 	void TextureFrameAnimationComponent::StopAnimation()
 	{
 		mbRepeat = false;
+		if( mAnimationPackage.end() != mCurrentAnimation )
+		{
+			mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Stop();
+		}
 		mCurrentAnimation = mAnimationPackage.end();
 		mCurrentAnimationFrameIndex = 0u;
 	}
