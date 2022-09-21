@@ -10,14 +10,11 @@ namespace ptt
 	public:
 		struct NodeConfig
 		{
-			bool pivot = false;
+			bool pivot = true;
 		};
 		static const NodeConfig& GetNodeConfig()
 		{
-			const static NodeConfig ret
-			{
-				true
-			};
+			const static NodeConfig ret;
 			return ret;
 		}
 	};
