@@ -1,12 +1,12 @@
 #include "r2node_PivotNode.h"
 
-#include "r2base_Director.h"
+#include "r2bix_Director.h"
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
 
 namespace r2node
 {
-	r2base::NodeUp PivotNode::Create( r2base::Director& director )
+	r2base::NodeUp PivotNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

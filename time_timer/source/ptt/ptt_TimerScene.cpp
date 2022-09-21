@@ -2,7 +2,7 @@
 
 #include <numeric>
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
@@ -19,7 +19,7 @@
 
 namespace ptt
 {
-	r2node::SceneNodeUp TimerScene::Create( r2base::Director& director, CoreUp&& core )
+	r2node::SceneNodeUp TimerScene::Create( r2bix::Director& director, CoreUp&& core )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )

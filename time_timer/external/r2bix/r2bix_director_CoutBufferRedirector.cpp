@@ -1,8 +1,8 @@
-#include "r2base_CoutBufferRedirector.h"
+#include "r2bix_director_CoutBufferRedirector.h"
 
 #include <Windows.h>
 
-namespace r2base
+namespace r2bix_director
 {
 	CoutBufferRedirector::CoutBufferRedirector( HandleT handle ) : mHandle( handle )
 	{}

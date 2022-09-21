@@ -1,6 +1,6 @@
 #include "ptt_EntryScene.h"
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 
 #include "ptt_Core.h"
 #include "ptt_TextureTable.h"
@@ -45,7 +45,7 @@ namespace ptt
 		}
 	};
 
-	r2node::SceneNodeUp EntryScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp EntryScene::Create( r2bix::Director& director )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
 		if( ret )

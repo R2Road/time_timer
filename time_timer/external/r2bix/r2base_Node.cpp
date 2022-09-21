@@ -2,7 +2,7 @@
 
 namespace r2base
 {
-	Node::Node( Director& director ) :
+	Node::Node( r2bix::Director& director ) :
 		mDirector( director )
 		, mbVisible( true )
 		, mComponentContainer()
@@ -11,7 +11,7 @@ namespace r2base
 		, mTransformComponent( nullptr )
 	{}
 
-	std::unique_ptr<Node> Node::Create( r2base::Director& director )
+	std::unique_ptr<Node> Node::Create( r2bix::Director& director )
 	{
 		std::unique_ptr<Node> ret( new ( std::nothrow ) Node( director ) );
 		if( !ret || !ret->Init() )

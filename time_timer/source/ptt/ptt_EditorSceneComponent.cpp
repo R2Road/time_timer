@@ -5,7 +5,7 @@
 
 #include "r2/r2_Assert.h"
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2utility_InputUtil.h"
 

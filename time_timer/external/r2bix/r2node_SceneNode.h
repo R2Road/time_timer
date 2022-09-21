@@ -5,7 +5,7 @@
 #include "r2render_Camera.h"
 #include "r2render_Texture.h"
 
-namespace r2base
+namespace r2bix
 {
 	class Director;
 }
@@ -17,9 +17,9 @@ namespace r2node
 	class SceneNode : public r2base::Node
 	{
 	public:
-		SceneNode( r2base::Director& director );
+		SceneNode( r2bix::Director& director );
 
-		static SceneNodeUp Create( r2base::Director& director );
+		static SceneNodeUp Create( r2bix::Director& director );
 
 		//
 		// Override

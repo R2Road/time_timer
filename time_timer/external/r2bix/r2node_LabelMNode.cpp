@@ -1,13 +1,13 @@
 #include "r2node_LabelMNode.h"
 
-#include "r2base_Director.h"
+#include "r2bix_Director.h"
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
 #include "r2component_LabelSComponent.h"
 
 namespace r2node
 {
-	r2base::NodeUp LabelMNode::Create( r2base::Director& director )
+	r2base::NodeUp LabelMNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

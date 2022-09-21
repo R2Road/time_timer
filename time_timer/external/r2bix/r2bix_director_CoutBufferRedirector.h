@@ -8,7 +8,7 @@
 // https://stackoverflow.com/questions/39110882/redirecting-cout-to-the-new-buffer-that-created-with-winapi
 //
 
-namespace r2base
+namespace r2bix_director
 {
 	class CoutBufferRedirector : public std::streambuf
 	{

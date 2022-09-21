@@ -12,6 +12,6 @@ namespace ptt
 		TimerScene() = delete;
 
 	public:
-		static r2node::SceneNodeUp Create( r2base::Director& director, CoreUp&& core );
+		static r2node::SceneNodeUp Create( r2bix::Director& director, CoreUp&& core );
 	};
 }

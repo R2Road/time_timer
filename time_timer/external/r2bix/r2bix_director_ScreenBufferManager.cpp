@@ -1,4 +1,4 @@
-#include "r2base_ScreenBufferManager.h"
+#include "r2bix_director_ScreenBufferManager.h"
 
 #include <cassert>
 #include <iostream>
@@ -13,7 +13,7 @@
 
 #include "r2render_Texture.h"
 
-namespace r2base
+namespace r2bix_director
 {
 	ScreenBufferManager::ScreenBufferManager() :
 		mCoutOriginalStreamBuffer( nullptr )

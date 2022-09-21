@@ -1,10 +1,10 @@
 #pragma once
 
-#include "r2bix/r2base_DirectorConfig.h"
+#include "r2bix/r2bix_director_Config.h"
 
 namespace ptt
 {
-	const r2base::DirectorConfig DirectorConfig
+	const r2bix_director::Config DirectorConfig
 	{
 		{ 57, 27 } // Screen Buffer Size
 		, 60u // Update FPS

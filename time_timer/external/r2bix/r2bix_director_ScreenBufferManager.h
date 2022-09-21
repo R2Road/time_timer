@@ -1,13 +1,13 @@
 #pragma once
 
-#include "r2base_CoutBufferRedirector.h"
+#include "r2bix_director_CoutBufferRedirector.h"
 
 namespace r2render
 {
 	class Texture;
 }
 
-namespace r2base
+namespace r2bix_director
 {
 	class ScreenBufferManager
 	{

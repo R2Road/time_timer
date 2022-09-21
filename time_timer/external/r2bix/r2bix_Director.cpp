@@ -1,15 +1,14 @@
-#include "r2base_Director.h"
+#include "r2bix_Director.h"
 
 #include <utility> // std::move
 
 #include "r2node_SceneNode.h"
 
-namespace r2base
+namespace r2bix
 {
-	Director::Director( const DirectorConfig& director_config ) :
+	Director::Director( const r2bix_director::Config& director_config ) :
 		mScreenBufferManager()
-		, mUpdateTimer( director_config.UpdateFramePerSeconds )
-		, mRenderTimer( director_config.RenderFramePerSeconds )
+		, mScheduler( director_config, std::bind( &Director::onUpdate, this, std::placeholders::_1 ), std::bind( &Director::onRender, this ) )
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSIze )
 
@@ -42,21 +41,21 @@ namespace r2base
 				mCurrentSceneNode = std::move( mNextSceneNode );
 			}
 
-			if( mUpdateTimer.Update() )
-			{
-				mKeyboardInputCollector.Collect();
-
-				mCurrentSceneNode->Update( mUpdateTimer.GetElapsedTime() );
-			}
-
-			if( mRenderTimer.Update() )
-			{
-				mCurrentSceneNode->Render();
-
-				mScreenBufferManager.InitCursor();
-				mScreenBufferManager.Swap();
-			}
+			mScheduler.Do();
 		}
+	}
+	void Director::onUpdate( const float delta_time )
+	{
+		mKeyboardInputCollector.Collect();
+
+		mCurrentSceneNode->Update( delta_time );
+	}
+	void Director::onRender()
+	{
+		mCurrentSceneNode->Render();
+
+		mScreenBufferManager.InitCursor();
+		mScreenBufferManager.Swap();
 	}
 
 	void Director::ClearScreen()

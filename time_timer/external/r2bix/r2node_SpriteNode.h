@@ -2,7 +2,7 @@
 
 #include "r2base_Node.h"
 
-namespace r2base
+namespace r2bix
 {
 	class Director;
 }
@@ -15,6 +15,6 @@ namespace r2node
 		SpriteNode() = delete;
 
 	public:
-		static r2base::NodeUp Create( r2base::Director& director );
+		static r2base::NodeUp Create( r2bix::Director& director );
 	};
 }

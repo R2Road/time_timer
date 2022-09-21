@@ -10,6 +10,6 @@ namespace ptt
 		SelectIndicatorNode() = delete;
 
 	public:
-		static r2base::NodeUp Create( r2base::Director& director );
+		static r2base::NodeUp Create( r2bix::Director& director );
 	};
 }

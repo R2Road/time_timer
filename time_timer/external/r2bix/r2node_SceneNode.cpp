@@ -1,16 +1,16 @@
 #include "r2node_SceneNode.h"
 
-#include "r2base_Director.h"
+#include "r2bix_Director.h"
 #include "r2component_TransformComponent.h"
 
 namespace r2node
 {
-	SceneNode::SceneNode( r2base::Director& director ) : r2base::Node( director )
+	SceneNode::SceneNode( r2bix::Director& director ) : r2base::Node( director )
 		, mCamera( { director.GetScreenBufferSize().GetWidth() / 2, director.GetScreenBufferSize().GetHeight() / 2 }, director.GetScreenBufferSize() )
 		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
 
-	SceneNodeUp SceneNode::Create( r2base::Director& director )
+	SceneNodeUp SceneNode::Create( r2bix::Director& director )
 	{
 		SceneNodeUp ret( new ( std::nothrow ) SceneNode( director ) );
 		if( !ret || !ret->Init() )

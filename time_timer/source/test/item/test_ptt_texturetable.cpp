@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2bix/r2render_Camera.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 

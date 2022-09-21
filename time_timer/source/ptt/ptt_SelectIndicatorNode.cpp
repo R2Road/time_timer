@@ -8,7 +8,7 @@
 
 namespace ptt
 {
-	r2base::NodeUp SelectIndicatorNode::Create( r2base::Director& director )
+	r2base::NodeUp SelectIndicatorNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

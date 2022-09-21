@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2bix/r2render_Camera.h"
 #include "r2bix/r2component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
@@ -32,7 +32,7 @@ namespace test_ptt_numbernode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -108,7 +108,7 @@ namespace test_ptt_numbernode
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 7 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -152,7 +152,7 @@ namespace test_ptt_numbernode
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 15, 9 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
 			std::cout << r2cm::split;
 

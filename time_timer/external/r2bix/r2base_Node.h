@@ -16,6 +16,11 @@
 // 사용자 정의 노드의 제작은 가급적 없도록 노력하자.
 //
 
+namespace r2bix
+{
+	class Director;
+}
+
 namespace r2component
 {
 	class TransformComponent;
@@ -29,8 +34,6 @@ namespace r2render
 
 namespace r2base
 {
-	class Director;
-
 	using NodeUp = std::unique_ptr<class Node>;
 	class Node
 	{
@@ -38,12 +41,12 @@ namespace r2base
 		using ComponentContainerT = std::list<ComponentUp>;
 		using ChildContainerT = std::list<r2base::NodeUp>;
 
-		Node( Director& director );
+		Node( r2bix::Director& director );
 
 	public:
 		virtual ~Node() {}
 
-	static std::unique_ptr<Node> Create( r2base::Director& director );
+	static std::unique_ptr<Node> Create( r2bix::Director& director );
 
 	public:
 		virtual bool Init();
@@ -53,7 +56,7 @@ namespace r2base
 		//
 		//
 		//
-		Director& GetDirector() const { return mDirector; }
+		r2bix::Director& GetDirector() const { return mDirector; }
 		bool IsVisible() const { return mbVisible; }
 		void SetVisible( const bool visible )
 		{
@@ -168,7 +171,7 @@ namespace r2base
 		}
 
 	protected:
-		Director& mDirector;
+		r2bix::Director& mDirector;
 		bool mbVisible;
 		ComponentContainerT mComponentContainer;
 		ChildContainerT mChildContainer;

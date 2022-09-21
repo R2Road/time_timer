@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "r2bix/r2base_Director.h"
-#include "r2bix/r2base_VersionInfo.h"
+#include "r2bix/r2bix_Director.h"
+#include "r2bix/r2bix_VersionInfo.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
@@ -21,7 +21,7 @@ const char* DevelopmentMenu::GetTitle()
 	static const std::string ret =
 		std::string( "Development Menu" )
 		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " : <" + r2base::VersionInfo.String4Version + ">"
+		+ " : <" + r2bix::VersionInfo.String4Version + ">"
 		+ " : <" + ptt::VersionInfo.String4Version + ">";
 	return ret.c_str();
 }
@@ -78,7 +78,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					//
 					// Setup
 					//
-					r2base::Director director( ptt::DirectorConfig );
+					r2bix::Director director( ptt::DirectorConfig );
 					director.Setup( ptt::EntryScene::Create( director ) );
 
 					//

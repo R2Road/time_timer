@@ -2,7 +2,7 @@
 
 #include <string_view>
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
@@ -13,7 +13,7 @@
 
 namespace ptt
 {
-	r2base::NodeUp PauseIndicatorNode::Create( r2base::Director& director )
+	r2base::NodeUp PauseIndicatorNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
