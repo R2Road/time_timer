@@ -143,9 +143,6 @@
     <ClCompile Include="source\ptt\ptt_AlramEffectNode.cpp">
       <Filter>project_time_timer\node</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -446,9 +443,6 @@
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -483,9 +477,6 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_TimerFloat.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_UniqueIndex.h">
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2action_AnimationRequestAction.h">
