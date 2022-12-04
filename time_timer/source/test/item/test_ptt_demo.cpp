@@ -20,7 +20,7 @@ namespace test_ptt_demo
 			return "Demo";
 		};
 	}
-	r2cm::iItem::DoFunctionT Play::GetDoFunction()
+	r2cm::iItem::DoFunctionT Play::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

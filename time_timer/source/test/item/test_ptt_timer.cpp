@@ -12,6 +12,12 @@
 
 namespace test_ptt_timer
 {
+	std::ostream& operator<<( std::ostream& o, ptt::Timer::eStatus status )
+	{
+		o << static_cast<int>( status );
+		return o;
+	}
+
 	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -19,7 +25,7 @@ namespace test_ptt_timer
 			return "Timer : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -68,7 +74,7 @@ namespace test_ptt_timer
 			return "Timer : Set";
 		};
 	}
-	r2cm::iItem::DoFunctionT Set::GetDoFunction()
+	r2cm::iItem::DoFunctionT Set::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -115,7 +121,7 @@ namespace test_ptt_timer
 			return "Timer : Start";
 		};
 	}
-	r2cm::iItem::DoFunctionT Start::GetDoFunction()
+	r2cm::iItem::DoFunctionT Start::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -188,7 +194,7 @@ namespace test_ptt_timer
 			return "Timer : Update";
 		};
 	}
-	r2cm::iItem::DoFunctionT Update::GetDoFunction()
+	r2cm::iItem::DoFunctionT Update::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -266,7 +272,7 @@ namespace test_ptt_timer
 			return "Timer : Stop";
 		};
 	}
-	r2cm::iItem::DoFunctionT Stop::GetDoFunction()
+	r2cm::iItem::DoFunctionT Stop::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -356,7 +362,7 @@ namespace test_ptt_timer
 			return "Timer : Pause";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pause::GetDoFunction()
+	r2cm::iItem::DoFunctionT Pause::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

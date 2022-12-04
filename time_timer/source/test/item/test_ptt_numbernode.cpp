@@ -26,7 +26,7 @@ namespace test_ptt_numbernode
 			return "NumberNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -100,7 +100,7 @@ namespace test_ptt_numbernode
 			return "NumberNode : FirstView";
 		};
 	}
-	r2cm::iItem::DoFunctionT FirstView::GetDoFunction()
+	r2cm::iItem::DoFunctionT FirstView::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -144,7 +144,7 @@ namespace test_ptt_numbernode
 			return "NumberNode : Process";
 		};
 	}
-	r2cm::iItem::DoFunctionT Process::GetDoFunction()
+	r2cm::iItem::DoFunctionT Process::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

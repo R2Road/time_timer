@@ -19,7 +19,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', test_ptt_texturetable::Basic::GetInstance() );
+		ret->AddItem( '1', test_ptt_texturetable::Basic() );
 
 
 
@@ -27,12 +27,12 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '2', test_ptt_timer::Generate::GetInstance() );
-		ret->AddItem( '3', test_ptt_timer::Set::GetInstance() );
-		ret->AddItem( '4', test_ptt_timer::Start::GetInstance() );
-		ret->AddItem( '5', test_ptt_timer::Update::GetInstance() );
-		ret->AddItem( '6', test_ptt_timer::Stop::GetInstance() );
-		ret->AddItem( '7', test_ptt_timer::Pause::GetInstance() );
+		ret->AddItem( '2', test_ptt_timer::Generate() );
+		ret->AddItem( '3', test_ptt_timer::Set() );
+		ret->AddItem( '4', test_ptt_timer::Start() );
+		ret->AddItem( '5', test_ptt_timer::Update() );
+		ret->AddItem( '6', test_ptt_timer::Stop() );
+		ret->AddItem( '7', test_ptt_timer::Pause() );
 
 
 
@@ -40,7 +40,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( '9', test_ptt_core::Basic::GetInstance() );
+		ret->AddItem( '9', test_ptt_core::Basic() );
 
 
 
@@ -48,9 +48,9 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', test_ptt_numbernode::Generate::GetInstance() );
-		ret->AddItem( 'w', test_ptt_numbernode::FirstView::GetInstance() );
-		ret->AddItem( 'e', test_ptt_numbernode::Process::GetInstance() );
+		ret->AddItem( 'q', test_ptt_numbernode::Generate() );
+		ret->AddItem( 'w', test_ptt_numbernode::FirstView() );
+		ret->AddItem( 'e', test_ptt_numbernode::Process() );
 
 
 
@@ -58,9 +58,9 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'a', test_ptt_minutenode::Generate::GetInstance() );
-		ret->AddItem( 's', test_ptt_minutenode::View::GetInstance() );
-		ret->AddItem( 'd', test_ptt_minutenode::Process::GetInstance() );
+		ret->AddItem( 'a', test_ptt_minutenode::Generate() );
+		ret->AddItem( 's', test_ptt_minutenode::View() );
+		ret->AddItem( 'd', test_ptt_minutenode::Process() );
 
 
 
@@ -68,9 +68,9 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'z', test_ptt_secondsnode::Generate::GetInstance() );
-		ret->AddItem( 'x', test_ptt_secondsnode::View::GetInstance() );
-		ret->AddItem( 'c', test_ptt_secondsnode::Process::GetInstance() );
+		ret->AddItem( 'z', test_ptt_secondsnode::Generate() );
+		ret->AddItem( 'x', test_ptt_secondsnode::View() );
+		ret->AddItem( 'c', test_ptt_secondsnode::Process() );
 
 
 
@@ -78,7 +78,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 32, test_ptt_demo::Play::GetInstance() ); // space
+		ret->AddItem( 32, test_ptt_demo::Play() ); // space
 
 
 
