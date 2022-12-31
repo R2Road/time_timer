@@ -11,13 +11,20 @@
 #include "item/test_ptt_texturetable.h"
 #include "item/test_ptt_timer.h"
 
-r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
+r2cm::TitleFunctionT TestMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
+	{
+		return "Test Menu";
+	};
+}
+r2cm::DescriptionFunctionT TestMenu::GetDescriptionFunction() const
+{
+	return []()->const char* { return ""; };
+}
+r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
+{
+	return []( r2cm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', test_ptt_texturetable::Basic() );
 
@@ -88,14 +95,12 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			27
-			, r2cm::eColor::FG_White
+			, r2cm::eColor::BG_Purple
 			, []()->const char* { return "Exit"; }
-			, [&director]()->r2cm::eItemLeaveAction
+			, []()->r2cm::eDoLeaveAction
 			{
-				return r2cm::eItemLeaveAction::Exit;
+				return r2cm::eDoLeaveAction::Exit;
 			}
 		);
-	}
-
-	return ret;
+	};
 }

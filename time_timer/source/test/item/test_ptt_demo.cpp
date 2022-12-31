@@ -13,16 +13,16 @@
 
 namespace test_ptt_demo
 {
-	r2cm::iItem::TitleFunctionT Play::GetTitleFunction() const
+	r2cm::TitleFunctionT Play::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Demo";
 		};
 	}
-	r2cm::iItem::DoFunctionT Play::GetDoFunction() const
+	r2cm::DoFunctionT Play::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -109,7 +109,7 @@ namespace test_ptt_demo
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

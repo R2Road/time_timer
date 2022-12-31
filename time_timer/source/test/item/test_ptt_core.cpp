@@ -7,16 +7,16 @@
 
 namespace test_ptt_core
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Core : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2cm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -76,7 +76,7 @@ namespace test_ptt_core
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

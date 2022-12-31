@@ -19,16 +19,16 @@
 
 namespace test_ptt_secondsnode
 {
-	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
+	r2cm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "SecondsNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
+	r2cm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -67,22 +67,22 @@ namespace test_ptt_secondsnode
 			
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT View::GetTitleFunction() const
+	r2cm::TitleFunctionT View::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "SecondsNode : View";
 		};
 	}
-	r2cm::iItem::DoFunctionT View::GetDoFunction() const
+	r2cm::DoFunctionT View::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -111,19 +111,19 @@ namespace test_ptt_secondsnode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
-	r2cm::iItem::TitleFunctionT Process::GetTitleFunction() const
+	r2cm::TitleFunctionT Process::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "SecondsNode : Process";
 		};
 	}
-	r2cm::iItem::DoFunctionT Process::GetDoFunction() const
+	r2cm::DoFunctionT Process::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -190,7 +190,7 @@ namespace test_ptt_secondsnode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::None;
+			return r2cm::eDoLeaveAction::None;
 		};
 	}
 }

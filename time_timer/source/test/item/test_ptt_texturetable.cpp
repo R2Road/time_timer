@@ -15,16 +15,16 @@
 
 namespace test_ptt_texturetable
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Table";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2cm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -107,7 +107,7 @@ namespace test_ptt_texturetable
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

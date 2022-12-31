@@ -18,16 +18,16 @@ namespace test_ptt_timer
 		return o;
 	}
 
-	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
+	r2cm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
+	r2cm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -61,22 +61,22 @@ namespace test_ptt_timer
 			
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Set::GetTitleFunction() const
+	r2cm::TitleFunctionT Set::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Set";
 		};
 	}
-	r2cm::iItem::DoFunctionT Set::GetDoFunction() const
+	r2cm::DoFunctionT Set::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -108,22 +108,22 @@ namespace test_ptt_timer
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Start::GetTitleFunction() const
+	r2cm::TitleFunctionT Start::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Start";
 		};
 	}
-	r2cm::iItem::DoFunctionT Start::GetDoFunction() const
+	r2cm::DoFunctionT Start::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -181,22 +181,22 @@ namespace test_ptt_timer
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Update::GetTitleFunction() const
+	r2cm::TitleFunctionT Update::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Update";
 		};
 	}
-	r2cm::iItem::DoFunctionT Update::GetDoFunction() const
+	r2cm::DoFunctionT Update::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -259,22 +259,22 @@ namespace test_ptt_timer
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Stop::GetTitleFunction() const
+	r2cm::TitleFunctionT Stop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Stop";
 		};
 	}
-	r2cm::iItem::DoFunctionT Stop::GetDoFunction() const
+	r2cm::DoFunctionT Stop::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -349,22 +349,22 @@ namespace test_ptt_timer
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Pause::GetTitleFunction() const
+	r2cm::TitleFunctionT Pause::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Pause";
 		};
 	}
-	r2cm::iItem::DoFunctionT Pause::GetDoFunction() const
+	r2cm::DoFunctionT Pause::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -451,7 +451,7 @@ namespace test_ptt_timer
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }
