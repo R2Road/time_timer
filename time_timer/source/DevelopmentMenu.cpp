@@ -22,9 +22,11 @@ r2cm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 	{
 		static const std::string ret =
 			std::string( "Development Menu" )
-			+ " : <" + r2cm::VersionInfo.String4Version + ">"
-			+ " : <" + r2bix::VersionInfo.String4Version + ">"
-			+ " : <" + ptt::VersionInfo.String4Version + ">";
+			+ " : " "<" + "C++17" + ">"
+			+ ", " "<" + "MS C/C++ : " + std::to_string( _MSC_VER ) + ">"
+			+ ", " "<" + r2cm::VersionInfo.String4Version + ">"
+			+ ", " "<" + r2bix::VersionInfo.String4Version + ">"
+			+ ", " "<" + ptt::VersionInfo.String4Version + ">";
 		return ret.c_str();
 	};
 }
