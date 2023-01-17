@@ -32,7 +32,19 @@ r2cm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 }
 r2cm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 {
-	return []()->const char* { return ptt::VersionInfo.String4SubjectAsAProgrammer; };
+	return []()->const char*
+	{
+		static const std::string ret =
+			std::string()
+			+ ptt::VersionInfo.String4SubjectAsAProgrammer
+			+ "\n"
+			  "\n"
+			  "\n"
+			+ ptt::VersionInfo.String4Road2Version_1_0_7
+		;
+
+		return ret.c_str();
+	};
 }
 r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 {
