@@ -23,13 +23,13 @@ namespace ptt
 
 
 		const char* const String4Road2Version_1_0_7 =
-			"### Road 2 Version 1.0.7 ###"
+					"### Road 2 Version 1.0.7 ###"
 			"\n"
 			"\n"	"[ ] " "..."
 		;
 
 		const char* const String4SubjectAsAProgrammer = {
-			"### 프로젝트 목표 | Subject Of A Project ###"
+					"### 프로젝트 목표 | Subject Of A Project ###"
 			"\n"
 			"\n"	"1. Core"
 			"\n"	"[o] "    "전반의 데이터를 다루는 Core 객체를 둔다"
