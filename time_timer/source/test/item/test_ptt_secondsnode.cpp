@@ -177,7 +177,7 @@ namespace test_ptt_secondsnode
 						break;
 
 					case 32:
-						seconds_component->Toggle( seconds );
+						seconds_component->Toggle( seconds & 1 );
 					}
 
 				} while( 27 != input );
