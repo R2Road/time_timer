@@ -46,6 +46,7 @@ namespace test_ptt_secondsnode
 			std::cout << r2cm::split;
 
 			{
+				EXPECT_FALSE( node->IsVisible() );
 				EXPECT_TRUE( node->GetComponent<ptt::SecondsComponent>() );
 			}
 
