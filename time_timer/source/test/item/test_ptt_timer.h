@@ -4,7 +4,7 @@
 
 namespace test_ptt_timer
 {
-	class Generate : public r2cm::iItem
+	class Declaration : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

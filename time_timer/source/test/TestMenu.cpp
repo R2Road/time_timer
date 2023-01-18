@@ -34,7 +34,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( '2', test_ptt_timer::Generate() );
+		ret->AddItem( '2', test_ptt_timer::Declaration() );
 		ret->AddItem( '3', test_ptt_timer::Set() );
 		ret->AddItem( '4', test_ptt_timer::Start() );
 		ret->AddItem( '5', test_ptt_timer::Update() );

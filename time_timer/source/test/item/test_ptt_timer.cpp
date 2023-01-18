@@ -18,14 +18,14 @@ namespace test_ptt_timer
 		return o;
 	}
 
-	r2cm::TitleFunctionT Generate::GetTitleFunction() const
+	r2cm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Timer : Generate";
+			return "Timer : Declaration";
 		};
 	}
-	r2cm::DoFunctionT Generate::GetDoFunction() const
+	r2cm::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
