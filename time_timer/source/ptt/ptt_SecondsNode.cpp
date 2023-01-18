@@ -17,6 +17,7 @@ namespace ptt
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
+			ret->SetVisible( false );
 			ret->AddComponent<ptt::SecondsComponent>();
 
 			//
