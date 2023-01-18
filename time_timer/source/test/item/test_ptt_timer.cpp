@@ -151,15 +151,19 @@ namespace test_ptt_timer
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 0ll, timer.GetElapsedTime() );
-				OUTPUT_VALUE( timer.GetElapsedTime() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed2;
+				OUTPUT_NOTE( "Demo : [ESC] End" );
 
-				r2::FPSTimer ft( 30 );
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( r2::FPSTimer ft( 30 ) );
+
+				std::cout << r2cm::linefeed;
+
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 				do
 				{
