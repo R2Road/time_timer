@@ -93,6 +93,7 @@ namespace test_ptt_secondsnode
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto node = ptt::SecondsNode::Create( dummy_director ) );
+			PROCESS_MAIN( node->SetVisible( true ) );
 
 			std::cout << r2cm::split;
 
