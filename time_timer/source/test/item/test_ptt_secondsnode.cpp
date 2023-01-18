@@ -47,22 +47,17 @@ namespace test_ptt_secondsnode
 
 			{
 				EXPECT_TRUE( node->GetComponent<ptt::SecondsComponent>() );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 			}
 
 			std::cout << r2cm::split;
 
 			if( ptt::DebugConfig::GetNodeConfig().pivot )
 			{
-				EXPECT_EQ( 1, node->GetChildCount() );
+				EXPECT_EQ( 3, node->GetChildCount() );
 			}
 			else
 			{
-				EXPECT_EQ( 0, node->GetChildCount() );
+				EXPECT_EQ( 2, node->GetChildCount() );
 			}
 			
 			std::cout << r2cm::split;
