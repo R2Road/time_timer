@@ -156,7 +156,8 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_NOTE( "Demo : [ESC] End" );
+				OUTPUT_NOTE( "Demo" );
+				OUTPUT_COMMENT( "[ESC] End" );
 
 				std::cout << r2cm::linefeed;
 
