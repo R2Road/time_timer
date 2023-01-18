@@ -87,6 +87,7 @@ namespace test_ptt_timer
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer );
+			EXPECT_EQ( 0, timer.GetRequiredTime() );
 
 			std::cout << r2cm::split;
 
