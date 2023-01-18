@@ -31,34 +31,40 @@ namespace test_ptt_timer
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( ptt::Timer timer );
-
-			std::cout << r2cm::split;
-
 			{
-				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
+				DECLARATION_MAIN( ptt::Timer timer );
 
 				std::cout << r2cm::linefeed;
 
+				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 0, timer.GetCurrentTime() );
-
-				std::cout << r2cm::linefeed;
-
 				EXPECT_EQ( 0, timer.GetLastTime() );
-
-				std::cout << r2cm::linefeed;
-
 				EXPECT_EQ( 0, timer.GetElapsedTime() );
-
-				std::cout << r2cm::linefeed;
-
 				EXPECT_EQ( 0, timer.GetRequiredTime() );
 			}
 			
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( ptt::Timer timer( 12345 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
+				EXPECT_FALSE( timer.IsAlive() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, timer.GetCurrentTime() );
+				EXPECT_EQ( 0, timer.GetLastTime() );
+				EXPECT_EQ( 0, timer.GetElapsedTime() );
+				EXPECT_EQ( 12345, timer.GetRequiredTime() );
+			}
+
 			std::cout << r2cm::split;
 
 			return r2cm::eDoLeaveAction::Pause;
