@@ -7,6 +7,41 @@
 
 namespace test_ptt_core
 {
+	r2cm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Core : Declaration";
+		};
+	}
+	r2cm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_NOTE( "Not Working : private Constructor" );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_CODE( ptt::Core core );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( ptt::CoreUp core = ptt::Core::Create() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*

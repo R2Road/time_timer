@@ -4,6 +4,13 @@
 
 namespace test_ptt_core
 {
+	class Declaration : public r2cm::iItem
+	{
+	public:
+		r2cm::TitleFunctionT GetTitleFunction() const override;
+		r2cm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class Basic : public r2cm::iItem
 	{
 	public:
