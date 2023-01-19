@@ -31,7 +31,7 @@ namespace ptt
 			timer_scene_component->SetCore( std::move( core ) );
 
 			//
-			// Pause
+			// Pause Indicator
 			//
 			{
 				auto node = ret->AddChild<ptt::PauseIndicatorNode>();
@@ -67,7 +67,7 @@ namespace ptt
 			}
 
 			//
-			// Exit Indicator
+			// Exit Key View
 			//
 			{
 				auto node = ret->AddChild<r2node::LabelMNode>();
@@ -84,7 +84,7 @@ namespace ptt
 			}
 
 			//
-			// Pause Indicator
+			// Pause Key View
 			//
 			{
 				auto node = ret->AddChild<r2node::LabelMNode>();
