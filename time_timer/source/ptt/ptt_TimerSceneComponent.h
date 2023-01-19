@@ -28,6 +28,8 @@ namespace ptt
 		//
 		void SetCore( CoreUp&& core );
 		void SetPauseIndicatorNode( r2base::Node* const pause_indicator_node );
+		void SetPauseKeyViewNode( r2base::Node* const pause_key_view_node );
+		void SetResumeKeyViewNode( r2base::Node* const resume_key_view_node );
 		void SetMinuteComponent( MinuteComponent* const minute_component );
 		void SetSecondsComponent( SecondsComponent* const seconds_component );
 
@@ -41,6 +43,8 @@ namespace ptt
 		CoreUp mCore;
 
 		r2base::Node* mPauseIndicatorNode;
+		r2base::Node* mPauseKeyViewNode;
+		r2base::Node* mResumeKeyViewNode;
 		MinuteComponent* mMinuteComponent;
 		SecondsComponent* mSecondsComponent;
 		ptt::Timer mTimer;

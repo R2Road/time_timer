@@ -35,7 +35,6 @@ namespace ptt
 			//
 			{
 				auto node = ret->AddChild<ptt::PauseIndicatorNode>();
-				node->SetVisible( false );
 
 				timer_scene_component->SetPauseIndicatorNode( node );
 			}
@@ -98,6 +97,27 @@ namespace ptt
 					director.GetScreenBufferSize().GetWidth()
 					, director.GetScreenBufferSize().GetHeight()
 				);
+
+				timer_scene_component->SetPauseKeyViewNode( node );
+			}
+
+			//
+			// Resume Key View
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelMNode>();
+				node->GetComponent<r2component::LabelMComponent>()->SetString(
+
+					"\n"  "  "  "SPACE > "
+				);
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 1.f );
+
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					director.GetScreenBufferSize().GetWidth()
+					, director.GetScreenBufferSize().GetHeight()
+				);
+
+				timer_scene_component->SetResumeKeyViewNode( node );
 			}
 
 			//

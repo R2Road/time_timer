@@ -24,6 +24,8 @@ namespace ptt
 		, mCore()
 
 		, mPauseIndicatorNode( nullptr )
+		, mPauseKeyViewNode( nullptr )
+		, mResumeKeyViewNode( nullptr )
 		, mMinuteComponent( nullptr )
 		, mSecondsComponent( nullptr )
 		, mTimer()
@@ -83,7 +85,10 @@ namespace ptt
 			if( mKeyboardInputListener.IsRelease( 1 ) )
 			{
 				mTimer.Pause();
+
 				mPauseIndicatorNode->SetVisible( true );
+				mPauseKeyViewNode->SetVisible( false );
+				mResumeKeyViewNode->SetVisible( true );
 			}
 		}
 		break;
@@ -96,7 +101,10 @@ namespace ptt
 			if( mKeyboardInputListener.IsRelease( 1 ) )
 			{
 				mTimer.Resume();
+
 				mPauseIndicatorNode->SetVisible( false );
+				mPauseKeyViewNode->SetVisible( true );
+				mResumeKeyViewNode->SetVisible( false );
 			}
 		}
 		break;
@@ -128,6 +136,18 @@ namespace ptt
 
 		mPauseIndicatorNode = pause_indicator_node;
 	}
+	void TimerSceneComponent::SetPauseKeyViewNode( r2base::Node* const pause_key_view_node )
+	{
+		R2ASSERT( nullptr != pause_key_view_node, "" );
+
+		mPauseKeyViewNode = pause_key_view_node;
+	}
+	void TimerSceneComponent::SetResumeKeyViewNode( r2base::Node* const resume_key_view_node )
+	{
+		R2ASSERT( nullptr != resume_key_view_node, "" );
+
+		mResumeKeyViewNode = resume_key_view_node;
+	}
 	void TimerSceneComponent::SetMinuteComponent( MinuteComponent* const minute_component )
 	{
 		R2ASSERT( nullptr != minute_component, "" );
@@ -146,5 +166,9 @@ namespace ptt
 		mMinuteComponent->SetMinute( mCore->GetPlayTime().GetMinute10(), mCore->GetPlayTime().GetMinute1() );
 		mTimer.Set( mCore->GetPlayTime().GetSeconds() );
 		mTimer.Start();
+
+		mPauseIndicatorNode->SetVisible( false );
+		mPauseKeyViewNode->SetVisible( true );
+		mResumeKeyViewNode->SetVisible( false );
 	}
 }
