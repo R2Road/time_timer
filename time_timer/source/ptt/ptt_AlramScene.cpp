@@ -5,7 +5,9 @@
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2component_LabelSComponent.h"
+#include "r2bix/r2component_LabelMComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
+#include "r2bix/r2node_LabelMNode.h"
 #include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
@@ -57,6 +59,25 @@ namespace ptt
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					0
 					, 0
+				);
+			}
+
+			//
+			// More Minutes
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelMNode>();
+				node->GetComponent<r2component::LabelMComponent>()->SetString(
+					"\n"  "  "  "A :  5 More Min => "
+					"\n"  "  "  "W : 10 More Min => "
+					"\n"  "  "  "D : 15 More Min => "
+					"\n"  "  "  "S : 20 More Min => "
+				);
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 1.f );
+
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					director.GetScreenBufferSize().GetWidth()
+					, director.GetScreenBufferSize().GetHeight()
 				);
 			}
 
