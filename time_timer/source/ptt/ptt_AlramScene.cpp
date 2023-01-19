@@ -54,7 +54,7 @@ namespace ptt
 			{
 				auto node = ret->AddChild<r2node::LabelMNode>();
 				node->GetComponent<r2component::LabelMComponent>()->SetString(
-					"<<< ESC | SPACE" "  "
+					      "<<< ESC | SPACE" "  "
 					"\n"
 				);
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
@@ -71,6 +71,7 @@ namespace ptt
 			{
 				auto node = ret->AddChild<r2node::LabelMNode>();
 				node->GetComponent<r2component::LabelMComponent>()->SetString(
+
 					"\n"  "  "  "A :  5 More Min => "
 					"\n"  "  "  "W : 10 More Min => "
 					"\n"  "  "  "D : 15 More Min => "
