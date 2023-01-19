@@ -22,7 +22,7 @@ namespace r2component
 
 		if( mCustomTextureComponent )
 		{
-			mCustomTextureComponent->GetTexture()->Reset( str );
+			mCustomTextureComponent->GetTexture()->Reset( static_cast<uint32_t>( str.size() ), str );
 			mCustomTextureComponent->GetTexture()->FillColorAll( mColorValue );
 		}
 
