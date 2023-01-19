@@ -64,8 +64,7 @@ namespace ptt
 			// Seconds View
 			//
 			{
-				const bool flag = mTimer.GetElapsedTime<std::chrono::seconds>() & 1;
-				mSecondsComponent->Toggle( flag );
+				mSecondsComponent->Toggle( mTimer.GetElapsedTime<std::chrono::seconds>() );
 			}
 
 			//

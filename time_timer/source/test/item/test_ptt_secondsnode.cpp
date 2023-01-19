@@ -175,12 +175,12 @@ namespace test_ptt_secondsnode
 					{
 					case 'q':
 						seconds = ++seconds;
-						seconds_component->Toggle( seconds & 1 );
+						seconds_component->Toggle( seconds );
 						break;
 
 					case 'a':
 						seconds = --seconds;
-						seconds_component->Toggle( seconds & 1 );
+						seconds_component->Toggle( seconds );
 						break;
 					}
 

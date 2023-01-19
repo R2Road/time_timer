@@ -8,8 +8,10 @@ namespace ptt
 		, mbFlag( owner_node.IsVisible() )
 	{}
 
-	void SecondsComponent::Toggle( const bool new_flag )
+	void SecondsComponent::Toggle( const int64_t seconds )
 	{
+		const bool new_flag = seconds & 1;
+
 		if( new_flag == mbFlag )
 		{
 			return;

@@ -9,7 +9,7 @@ namespace ptt
 	public:
 		SecondsComponent( r2base::Node& owner_node );
 
-		void Toggle( const bool new_flag );
+		void Toggle( const int64_t seconds );
 
 	private:
 		bool mbFlag;
