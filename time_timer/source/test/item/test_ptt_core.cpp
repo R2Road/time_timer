@@ -25,53 +25,53 @@ namespace test_ptt_core
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( core->IncreaseMinute10() );
-				EXPECT_EQ( 1, core->GetMinute10() );
-				PROCESS_MAIN( core->IncreaseMinute10() );
-				EXPECT_EQ( 2, core->GetMinute10() );
+				PROCESS_MAIN( core->GetRequiredTime().IncreaseMinute10() );
+				EXPECT_EQ( 1, core->GetRequiredTime().GetMinute10() );
+				PROCESS_MAIN( core->GetRequiredTime().IncreaseMinute10() );
+				EXPECT_EQ( 2, core->GetRequiredTime().GetMinute10() );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( core->IncreaseMinute1() );
-				EXPECT_EQ( 1, core->GetMinute1() );
-				PROCESS_MAIN( core->IncreaseMinute1() );
-				EXPECT_EQ( 2, core->GetMinute1() );
-				PROCESS_MAIN( core->IncreaseMinute1() );
-				EXPECT_EQ( 3, core->GetMinute1() );
+				PROCESS_MAIN( core->GetRequiredTime().IncreaseMinute1() );
+				EXPECT_EQ( 1, core->GetRequiredTime().GetMinute1() );
+				PROCESS_MAIN( core->GetRequiredTime().IncreaseMinute1() );
+				EXPECT_EQ( 2, core->GetRequiredTime().GetMinute1() );
+				PROCESS_MAIN( core->GetRequiredTime().IncreaseMinute1() );
+				EXPECT_EQ( 3, core->GetRequiredTime().GetMinute1() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( 23, core->GetMinute() );
+				EXPECT_EQ( 23, core->GetRequiredTime().GetMinute() );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( 23 * 60, core->GetSeconds() );
+				EXPECT_EQ( 23 * 60, core->GetRequiredTime().GetSeconds() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( core->DecreaseMinute10() );
-				EXPECT_EQ( 1, core->GetMinute10() );
+				PROCESS_MAIN( core->GetRequiredTime().DecreaseMinute10() );
+				EXPECT_EQ( 1, core->GetRequiredTime().GetMinute10() );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( core->DecreaseMinute1() );
-				EXPECT_EQ( 2, core->GetMinute1() );
-				PROCESS_MAIN( core->DecreaseMinute1() );
-				EXPECT_EQ( 1, core->GetMinute1() );
+				PROCESS_MAIN( core->GetRequiredTime().DecreaseMinute1() );
+				EXPECT_EQ( 2, core->GetRequiredTime().GetMinute1() );
+				PROCESS_MAIN( core->GetRequiredTime().DecreaseMinute1() );
+				EXPECT_EQ( 1, core->GetRequiredTime().GetMinute1() );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( 11, core->GetMinute() );
+				EXPECT_EQ( 11, core->GetRequiredTime().GetMinute() );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( 11 * 60, core->GetSeconds() );
+				EXPECT_EQ( 11 * 60, core->GetRequiredTime().GetSeconds() );
 			}
 
 			std::cout << r2cm::split;

@@ -60,27 +60,27 @@ namespace ptt
 		{
 			if( eNumberIndicator::M10 == mCurrentNumberIndicator )
 			{
-				mCore->IncreaseMinute10();
+				mCore->GetRequiredTime().IncreaseMinute10();
 			}
 			else //if( eNumberIndicator::M1 == mCurrentNumberIndicator )
 			{
-				mCore->IncreaseMinute1();
+				mCore->GetRequiredTime().IncreaseMinute1();
 			}
 
-			mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+			mMinuteComponent->SetMinute( mCore->GetRequiredTime().GetMinute10(), mCore->GetRequiredTime().GetMinute1() );
 		}
 		if( mKeyboardInputListener.IsPushed( 4 ) )
 		{
 			if( eNumberIndicator::M10 == mCurrentNumberIndicator )
 			{
-				mCore->DecreaseMinute10();
+				mCore->GetRequiredTime().DecreaseMinute10();
 			}
 			else //if( eNumberIndicator::M1 == mCurrentNumberIndicator )
 			{
-				mCore->DecreaseMinute1();
+				mCore->GetRequiredTime().DecreaseMinute1();
 			}
 
-			mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+			mMinuteComponent->SetMinute( mCore->GetRequiredTime().GetMinute10(), mCore->GetRequiredTime().GetMinute1() );
 		}
 
 		//
@@ -88,7 +88,7 @@ namespace ptt
 		//
 		if( mKeyboardInputListener.IsRelease( 1 ) )
 		{
-			if( 0 < mCore->GetMinute() )
+			if( 0 < mCore->GetRequiredTime().GetMinute() )
 			{
 				auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 				mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
@@ -138,7 +138,7 @@ namespace ptt
 
 	void EditorSceneComponent::Setup()
 	{
-		mMinuteComponent->SetMinute( mCore->GetMinute10(), mCore->GetMinute1() );
+		mMinuteComponent->SetMinute( mCore->GetRequiredTime().GetMinute10(), mCore->GetRequiredTime().GetMinute1() );
 		SelectNumber( ptt::EditorSceneComponent::eNumberIndicator::M1 );
 	}
 

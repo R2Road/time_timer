@@ -5,9 +5,7 @@
 
 namespace ptt
 {
-	Core::Core() : 
-		mMinute_10( 0 )
-		, mMinute_1( 0 )
+	Core::Core() : mRequiredTime()
 	{}
 
 	CoreUp Core::Create()
@@ -21,19 +19,19 @@ namespace ptt
 		return ret;
 	}
 
-	void Core::IncreaseMinute10()
+	void Core::RequiredTime::IncreaseMinute10()
 	{
 		mMinute_10 = std::min( 9, mMinute_10 + 1 );
 	}
-	void Core::DecreaseMinute10()
+	void Core::RequiredTime::DecreaseMinute10()
 	{
 		mMinute_10 = std::max( 0, mMinute_10 - 1 );
 	}
-	void Core::IncreaseMinute1()
+	void Core::RequiredTime::IncreaseMinute1()
 	{
 		mMinute_1 = std::min( 9, mMinute_1 + 1 );
 	}
-	void Core::DecreaseMinute1()
+	void Core::RequiredTime::DecreaseMinute1()
 	{
 		mMinute_1 = std::max( 0, mMinute_1 - 1 );
 	}
