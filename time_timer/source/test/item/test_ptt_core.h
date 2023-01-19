@@ -17,4 +17,11 @@ namespace test_ptt_core
 		r2cm::TitleFunctionT GetTitleFunction() const override;
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
+
+	class PlayTime : public r2cm::iItem
+	{
+	public:
+		r2cm::TitleFunctionT GetTitleFunction() const override;
+		r2cm::DoFunctionT GetDoFunction() const override;
+	};
 }

@@ -39,6 +39,13 @@ namespace test_ptt_core
 				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute10() );
 				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute1() );
 				EXPECT_EQ( 0, core->GetRequiredTime().GetSeconds() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, core->GetPlayTime().GetMinute() );
+				EXPECT_EQ( 0, core->GetPlayTime().GetMinute10() );
+				EXPECT_EQ( 0, core->GetPlayTime().GetMinute1() );
+				EXPECT_EQ( 0, core->GetPlayTime().GetSeconds() );
 			}
 
 			std::cout << r2cm::split;
@@ -114,6 +121,47 @@ namespace test_ptt_core
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 11 * 60, r.GetSeconds() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::TitleFunctionT PlayTime::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Core : PlayTime";
+		};
+	}
+	r2cm::DoFunctionT PlayTime::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( ptt::Core::PlayTime p );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( p.SetMinute( 1, 2 ) );
+				EXPECT_EQ( 12, p.GetMinute() );
+				EXPECT_EQ( 1, p.GetMinute10() );
+				EXPECT_EQ( 2, p.GetMinute1() );
+				EXPECT_EQ( 12 * 60, p.GetSeconds() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( p.SetMinute( 2, 4 ) );
+				EXPECT_EQ( 24, p.GetMinute() );
+				EXPECT_EQ( 2, p.GetMinute10() );
+				EXPECT_EQ( 4, p.GetMinute1() );
+				EXPECT_EQ( 24 * 60, p.GetSeconds() );
 			}
 
 			std::cout << r2cm::split;

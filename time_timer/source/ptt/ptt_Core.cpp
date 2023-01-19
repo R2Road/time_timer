@@ -5,7 +5,7 @@
 
 namespace ptt
 {
-	Core::Core() : mRequiredTime()
+	Core::Core() : mRequiredTime(), mPlayTime()
 	{}
 
 	CoreUp Core::Create()
