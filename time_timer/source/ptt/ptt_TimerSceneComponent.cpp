@@ -53,7 +53,7 @@ namespace ptt
 			// Minute View
 			//
 			{
-				const int result_minute = mCore->GetRequiredTime().GetMinute() - ( current_elapsed_minutes % 100 );
+				const int result_minute = mCore->GetPlayTime().GetMinute() - ( current_elapsed_minutes % 100 );
 
 				const int result_minute_1 = result_minute % 10;
 				const int result_minute_10 = ( result_minute - result_minute_1 ) / 10;
@@ -143,8 +143,8 @@ namespace ptt
 
 	void TimerSceneComponent::Setup()
 	{
-		mMinuteComponent->SetMinute( mCore->GetRequiredTime().GetMinute10(), mCore->GetRequiredTime().GetMinute1() );
-		mTimer.Set( mCore->GetRequiredTime().GetSeconds() );
+		mMinuteComponent->SetMinute( mCore->GetPlayTime().GetMinute10(), mCore->GetPlayTime().GetMinute1() );
+		mTimer.Set( mCore->GetPlayTime().GetSeconds() );
 		mTimer.Start();
 	}
 }

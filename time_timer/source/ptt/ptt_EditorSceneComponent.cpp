@@ -90,6 +90,14 @@ namespace ptt
 		{
 			if( 0 < mCore->GetRequiredTime().GetMinute() )
 			{
+				//
+				// Setup Play Time
+				//
+				mCore->GetPlayTime().SetMinute( mCore->GetRequiredTime().GetMinute10(), mCore->GetRequiredTime().GetMinute1() );
+
+				//
+				// Go Next Scene
+				//
 				auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 				mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
 				return;
