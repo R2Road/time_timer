@@ -7,9 +7,6 @@
     <Filter Include="test\item">
       <UniqueIdentifier>{73b8ae37-fff3-4b18-94bd-671e7fec08ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_time_timer">
-      <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="external">
       <UniqueIdentifier>{de198ac1-e477-4185-a48e-82f6779099fd}</UniqueIdentifier>
     </Filter>
@@ -22,17 +19,20 @@
     <Filter Include="external\r2cm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_time_timer\scene">
-      <UniqueIdentifier>{d580499f-06bb-4e5b-acf5-0b3791089e3e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project_time_timer\table">
-      <UniqueIdentifier>{7aacd882-f426-41a8-af14-b0f667a328e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project_time_timer\node">
-      <UniqueIdentifier>{342e4b94-6495-4512-b3ae-92231f2d7377}</UniqueIdentifier>
-    </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{a47b3b82-309a-453e-84b5-e9ce259efa6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ptt">
+      <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ptt\scene">
+      <UniqueIdentifier>{d580499f-06bb-4e5b-acf5-0b3791089e3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ptt\table">
+      <UniqueIdentifier>{7aacd882-f426-41a8-af14-b0f667a328e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ptt\node">
+      <UniqueIdentifier>{342e4b94-6495-4512-b3ae-92231f2d7377}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,7 +54,7 @@
       <Filter>test\item</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_Timer.cpp">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_timer.cpp">
       <Filter>test\item</Filter>
@@ -63,28 +63,28 @@
       <Filter>test\item</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_Core.cpp">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_TimerScene.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_TimerSceneComponent.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_EditorScene.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_EntryScene.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_TextureFrameAnimationTable.cpp">
-      <Filter>project_time_timer\table</Filter>
+      <Filter>ptt\table</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_TextureTable.cpp">
-      <Filter>project_time_timer\table</Filter>
+      <Filter>ptt\table</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_EditorSceneComponent.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\test\item\test_ptt_secondsnode.cpp">
       <Filter>test\item</Filter>
@@ -93,40 +93,40 @@
       <Filter>test\item</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_AlramScene.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_AlramSceneComponent.cpp">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_MinuteComponent.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_MinuteNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_SelectIndicatorNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_NumberComponent.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_NumberNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_SecondsComponent.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_SecondsNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_ChangeIndicatorNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_PauseIndicatorNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="source\ptt\ptt_AlramEffectNode.cpp">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
       <Filter>external\r2</Filter>
@@ -315,7 +315,7 @@
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
     <ClInclude Include="source\ptt\ptt_VersionInfo.h">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClInclude>
     <ClInclude Include="source\test\TestMenu.h">
       <Filter>test</Filter>
@@ -333,7 +333,7 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_Timer.h">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_timer.h">
       <Filter>test\item</Filter>
@@ -342,28 +342,28 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_Core.h">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TimerScene.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TimerSceneComponent.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_EditorScene.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_EntryScene.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TextureFrameAnimationTable.h">
-      <Filter>project_time_timer\table</Filter>
+      <Filter>ptt\table</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_TextureTable.h">
-      <Filter>project_time_timer\table</Filter>
+      <Filter>ptt\table</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_EditorSceneComponent.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\test\item\test_ptt_secondsnode.h">
       <Filter>test\item</Filter>
@@ -372,49 +372,49 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_AlramScene.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_AlramSceneComponent.h">
-      <Filter>project_time_timer\scene</Filter>
+      <Filter>ptt\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_MinuteComponent.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_MinuteNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SelectIndicatorNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_NumberComponent.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_NumberNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SecondsComponent.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_SecondsNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_ChangeIndicatorNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_PauseIndicatorNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_AlramEffectNode.h">
-      <Filter>project_time_timer\node</Filter>
+      <Filter>ptt\node</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>resource</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_DebugConfig.h">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClInclude>
     <ClInclude Include="source\ptt\ptt_DirectorConfig.h">
-      <Filter>project_time_timer</Filter>
+      <Filter>ptt</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>external\r2</Filter>
