@@ -3,10 +3,10 @@
 #include <numeric>
 
 #include "r2bix/r2bix_Director.h"
-#include "r2bix/r2component_LabelSComponent.h"
+#include "r2bix/r2component_LabelMComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
-#include "r2bix/r2node_LabelSNode.h"
+#include "r2bix/r2node_LabelMNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
 #include "ptt_DebugConfig.h"
@@ -70,8 +70,11 @@ namespace ptt
 			// Exit Indicator
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "<<< ESC" );
+				auto node = ret->AddChild<r2node::LabelMNode>();
+				node->GetComponent<r2component::LabelMComponent>()->SetString(
+					      "<<< ESC" "  "
+					"\n"
+				);
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
@@ -84,8 +87,11 @@ namespace ptt
 			// Pause Indicator
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "SPACE || " );
+				auto node = ret->AddChild<r2node::LabelMNode>();
+				node->GetComponent<r2component::LabelMComponent>()->SetString(
+					
+					"\n"  "  "  "SPACE || "
+				);
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 1.f );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
