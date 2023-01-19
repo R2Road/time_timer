@@ -32,6 +32,13 @@ namespace test_ptt_core
 
 			{
 				DECLARATION_MAIN( ptt::CoreUp core = ptt::Core::Create() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute() );
+				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute10() );
+				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute1() );
+				EXPECT_EQ( 0, core->GetRequiredTime().GetSeconds() );
 			}
 
 			std::cout << r2cm::split;
