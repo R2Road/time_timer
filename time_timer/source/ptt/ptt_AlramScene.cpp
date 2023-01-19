@@ -52,8 +52,11 @@ namespace ptt
 			// Exit Indicator
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelSNode>();
-				node->GetComponent<r2component::LabelSComponent>()->SetString( "<<< ESC | SPACE" );
+				auto node = ret->AddChild<r2node::LabelMNode>();
+				node->GetComponent<r2component::LabelMComponent>()->SetString(
+					"<<< ESC | SPACE" "  "
+					"\n"
+				);
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
