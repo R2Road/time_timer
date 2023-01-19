@@ -146,7 +146,6 @@ namespace test_ptt_secondsnode
 			{
 				std::cout << r2cm::tab << "# Key" << r2cm::linefeed;
 				std::cout << r2cm::tab << "[Q/A] Seconds Up/Down" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[Space] Apply Seconds" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
@@ -176,13 +175,13 @@ namespace test_ptt_secondsnode
 					{
 					case 'q':
 						seconds = ++seconds;
-						break;
-					case 'a':
-						seconds = --seconds;
+						seconds_component->Toggle( seconds & 1 );
 						break;
 
-					case 32:
+					case 'a':
+						seconds = --seconds;
 						seconds_component->Toggle( seconds & 1 );
+						break;
 					}
 
 				} while( 27 != input );
