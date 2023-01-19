@@ -3,7 +3,7 @@
 #include "r2bix_Director.h"
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
-#include "r2component_LabelSComponent.h"
+#include "r2component_LabelMComponent.h"
 
 namespace r2node
 {
@@ -14,7 +14,7 @@ namespace r2node
 		{
 			r2component::CustomTextureComponent* custom_texture_component = ret->AddComponent<r2component::CustomTextureComponent>();
 			r2component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
-			r2component::LabelSComponent* label_component = ret->AddComponent<r2component::LabelSComponent>();
+			r2component::LabelMComponent* label_component = ret->AddComponent<r2component::LabelMComponent>();
 
 			label_component->SetCustomTextureComponent( custom_texture_component );
 			label_component->SetTextureRenderComponent( texture_render_component );
