@@ -11,7 +11,7 @@ namespace test_ptt_core
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Basic : public r2cm::iItem
+	class RequiredTime : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

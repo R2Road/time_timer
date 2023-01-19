@@ -49,14 +49,14 @@ namespace test_ptt_core
 
 
 
-	r2cm::TitleFunctionT Basic::GetTitleFunction() const
+	r2cm::TitleFunctionT RequiredTime::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Core : Basic";
+			return "Core : RequiredTime";
 		};
 	}
-	r2cm::DoFunctionT Basic::GetDoFunction() const
+	r2cm::DoFunctionT RequiredTime::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{

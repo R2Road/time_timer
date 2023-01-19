@@ -48,7 +48,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 
 		ret->AddItem( '8', test_ptt_core::Declaration() );
-		ret->AddItem( '9', test_ptt_core::Basic() );
+		ret->AddItem( '9', test_ptt_core::RequiredTime() );
 
 
 
