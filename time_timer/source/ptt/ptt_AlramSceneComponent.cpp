@@ -11,6 +11,7 @@
 #include "ptt_Core.h"
 
 #include "ptt_EditorScene.h"
+#include "ptt_TimerScene.h"
 
 namespace ptt
 {
@@ -18,6 +19,10 @@ namespace ptt
 		, mKeyboardInputListener( {
 			  0x1B		// 0 : esc
 			, 0x20		// 1 : space
+			, 0x41		// 2 : a - left
+			, 0x44		// 3 : d - right
+			, 0x53		// 4 : s - down
+			, 0x57		// 5 : w - up
 		} )
 		, mCore()
 		, mTimer( 5 )
@@ -42,6 +47,43 @@ namespace ptt
 
 			mTimer.Start();
 		}
+
+		//
+		// More Minutes : 5, 10, 15, 20
+		//
+		if( mKeyboardInputListener.IsPushed( 2 ) ) // 'a'
+		{
+			mCore->GetPlayTime().SetMinute( 0, 5 );
+
+			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+			return;
+		}
+		if( mKeyboardInputListener.IsPushed( 3 ) ) // 'd'
+		{
+			mCore->GetPlayTime().SetMinute( 1, 5 );
+
+			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+			return;
+		}
+		if( mKeyboardInputListener.IsPushed( 4 ) ) // 's'
+		{
+			mCore->GetPlayTime().SetMinute( 2, 0 );
+
+			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+			return;
+		}
+		if( mKeyboardInputListener.IsPushed( 5 ) ) // 'w'
+		{
+			mCore->GetPlayTime().SetMinute( 1, 0 );
+
+			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
+			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
+			return;
+		}
+
 		//
 		// Move 2 Editor Scene
 		//
