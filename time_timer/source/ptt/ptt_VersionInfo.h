@@ -25,9 +25,10 @@ namespace ptt
 		const char* const String4Road2Version_1_0_7 =
 					"### Road 2 Version 1.0.7 ###"
 			"\n"
-			"\n"	"[ ] " "Add Interface 2 Alram Scene :  1분 더"
-			"\n"	"[ ] " "Add Interface 2 Alram Scene :  5분 더"
-			"\n"	"[ ] " "Add Interface 2 Alram Scene : 10분 더"
+			"\n"	"[o] " "Add Interface 2 Alram Scene :  5분 더"
+			"\n"	"[o] " "Add Interface 2 Alram Scene : 10분 더"
+			"\n"	"[o] " "Add Interface 2 Alram Scene : 15분 더"
+			"\n"	"[o] " "Add Interface 2 Alram Scene : 20분 더"
 		;
 
 		const char* const String4SubjectAsAProgrammer = {
