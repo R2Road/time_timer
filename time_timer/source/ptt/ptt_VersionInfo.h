@@ -22,6 +22,13 @@ namespace ptt
 
 
 
+		const char* const String4Road2Version_1_0_8 =
+					"### Road 2 Version 1.0.8 ###"
+			"\n"
+			"\n"	"[ ] " "..."
+			"\n"	"[o] " "update timer scene : improve key info - show resume key info"
+		;
+
 		const char* const String4Road2Version_1_0_7 =
 					"### Road 2 Version 1.0.7 ###"
 			"\n"
@@ -30,6 +37,8 @@ namespace ptt
 			"\n"	"[o] " "Add Interface 2 Alram Scene : 15분 더"
 			"\n"	"[o] " "Add Interface 2 Alram Scene : 20분 더"
 		;
+
+
 
 		const char* const String4SubjectAsAProgrammer = {
 					"### 프로젝트 목표 | Subject Of A Project ###"
