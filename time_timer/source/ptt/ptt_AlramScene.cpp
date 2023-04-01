@@ -72,10 +72,10 @@ namespace ptt
 				auto node = ret->AddChild<r2node::LabelMNode>();
 				node->GetComponent<r2component::LabelMComponent>()->SetString(
 
-					"\n"  "  "  "A | + 5 => "
-					"\n"  "  "  "W | +10 => "
-					"\n"  "  "  "D | +15 => "
-					"\n"  "  "  "S | +20 => "
+					"\n"  "  "  "A | + 1 => "
+					"\n"  "  "  "W | + 5 => "
+					"\n"  "  "  "D | +10 => "
+					"\n"  "  "  "S | +15 => "
 				);
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 1.f );
 

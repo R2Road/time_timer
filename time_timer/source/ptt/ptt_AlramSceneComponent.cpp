@@ -49,11 +49,11 @@ namespace ptt
 		}
 
 		//
-		// More Minutes : 5, 10, 15, 20
+		// More Minutes : 1, 5, 10, 15
 		//
 		if( mKeyboardInputListener.IsPushed( 2 ) ) // 'a'
 		{
-			mCore->GetPlayTime().SetMinute( 0, 5 );
+			mCore->GetPlayTime().SetMinute( 0, 1 );
 
 			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
@@ -61,7 +61,7 @@ namespace ptt
 		}
 		if( mKeyboardInputListener.IsPushed( 3 ) ) // 'd'
 		{
-			mCore->GetPlayTime().SetMinute( 1, 5 );
+			mCore->GetPlayTime().SetMinute( 1, 0 );
 
 			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
@@ -69,7 +69,7 @@ namespace ptt
 		}
 		if( mKeyboardInputListener.IsPushed( 4 ) ) // 's'
 		{
-			mCore->GetPlayTime().SetMinute( 2, 0 );
+			mCore->GetPlayTime().SetMinute( 1, 5 );
 
 			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
@@ -77,7 +77,7 @@ namespace ptt
 		}
 		if( mKeyboardInputListener.IsPushed( 5 ) ) // 'w'
 		{
-			mCore->GetPlayTime().SetMinute( 1, 0 );
+			mCore->GetPlayTime().SetMinute( 0, 5 );
 
 			auto next_scene = ptt::TimerScene::Create( mOwnerNode.GetDirector(), std::move( mCore ) );
 			mOwnerNode.GetDirector().Setup( std::move( next_scene ) );
