@@ -27,6 +27,7 @@ namespace ptt
 			"\n"
 			"\n"	"[ ] " "..."
 			"\n"	"[o] " "update timer scene : improve key info - show resume key info"
+			"\n"	"[o] " "update alram scene : adjust additional time - 5, 10, 15, 20 > 1, 5, 10, 15"
 		;
 
 		const char* const String4Road2Version_1_0_7 =
