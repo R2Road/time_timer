@@ -29,6 +29,12 @@ namespace ptt
 
 
 
+		const char* const String4Road2Version_1_0_9 =
+					"### Road 2 Version 1.0.9 ###"
+			"\n"
+			"\n"	"[ ] " "..."
+		;
+
 		const char* const String4Road2Version_1_0_8 =
 					"### Road 2 Version 1.0.8 ###"
 			"\n"
