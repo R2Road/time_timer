@@ -23,7 +23,7 @@
 - external library
   - [vld]( https://kinddragon.github.io/vld/ )
   - [r2_console_menu]( https://github.com/R2Road/r2_console_menu )
-  - [r2bix_console_framework]( https://github.com/R2Road/r2bix_console_framework )
+  - [r2bix]( https://github.com/R2Road/r2bix )
 
 
 ## License
