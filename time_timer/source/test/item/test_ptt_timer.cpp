@@ -29,7 +29,7 @@ namespace test_ptt_timer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_SUBJECT( "기본 생성자" );
@@ -38,12 +38,12 @@ namespace test_ptt_timer
 
 				DECLARATION_MAIN( ptt::Timer timer );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0, timer.GetCurrentTime() );
 				EXPECT_EQ( 0, timer.GetLastTime() );
@@ -51,21 +51,21 @@ namespace test_ptt_timer
 				EXPECT_EQ( 0, timer.GetRequiredTime() );
 			}
 			
-			std::cout << r2tm::split;
+			LS();
 
 			{
-				OUTPUT_SUBJECT( "인자가 있는 생성자" );
+				OUTPUT_SUBJECT( "기본 생성자" );
 
 				LF();
 
 				DECLARATION_MAIN( ptt::Timer timer( 12345 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0, timer.GetCurrentTime() );
 				EXPECT_EQ( 0, timer.GetLastTime() );
@@ -73,7 +73,7 @@ namespace test_ptt_timer
 				EXPECT_EQ( 12345, timer.GetRequiredTime() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -92,32 +92,32 @@ namespace test_ptt_timer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Timer timer );
 			EXPECT_EQ( 0, timer.GetRequiredTime() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Set( 123456 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 123456, timer.GetRequiredTime() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Set( 654321 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 654321, timer.GetRequiredTime() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -136,42 +136,42 @@ namespace test_ptt_timer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Timer timer );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Start() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 				EXPECT_TRUE( timer.IsAlive() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
 				OUTPUT_VALUE( timer.GetCurrentTime() );
 				OUTPUT_VALUE( timer.GetLastTime() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0ll, timer.GetElapsedTime() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Demo" );
 				OUTPUT_COMMENT( "[ESC] End" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( r2::FPSTimer ft( 30 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				do
@@ -195,7 +195,7 @@ namespace test_ptt_timer
 				} while( true );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -214,11 +214,11 @@ namespace test_ptt_timer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Timer timer( 3 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Start() );
@@ -227,7 +227,7 @@ namespace test_ptt_timer
 				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Update() );
@@ -237,7 +237,7 @@ namespace test_ptt_timer
 				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
@@ -273,7 +273,7 @@ namespace test_ptt_timer
 				} while( 27 != input );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -292,37 +292,37 @@ namespace test_ptt_timer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Timer timer( 10000 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Start() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 				EXPECT_TRUE( timer.IsAlive() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( timer.Stop() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Start() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
@@ -353,7 +353,7 @@ namespace test_ptt_timer
 				} while( true );
 			}
 			
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Stop 을 호출한 이후에는 Update 를 호출해도 시간이 갱신되지 않는다." << r2tm::linefeed2;
@@ -363,7 +363,7 @@ namespace test_ptt_timer
 				EXPECT_EQ( et, timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -382,49 +382,49 @@ namespace test_ptt_timer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Timer timer( 10000 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( timer.Pause() );
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( timer.Resume() );
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( timer.Start() );
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( timer.Resume() );
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( timer.Pause() );
 				EXPECT_EQ( ptt::Timer::eStatus::Pause, timer.GetStatus() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( timer.Resume() );
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
@@ -465,7 +465,7 @@ namespace test_ptt_timer
 				} while( 27 != input );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

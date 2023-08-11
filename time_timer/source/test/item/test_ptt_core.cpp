@@ -18,29 +18,29 @@ namespace test_ptt_core
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				OUTPUT_NOTE( "Not Working : private Constructor" );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_CODE( ptt::Core core );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( ptt::CoreUp core = ptt::Core::Create() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute() );
 				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute10() );
 				EXPECT_EQ( 0, core->GetRequiredTime().GetMinute1() );
 				EXPECT_EQ( 0, core->GetRequiredTime().GetSeconds() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 0, core->GetPlayTime().GetMinute() );
 				EXPECT_EQ( 0, core->GetPlayTime().GetMinute10() );
@@ -48,7 +48,7 @@ namespace test_ptt_core
 				EXPECT_EQ( 0, core->GetPlayTime().GetSeconds() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -67,11 +67,11 @@ namespace test_ptt_core
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Core::RequiredTime r );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( r.IncreaseMinute10() );
@@ -79,7 +79,7 @@ namespace test_ptt_core
 				PROCESS_MAIN( r.IncreaseMinute10() );
 				EXPECT_EQ( 2, r.GetMinute10() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( r.IncreaseMinute1() );
 				EXPECT_EQ( 1, r.GetMinute1() );
@@ -89,23 +89,23 @@ namespace test_ptt_core
 				EXPECT_EQ( 3, r.GetMinute1() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 23, r.GetMinute() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 23 * 60, r.GetSeconds() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( r.DecreaseMinute10() );
 				EXPECT_EQ( 1, r.GetMinute10() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( r.DecreaseMinute1() );
 				EXPECT_EQ( 2, r.GetMinute1() );
@@ -113,17 +113,17 @@ namespace test_ptt_core
 				EXPECT_EQ( 1, r.GetMinute1() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 11, r.GetMinute() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 11 * 60, r.GetSeconds() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -142,11 +142,11 @@ namespace test_ptt_core
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Core::PlayTime p );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( p.SetMinute( 1, 2 ) );
@@ -155,7 +155,7 @@ namespace test_ptt_core
 				EXPECT_EQ( 2, p.GetMinute1() );
 				EXPECT_EQ( 12 * 60, p.GetSeconds() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( p.SetMinute( 2, 4 ) );
 				EXPECT_EQ( 24, p.GetMinute() );
@@ -164,7 +164,7 @@ namespace test_ptt_core
 				EXPECT_EQ( 24 * 60, p.GetSeconds() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

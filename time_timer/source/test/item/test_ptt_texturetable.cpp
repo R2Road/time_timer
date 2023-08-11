@@ -26,11 +26,11 @@ namespace test_ptt_texturetable
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -47,7 +47,7 @@ namespace test_ptt_texturetable
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -64,7 +64,7 @@ namespace test_ptt_texturetable
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				auto tf = ptt::TextureTable::GetInstance().GetTextureFrame( "seconds_0" );
@@ -72,7 +72,7 @@ namespace test_ptt_texturetable
 				Utility4Test::DrawTextureFrame( *tf );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -89,7 +89,7 @@ namespace test_ptt_texturetable
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -105,7 +105,7 @@ namespace test_ptt_texturetable
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

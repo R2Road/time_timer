@@ -30,27 +30,27 @@ namespace test_ptt_secondsnode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = ptt::SecondsNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_FALSE( node->IsVisible() );
 				EXPECT_TRUE( node->GetComponent<ptt::SecondsComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			if( ptt::DebugConfig::GetNodeConfig().pivot )
 			{
@@ -61,7 +61,7 @@ namespace test_ptt_secondsnode
 				EXPECT_EQ( 2, node->GetChildCount() );
 			}
 			
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -80,33 +80,33 @@ namespace test_ptt_secondsnode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 11 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), 'x' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			PROCESS_SUB( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_SUB( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = ptt::SecondsNode::Create( dummy_director ) );
 			PROCESS_MAIN( node->SetVisible( true ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -125,34 +125,34 @@ namespace test_ptt_secondsnode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 31, 11 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), 'x' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_SUB( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_SUB( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = ptt::SecondsNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto seconds_component = node->GetComponent<ptt::SecondsComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "# Key" << r2tm::linefeed;
 				std::cout << r2tm::tab << "[Q/A] Seconds Up/Down" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( int seconds = 0 );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -166,7 +166,7 @@ namespace test_ptt_secondsnode
 					PROCESS_MAIN( render_target.FillCharacterAll( 'x' ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-					std::cout << r2tm::linefeed;
+					LF();
 
 					Utility4Test::DrawTexture( render_target );
 
@@ -187,7 +187,7 @@ namespace test_ptt_secondsnode
 				} while( 27 != input );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::None;
 		};

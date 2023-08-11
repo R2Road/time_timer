@@ -116,12 +116,12 @@ void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 		if( texture.GetWidth() <= x )
 		{
 			x = 0u;
-			std::cout << r2tm::linefeed;
+			LF();
 		}
 	}
 	if( 0u != x )
 	{
-		std::cout << r2tm::linefeed;
+		LF();
 	}
 }
 void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
@@ -135,12 +135,12 @@ void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
 		if( texture.GetWidth() <= x )
 		{
 			x = 0u;
-			std::cout << r2tm::linefeed;
+			LF();
 		}
 	}
 	if( 0u != x )
 	{
-		std::cout << r2tm::linefeed;
+		LF();
 	}
 }
 

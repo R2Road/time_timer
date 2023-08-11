@@ -30,36 +30,36 @@ namespace test_ptt_numbernode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto tfrc = node->GetComponent<r2component::TextureFrameRenderComponent>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( tfrc );
 				EXPECT_EQ( ptt::TextureTable::GetInstance().GetTextureFrame( "number_0" ), tfrc->GetTextureFrame() );
 			}
 			
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( tfac );
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_0 ) );
@@ -74,18 +74,18 @@ namespace test_ptt_numbernode
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_9 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto number_component = node->GetComponent<ptt::NumberComponent>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( number_component );
 				EXPECT_EQ( node->GetComponent<r2component::TextureFrameAnimationComponent>(), number_component->GetTextureFrameAnimationComponent() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -104,32 +104,32 @@ namespace test_ptt_numbernode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 7 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			PROCESS_MAIN( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_MAIN( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -148,30 +148,30 @@ namespace test_ptt_numbernode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 15, 9 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_SUB( ptt::TextureTable::GetInstance().Load() );
 			PROCESS_SUB( ptt::TextureFrameAnimationTable::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = ptt::NumberNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto number_component = node->GetComponent<ptt::NumberComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "# Key" << r2tm::linefeed;
 				std::cout << r2tm::tab << "[0 ~ 9] Play Animation" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -185,7 +185,7 @@ namespace test_ptt_numbernode
 					PROCESS_MAIN( node->Update( 0.1f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-					std::cout << r2tm::linefeed;
+					LF();
 
 					Utility4Test::DrawTexture( render_target );
 
@@ -200,7 +200,7 @@ namespace test_ptt_numbernode
 				} while( 27 != input );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::None;
 		};

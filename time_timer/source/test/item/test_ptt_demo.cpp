@@ -24,14 +24,14 @@ namespace test_ptt_demo
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ptt::Timer timer );
 			DECLARATION_MAIN( int required_10_min = 0 );
 			DECLARATION_MAIN( int required_1_min = 1 );
 			PROCESS_MAIN( timer.Set( ( required_10_min + required_1_min ) * 60 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed2;
@@ -42,7 +42,7 @@ namespace test_ptt_demo
 				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				r2::FPSTimer ft( 30 );
@@ -107,7 +107,7 @@ namespace test_ptt_demo
 				} while( 27 != input );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
