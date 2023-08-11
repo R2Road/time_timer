@@ -32,6 +32,10 @@ namespace test_ptt_timer
 			std::cout << r2tm::split;
 
 			{
+				OUTPUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
 				DECLARATION_MAIN( ptt::Timer timer );
 
 				std::cout << r2tm::linefeed;
@@ -50,6 +54,10 @@ namespace test_ptt_timer
 			std::cout << r2tm::split;
 
 			{
+				OUTPUT_SUBJECT( "인자가 있는 생성자" );
+
+				LF();
+
 				DECLARATION_MAIN( ptt::Timer timer( 12345 ) );
 
 				std::cout << r2tm::linefeed;
