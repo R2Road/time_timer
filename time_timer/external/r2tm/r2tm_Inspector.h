@@ -3,16 +3,16 @@
 #include <iostream>
 #include <stdint.h>
 
-#include "r2cm_PrintBinary.h"
-#include "r2cm_PrintFile.h"
+#include "r2tm_PrintBinary.h"
+#include "r2tm_PrintFile.h"
 
-#define R2CM_ENABLE_DEBUG_BREAK 0
+#define R2TM_ENABLE_DEBUG_BREAK 0
 
-#if defined( R2CM_ENABLE_DEBUG_BREAK ) && R2CM_ENABLE_DEBUG_BREAK == 1
-	#define R2CM_DEBUG_BREAK ( __debugbreak() )
+#if defined( R2TM_ENABLE_DEBUG_BREAK ) && R2TM_ENABLE_DEBUG_BREAK == 1
+	#define R2TM_DEBUG_BREAK ( __debugbreak() )
 #else
-	#define R2CM_DEBUG_BREAK
-#endif // R2CM_ENABLE_DEBUG_BREAK
+	#define R2TM_DEBUG_BREAK
+#endif // R2TM_ENABLE_DEBUG_BREAK
 
 
 
@@ -27,7 +27,7 @@ do {																							\
 	}																							\
 	else																						\
 	{																							\
-		R2CM_DEBUG_BREAK;																		\
+		R2TM_DEBUG_BREAK;																		\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_TRUE( %s )\n", #condition );			\
 	}																							\
 } while( false )
@@ -40,7 +40,7 @@ do {																							\
 	}																							\
 	else																						\
 	{																							\
-		R2CM_DEBUG_BREAK;																		\
+		R2TM_DEBUG_BREAK;																		\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_FALSE( %s )\n", #condition );			\
 	}																							\
 } while( false )
@@ -53,7 +53,7 @@ do {																											\
 	}																											\
 	else																										\
 	{																											\
-		R2CM_DEBUG_BREAK;																						\
+		R2TM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_EQ( %s == %s )\n", #condition_1, #condition_2 );		\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
@@ -68,7 +68,7 @@ do {																											\
 	}																											\
 	else																										\
 	{																											\
-		R2CM_DEBUG_BREAK;																						\
+		R2TM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_NE( %s != %s )\n", #condition_1, #condition_2 );		\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
@@ -83,7 +83,7 @@ do {																											\
 	}																											\
 	else																										\
 	{																											\
-		R2CM_DEBUG_BREAK;																						\
+		R2TM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_GT( %s > %s )\n", #condition_1, #condition_2 );		\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
@@ -98,7 +98,7 @@ do {																											\
 	}																											\
 	else																										\
 	{																											\
-		R2CM_DEBUG_BREAK;																						\
+		R2TM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_LT( %s < %s )\n", #condition_1, #condition_2 );		\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
@@ -113,7 +113,7 @@ do {																											\
 	}																											\
 	else																										\
 	{																											\
-		R2CM_DEBUG_BREAK;																						\
+		R2TM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_GE( %s >= %s )\n", #condition_1, #condition_2 );		\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
@@ -128,7 +128,7 @@ do {																											\
 	}																											\
 	else																										\
 	{																											\
-		R2CM_DEBUG_BREAK;																						\
+		R2TM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_LE( %s <= %s )\n", #condition_1, #condition_2 );		\
 		OUTPUT_VALUE( ( condition_1 ) );																		\
 		OUTPUT_VALUE( ( condition_2 ) );																		\
@@ -192,7 +192,7 @@ do {																						\
 #define	OUTPUT_BINARY( condition )															\
 do {																						\
 	printf( "[BINARY]" " %s", #condition );													\
-	r2cm::PrintBinary( ( condition ) );														\
+	r2tm::PrintBinary( ( condition ) );														\
 	printf( "\n" );																			\
 } while( false )
 
@@ -204,7 +204,7 @@ do {																						\
 #define	OUTPUT_BINARIES( pointer, size )													\
 do {																						\
 	printf( "[BINARIES]" " %s" ", %s", #pointer, #size );									\
-	r2cm::PrintBinary( ( pointer ), ( size ) );												\
+	r2tm::PrintBinary( ( pointer ), ( size ) );												\
 	printf( "\n" );																			\
 } while( false )
 
@@ -216,8 +216,30 @@ do {																						\
 //
 #define	OUTPUT_CODE( condition )															\
 do {																						\
-	printf( "[CODE]" " %s" "\n", #condition );												\
+	printf( "[CODE]"  "\x1B[90m"  " %s"  "\033[0m"  "\n", #condition );						\
 } while( false )
+
+
+
+
+//
+// Output Size
+//
+#if _WIN64 == 1
+
+#define	OUTPUT_SIZE( condition )															\
+do {																						\
+	printf( "[SIZE]" " %s" "\n" "\t> %llu" " byte" "\n", #condition, sizeof( condition ) );	\
+} while( false )
+
+#else
+
+#define	OUTPUT_SIZE( condition )															\
+do {																						\
+	printf( "[SIZE]" " %s" "\n" "\t> %u" " byte" "\n", #condition, sizeof( condition ) );	\
+} while( false )
+
+#endif
 
 
 
@@ -225,14 +247,24 @@ do {																						\
 //
 // Output ETC
 //
+#define	OUTPUT_STRING( str )																\
+do {																						\
+	printf( "%s"  "\n", str );																\
+} while( false )
+
 #define	OUTPUT_NOTE( str )																	\
 do {																						\
-	printf( "\t" "+ Note : " "%s" "\n", str );												\
+	printf( "\t"  "\x1B[91m"  "[ NOTE ] "  "%s"  "\033[0m"  "\n", str );					\
+} while( false )
+
+#define	OUTPUT_SUBJECT( str )																\
+do {																						\
+	printf( "\t"  "\x1B[92m"  "+ "  "%s"  "\033[0m"  "\n", str );							\
 } while( false )
 
 #define	OUTPUT_COMMENT( str )																\
 do {																						\
-	printf( "\t" "> " "%s" "\n", str );														\
+	printf( "\t"  "\x1B[93m"  "> " "%s"  "\033[0m"  "\n", str );							\
 } while( false )
 
 
@@ -243,10 +275,16 @@ do {																						\
 //
 #define OUTPUT_FILE( file_path )															\
 do {																						\
-	r2cm::PrintFile( file_path );															\
+	r2tm::PrintFile( file_path );															\
 } while( false )
 
 #define OUTPUT_FILE_RANGE( file_path, min, max )											\
 do {																						\
-	r2cm::PrintFile( file_path, min, max );													\
+	r2tm::PrintFile( file_path, min, max );													\
 } while( false )
+
+#define OUTPUT_SOURCE_READY		int src_begin, src_end = -1
+#define OUTPUT_SOURCE_BEGIN		do { src_begin = __LINE__ + 1; } while( false )
+#define OUTPUT_SOURCE_END		do { src_end = __LINE__ - 1; r2tm::PrintFile( __FILE__, src_begin, src_end ); } while( false )
+
+#define OUTPUT_SOURCE_READY_N_BEGIN		OUTPUT_SOURCE_READY; OUTPUT_SOURCE_BEGIN

@@ -4,9 +4,9 @@
 
 #include "r2/r2_FPSTimer.h"
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 #include "ptt/ptt_Timer.h"
 
@@ -18,28 +18,28 @@ namespace test_ptt_timer
 		return o;
 	}
 
-	r2cm::TitleFunctionT Declaration::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Declaration";
 		};
 	}
-	r2cm::DoFunctionT Declaration::GetDoFunction() const
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( ptt::Timer timer );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 0, timer.GetCurrentTime() );
 				EXPECT_EQ( 0, timer.GetLastTime() );
@@ -47,17 +47,17 @@ namespace test_ptt_timer
 				EXPECT_EQ( 0, timer.GetRequiredTime() );
 			}
 			
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( ptt::Timer timer( 12345 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 0, timer.GetCurrentTime() );
 				EXPECT_EQ( 0, timer.GetLastTime() );
@@ -65,112 +65,112 @@ namespace test_ptt_timer
 				EXPECT_EQ( 12345, timer.GetRequiredTime() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Set::GetTitleFunction() const
+	r2tm::TitleFunctionT Set::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Set";
 		};
 	}
-	r2cm::DoFunctionT Set::GetDoFunction() const
+	r2tm::DoFunctionT Set::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer );
 			EXPECT_EQ( 0, timer.GetRequiredTime() );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Set( 123456 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 123456, timer.GetRequiredTime() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Set( 654321 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 654321, timer.GetRequiredTime() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Start::GetTitleFunction() const
+	r2tm::TitleFunctionT Start::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Start";
 		};
 	}
-	r2cm::DoFunctionT Start::GetDoFunction() const
+	r2tm::DoFunctionT Start::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Start() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 				EXPECT_TRUE( timer.IsAlive() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( timer.GetCurrentTime(), timer.GetLastTime() );
 				OUTPUT_VALUE( timer.GetCurrentTime() );
 				OUTPUT_VALUE( timer.GetLastTime() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 0ll, timer.GetElapsedTime() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				OUTPUT_NOTE( "Demo" );
 				OUTPUT_COMMENT( "[ESC] End" );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				DECLARATION_MAIN( r2::FPSTimer ft( 30 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				do
 				{
 					if( ft.Update() )
 					{
-						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+						r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						PROCESS_MAIN( timer.Start() );
 						OUTPUT_VALUE( timer.GetCurrentTime() );
@@ -187,30 +187,30 @@ namespace test_ptt_timer
 				} while( true );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Update::GetTitleFunction() const
+	r2tm::TitleFunctionT Update::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Update";
 		};
 	}
-	r2cm::DoFunctionT Update::GetDoFunction() const
+	r2tm::DoFunctionT Update::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer( 3 ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Start() );
@@ -219,7 +219,7 @@ namespace test_ptt_timer
 				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Update() );
@@ -229,21 +229,21 @@ namespace test_ptt_timer
 				OUTPUT_VALUE( timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[1] Timer::Start" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[ESC] End" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
+				std::cout << r2tm::tab << "[1] Timer::Start" << r2tm::linefeed;
+				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed2;
 
 				r2::FPSTimer ft( 30 );
-				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
 					if( ft.Update() )
 					{
-						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+						r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						OUTPUT_VALUE( timer.Update() );
 						OUTPUT_VALUE( static_cast<int>( timer.GetStatus() ) );
@@ -265,68 +265,68 @@ namespace test_ptt_timer
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Stop::GetTitleFunction() const
+	r2tm::TitleFunctionT Stop::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Stop";
 		};
 	}
-	r2cm::DoFunctionT Stop::GetDoFunction() const
+	r2tm::DoFunctionT Stop::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer( 10000 ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Start() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 				EXPECT_TRUE( timer.IsAlive() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( timer.Stop() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 				EXPECT_FALSE( timer.IsAlive() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Start() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[Any Key] Timer::Stop" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
+				std::cout << r2tm::tab << "[Any Key] Timer::Stop" << r2tm::linefeed2;
 
 				r2::FPSTimer ft( 30 );
-				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				do
 				{
 					if( ft.Update() )
 					{
-						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+						r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						OUTPUT_VALUE( timer.Update() );
 						OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
@@ -345,93 +345,93 @@ namespace test_ptt_timer
 				} while( true );
 			}
 			
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Stop 을 호출한 이후에는 Update 를 호출해도 시간이 갱신되지 않는다." << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Stop 을 호출한 이후에는 Update 를 호출해도 시간이 갱신되지 않는다." << r2tm::linefeed2;
 
 				DECLARATION_MAIN( auto et = timer.GetElapsedTime<std::chrono::microseconds>() );
 				PROCESS_MAIN( timer.Update() );
 				EXPECT_EQ( et, timer.GetElapsedTime<std::chrono::microseconds>() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Pause::GetTitleFunction() const
+	r2tm::TitleFunctionT Pause::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Timer : Pause";
 		};
 	}
-	r2cm::DoFunctionT Pause::GetDoFunction() const
+	r2tm::DoFunctionT Pause::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( ptt::Timer timer( 10000 ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( timer.Pause() );
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( timer.Resume() );
 				EXPECT_EQ( ptt::Timer::eStatus::Stop, timer.GetStatus() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( timer.Start() );
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( timer.Resume() );
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( timer.Pause() );
 				EXPECT_EQ( ptt::Timer::eStatus::Pause, timer.GetStatus() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( timer.Resume() );
 				EXPECT_EQ( ptt::Timer::eStatus::Play, timer.GetStatus() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
-				std::cout << r2cm::tab << "+ Demo" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[1] Timer::Pause" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[2] Timer::Resume" << r2cm::linefeed;
-				std::cout << r2cm::tab << "[ESC] End" << r2cm::linefeed2;
+				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
+				std::cout << r2tm::tab << "[1] Timer::Pause" << r2tm::linefeed;
+				std::cout << r2tm::tab << "[2] Timer::Resume" << r2tm::linefeed;
+				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed2;
 
 				r2::FPSTimer ft( 30 );
-				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
 					if( ft.Update() )
 					{
-						r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
+						r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
 
 						OUTPUT_VALUE( timer.Update() );
 						OUTPUT_VALUE( static_cast<int>( timer.GetStatus() ) );
@@ -457,9 +457,9 @@ namespace test_ptt_timer
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

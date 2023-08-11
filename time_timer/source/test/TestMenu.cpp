@@ -1,7 +1,7 @@
 #include "TestMenu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "item/test_ptt_core.h"
 #include "item/test_ptt_demo.h"
@@ -11,20 +11,20 @@
 #include "item/test_ptt_texturetable.h"
 #include "item/test_ptt_timer.h"
 
-r2cm::TitleFunctionT TestMenu::GetTitleFunction() const
+r2tm::TitleFunctionT TestMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Test Menu";
 	};
 }
-r2cm::DescriptionFunctionT TestMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT TestMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
+r2tm::WriteFunctionT TestMenu::GetWriteFunction() const
 {
-	return []( r2cm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', test_ptt_texturetable::Basic() );
 
@@ -97,11 +97,11 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 		ret->AddItem(
 			27
-			, r2cm::eColor::BG_Purple
+			, r2tm::eColor::BG_Purple
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eDoLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
-				return r2cm::eDoLeaveAction::Exit;
+				return r2tm::eDoLeaveAction::Exit;
 			}
 		);
 	};
