@@ -163,12 +163,12 @@ namespace test_ptt_timer
 
 			LS();
 
+			OUTPUT_NOTE( "Demo" );
+			OUTPUT_COMMENT( "[ESC] End" );
+
+			LS();
+
 			{
-				OUTPUT_NOTE( "Demo" );
-				OUTPUT_COMMENT( "[ESC] End" );
-
-				LF();
-
 				DECLARATION_MAIN( r2::FPSTimer ft( 30 ) );
 
 				LF();
@@ -188,7 +188,7 @@ namespace test_ptt_timer
 
 					if( _kbhit() )
 					{
-						_getch();
+						_getch(); // 입력키를 pop 해서 이후 키 처리에 문제가 없게 한다.
 						break;
 					}
 
@@ -197,7 +197,7 @@ namespace test_ptt_timer
 
 			LS();
 
-			return r2tm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
