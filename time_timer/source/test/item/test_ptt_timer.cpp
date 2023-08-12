@@ -440,10 +440,12 @@ namespace test_ptt_timer
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[1] Timer::Pause" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[2] Timer::Resume" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed2;
+				OUTPUT_NOTE( "Demo" );
+				OUTPUT_COMMENT( "[  1  ] Timer::Pause" );
+				OUTPUT_COMMENT( "[  2  ] Timer::Resume" );
+				OUTPUT_COMMENT( "[ ESC ] End");
+
+				SS();
 
 				r2::FPSTimer ft( 30 );
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
