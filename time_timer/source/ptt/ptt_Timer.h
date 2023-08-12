@@ -14,8 +14,12 @@ namespace ptt
 			Pause,
 		};
 
+
+
 		Timer();
 		Timer( const int seconds );
+
+
 
 		//
 		//
@@ -72,6 +76,8 @@ namespace ptt
 			return std::chrono::duration_cast<durationT>( mRequiredDuration ).count();
 		}
 
+
+
 		//
 		//
 		//
@@ -82,8 +88,12 @@ namespace ptt
 		void Pause();
 		void Resume();
 
+
+
 	private:
 		void updateTime();
+
+
 
 	private:
 		eStatus mStatus;
