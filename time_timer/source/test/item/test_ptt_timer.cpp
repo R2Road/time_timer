@@ -329,15 +329,15 @@ namespace test_ptt_timer
 
 			LS();
 
-			{
-				PROCESS_MAIN( timer.Start() );
-			}
+			OUTPUT_SUBJECT( "Demo" );
+			OUTPUT_COMMENT( "[Any Key] Timer::Stop" );
 
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[Any Key] Timer::Stop" << r2tm::linefeed2;
+				PROCESS_MAIN( timer.Start() );
+
+				LF();
 
 				r2::FPSTimer ft( 30 );
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -367,7 +367,9 @@ namespace test_ptt_timer
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Stop 을 호출한 이후에는 Update 를 호출해도 시간이 갱신되지 않는다." << r2tm::linefeed2;
+				OUTPUT_NOTE( "Stop 을 호출한 이후에는 Update 를 호출해도 시간이 갱신되지 않는다." );
+
+				LF();
 
 				DECLARATION_MAIN( auto et = timer.GetElapsedTime<std::chrono::microseconds>() );
 				PROCESS_MAIN( timer.Update() );
