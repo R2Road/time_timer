@@ -221,6 +221,10 @@ namespace test_ptt_timer
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Start" );
+
+				LF();
+
 				PROCESS_MAIN( timer.Start() );
 				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
 				OUTPUT_VALUE( timer.GetLastTime<std::chrono::microseconds>() );
@@ -230,6 +234,10 @@ namespace test_ptt_timer
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Update" );
+
+				LF();
+
 				PROCESS_MAIN( timer.Update() );
 				EXPECT_NE( timer.GetCurrentTime<std::chrono::microseconds>(), timer.GetLastTime<std::chrono::microseconds>() );
 				OUTPUT_VALUE( timer.GetCurrentTime<std::chrono::microseconds>() );
@@ -240,11 +248,14 @@ namespace test_ptt_timer
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[1] Timer::Start" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Demo" );
+				OUTPUT_COMMENT( "[  1  ] Timer::Start" );
+				OUTPUT_COMMENT( "[ ESC ] End" );
 
-				r2::FPSTimer ft( 30 );
+				SS();
+
+				r2::FPSTimer ft( 24 );
+
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
@@ -275,7 +286,7 @@ namespace test_ptt_timer
 
 			LS();
 
-			return r2tm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
