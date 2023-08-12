@@ -166,7 +166,7 @@ namespace test_ptt_timer
 			OUTPUT_NOTE( "Demo" );
 			OUTPUT_COMMENT( "[ESC] End" );
 
-			LS();
+			SS();
 
 			{
 				DECLARATION_MAIN( r2::FPSTimer ft( 30 ) );
@@ -247,13 +247,13 @@ namespace test_ptt_timer
 
 			LS();
 
+			OUTPUT_SUBJECT( "Demo" );
+			OUTPUT_COMMENT( "[  1  ] Timer::Start" );
+			OUTPUT_COMMENT( "[ ESC ] End" );
+
+			SS();
+
 			{
-				OUTPUT_SUBJECT( "Demo" );
-				OUTPUT_COMMENT( "[  1  ] Timer::Start" );
-				OUTPUT_COMMENT( "[ ESC ] End" );
-
-				SS();
-
 				r2::FPSTimer ft( 24 );
 
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
@@ -332,7 +332,7 @@ namespace test_ptt_timer
 			OUTPUT_SUBJECT( "Demo" );
 			OUTPUT_COMMENT( "[Any Key] Timer::Stop" );
 
-			LS();
+			SS();
 
 			{
 				PROCESS_MAIN( timer.Start() );
@@ -439,14 +439,14 @@ namespace test_ptt_timer
 
 			LS();
 
+			OUTPUT_NOTE( "Demo" );
+			OUTPUT_COMMENT( "[  1  ] Timer::Pause" );
+			OUTPUT_COMMENT( "[  2  ] Timer::Resume" );
+			OUTPUT_COMMENT( "[ ESC ] End");
+
+			SS();
+
 			{
-				OUTPUT_NOTE( "Demo" );
-				OUTPUT_COMMENT( "[  1  ] Timer::Pause" );
-				OUTPUT_COMMENT( "[  2  ] Timer::Resume" );
-				OUTPUT_COMMENT( "[ ESC ] End");
-
-				SS();
-
 				r2::FPSTimer ft( 30 );
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
