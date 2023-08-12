@@ -18,6 +18,8 @@ namespace test_ptt_timer
 		return o;
 	}
 
+
+
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
