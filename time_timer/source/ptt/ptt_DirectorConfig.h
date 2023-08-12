@@ -6,9 +6,16 @@ namespace ptt
 {
 	const r2bix_director::Config DirectorConfig
 	{
-		{ 57, 27 } // Screen Buffer Size
-		, 60u // Update FPS
-		, 30u // Render FPS
+		// Screen Buffer Size
+		{ 57, 27 }
+
+		// Update FPS
+		, 60u
+
+		// Render FPS
+		, 30u
+
+		// Schedule Type( Infinite/Sleep )
 		, r2bix_director::Config::eScheduleType::Sleep
 	};
 }
