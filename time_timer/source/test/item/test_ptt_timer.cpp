@@ -54,7 +54,7 @@ namespace test_ptt_timer
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "기본 생성자" );
+				OUTPUT_SUBJECT( "매개변수가 있는 생성자" );
 
 				LF();
 
