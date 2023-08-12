@@ -51,5 +51,9 @@ namespace ptt
 			"\n"	"[o] " "Add Interface 2 Alram Scene : 20Ка Дѕ"
 		;
 
+
+
+		const char* const String4Road2NextVersion = String4Road2Version_1_0_9;
+
 	} VersionInfo;
 }

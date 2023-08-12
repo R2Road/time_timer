@@ -40,7 +40,7 @@ r2tm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 			+ "\n"
 			  "\n"
 			  "\n"
-			+ ptt::VersionInfo.String4Road2Version_1_0_9
+			+ ptt::VersionInfo.String4Road2NextVersion
 		;
 
 		return ret.c_str();
