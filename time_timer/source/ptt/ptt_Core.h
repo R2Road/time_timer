@@ -87,11 +87,15 @@ namespace ptt
 			int mMinute_1;
 		};
 
+
+
 	private:
 		Core();
 
 	public:
 		static CoreUp Create();
+
+
 
 		const RequiredTime& GetRequiredTime() const
 		{
@@ -110,6 +114,8 @@ namespace ptt
 		{
 			return mPlayTime;
 		}
+
+
 
 	private:
 		RequiredTime mRequiredTime;
