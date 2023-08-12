@@ -34,18 +34,18 @@ namespace test_ptt_demo
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Demo" << r2tm::linefeed2;
-				std::cout << r2tm::tab << "[1] Start/Stop" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[2] Pause/Resume" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[Q/A] 10 Min Up/Down" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[W/S]  1 Min Up/Down" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed;
+				OUTPUT_SUBJECT( "Demo" );
+				OUTPUT_COMMENT( "[  1  ] Start / Stop" );
+				OUTPUT_COMMENT( "[  2  ] Pause / Resume" );
+				OUTPUT_COMMENT( "[ Q/A ] 10 Min Up / Down" );
+				OUTPUT_COMMENT( "[ W/S ]  1 Min Up / Down" );
+				OUTPUT_COMMENT( "[ ESC ] End" );
 			}
 
-			LS();
+			SS();
 
 			{
-				r2::FPSTimer ft( 30 );
+				r2::FPSTimer ft( 24 );
 				const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				ptt::Timer::eStatus last_status = timer.GetStatus();
