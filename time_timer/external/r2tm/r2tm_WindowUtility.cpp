@@ -89,7 +89,7 @@ namespace r2tm
 	}
 	void WindowUtility::MoveCursorPoint( const CursorPoint new_cursor_point )
 	{
-		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
+		const CursorPoint fixed_new_cursor_point( ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) );
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
 	}
 	void WindowUtility::MoveCursorPoint( const short x, const short y )
@@ -101,7 +101,7 @@ namespace r2tm
 	{
 		const auto last_cursor_point = GetCursorPoint();
 
-		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
+		const CursorPoint fixed_new_cursor_point( ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) );
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
 
 
