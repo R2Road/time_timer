@@ -18,7 +18,7 @@ namespace r2utility
 			{
 
 				find_pos = str.find( key_string, pivot_pos );
-				if( std::string::npos == find_pos )
+				if( std::string_view::npos == find_pos )
 				{
 					fixed_find_pos = str.size();
 				}
@@ -35,7 +35,7 @@ namespace r2utility
 				pivot_pos = fixed_find_pos + 1u;
 				++out_ret.height;
 
-			} while( std::string::npos != find_pos && pivot_pos <= str.size() );
+			} while( std::string_view::npos != find_pos && pivot_pos <= str.size() );
 		}
 
 		return out_ret;
